@@ -24,6 +24,6 @@ Before June, when hurricane season starts in earnest. [Storm preparation trimmin
 
 ## Is regular pruning worth it for a healthy Deer Park tree?
 
-Yes, because pruning done right is what keeps the tree healthy and the big bills away. Our [tree pruning](/services/tree-trimming/tree-pruning/) follows the ANSI A300 standard on every cut: branch collar cuts, no topping, no spikes in a living tree, never more than a quarter of the canopy in a season.
+Yes, because pruning done right is what keeps the tree healthy and the big bills away. Our [tree pruning](/services/tree-trimming/tree-pruning/) works from the ANSI A300 standard: cuts at the branch collar, no climbing spikes in a tree that is staying, and canopy removal kept conservative rather than drastic.
 
 Estimates in Deer Park are free, the price is firm, and you pay when the work is done. Call or text (281) 757-2938 and you will be talking to Robert, the arborist himself.

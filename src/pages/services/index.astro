@@ -17,7 +17,7 @@ const services = await getCollection('services');
 // "Tree Services" hand-set for this business: the formula would render
 // "Tree Service Services" (doubled word). Per-business fix, not a template change.
 const title = `Tree Services in ${cityState} | ${b.name}`;
-const description = `Every tree service ${b.name} provides in ${cityState}. Browse by category and get a fast, free estimate.`;
+const description = `Every tree service ${b.name} provides in ${cityState}: removal, trimming, stump grinding, land clearing, and tree health care. Free estimates.`;
 ---
 
 <BaseLayout title={title} description={description}>

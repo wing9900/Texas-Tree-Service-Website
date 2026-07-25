@@ -22,7 +22,7 @@ Anyone who was in La Porte for Hurricane Ike remembers what the bay can do. A tr
 
 ## Do La Porte's old oaks deserve an arborist instead of a tree guy?
 
-Yes, because some of the oldest live oaks on the Gulf Coast grow right here. The trees shading the [San Jacinto Battleground](https://www.sanjacinto-museum.org/) were standing before Texas was Texas, and the mature oaks around the Main Street district are part of what makes old La Porte feel like old La Porte. Work on trees like these follows the ANSI A300 standard on every cut: no topping, no spikes in a living tree, never more than a quarter of the canopy in a season.
+Yes, because some of the oldest live oaks on the Gulf Coast grow right here. The trees shading the [San Jacinto Battleground](https://www.sanjacinto-museum.org/) were standing before Texas was Texas, and the mature oaks around the Main Street district are part of what makes old La Porte feel like old La Porte. Work on trees like these follows the ANSI A300 standard: cuts at the branch collar, no climbing spikes in a tree that is staying, and canopy removal kept conservative rather than drastic.
 
 ## Can you clear acreage and overgrown lots in Lomax?
 

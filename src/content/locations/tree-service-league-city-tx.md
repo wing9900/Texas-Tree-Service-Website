@@ -7,7 +7,7 @@ relatedServices: ["tree-pruning", "crown-reduction", "cabling-bracing"]
 order: 2
 faqs:
   - q: "Can League City's old live oaks be pruned without ruining their shape?"
-    a: "Yes, when every cut follows the ANSI A300 standard: no topping, no spikes, and never more than a quarter of the live canopy in a season."
+    a: "Yes, when the work follows the ANSI A300 standard: cuts at the branch collar, no climbing spikes in a tree that is staying, and canopy removal kept conservative rather than drastic."
   - q: "Is it worth saving a splitting oak instead of removing it?"
     a: "Often, yes. A structurally sound oak with a weak fork can be supported with cabling and bracing for far less than the cost of losing it."
 ---
@@ -16,7 +16,7 @@ League City takes its trees seriously, and so do we. This is the town that spent
 
 ## Who should prune a mature live oak in League City?
 
-Someone working to the ANSI A300 standard, because a bad prune is permanent. That means every cut lands at the branch collar, no climbing spikes touch a tree that stays, and no more than a quarter of the live canopy comes off in a season. That is how our [tree pruning](/services/tree-trimming/tree-pruning/) service treats every League City oak, whether it shades a patio or a whole yard. The International Society of Arboriculture explains why topping ruins trees at [treesaregood.org](https://www.treesaregood.org/).
+Someone working to the ANSI A300 standard, because a bad prune is permanent. That means cuts landing at the branch collar, no climbing spikes in a tree that stays, and conservative canopy removal instead of heavy thinning. That is how our [tree pruning](/services/tree-trimming/tree-pruning/) service approaches League City oaks, whether one shades a patio or a whole yard. The International Society of Arboriculture explains why topping ruins trees at [treesaregood.org](https://www.treesaregood.org/).
 
 ## Can a storm-worried League City homeowner shrink a tree without topping it?
 

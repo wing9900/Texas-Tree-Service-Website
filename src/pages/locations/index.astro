@@ -22,7 +22,7 @@ const locations = (await getCollection('locations')).sort((a, z) =>
 );
 
 const title = `Areas We Serve in ${cityState} | ${b.name}`;
-const description = `Towns and neighborhoods across the ${cityState} region served by ${b.name}. Find detailed local tree service information for your area.`;
+const description = `Towns and neighborhoods across the ${cityState} region served by ${b.name}. Find local tree service details and free estimates for your area.`;
 ---
 
 <BaseLayout title={title} description={description} noindex={locations.length === 0}>

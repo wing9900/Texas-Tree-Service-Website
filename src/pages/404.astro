@@ -4,10 +4,10 @@
  * the site with paths back to the money pages.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { business as b, telHref } from '../config/business';
+import { business as b, cityState, telHref } from '../config/business';
 ---
 
-<BaseLayout title={`Page Not Found | ${b.name}`} description={`That page doesn't exist. Head back to ${b.name}'s services or call ${b.phoneDisplay} for immediate help.`}>
+<BaseLayout title={`Page Not Found | ${b.name}`} description={`That page doesn't exist. Head back to ${b.name}'s tree services in ${cityState}, or call ${b.phoneDisplay} for immediate help with your tree.`}>
   <section class="hero">
     <div class="container">
       <h1>That Page Isn't Here</h1>

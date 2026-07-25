@@ -20,7 +20,7 @@ Yes, that is the job we are built for. Houston's older southeast neighborhoods m
 
 ## How should Houston live oaks be trimmed?
 
-To the ANSI A300 standard, which is the written standard cities and utilities hold their own contractors to. Our [canopy trimming](/services/tree-trimming/canopy-trimming/) lifts the crown off your roof, clears the streetlights and sightlines, and never tops a tree. The Tree Care Industry Association, which publishes those standards, explains what professional tree care should look like at [tcia.org](https://www.tcia.org/).
+To the ANSI A300 standard, which is the written standard cities and utilities hold their own contractors to. Our [canopy trimming](/services/tree-trimming/canopy-trimming/) lifts the crown off your roof and clears the streetlights and sightlines, using reduction cuts back to sound laterals rather than topping. The Tree Care Industry Association, which publishes those standards, explains what professional tree care should look like at [tcia.org](https://www.tcia.org/).
 
 ## What about the mess a Houston storm leaves behind?
 
