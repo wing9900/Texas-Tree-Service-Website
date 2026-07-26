@@ -59,7 +59,7 @@ export const homepage = {
     {
       icon: 'book',
       title: 'Standards, Not Guesswork',
-      text: "Your trees and your home are major investments, and we treat them that way. That's why we execute every job in accordance with ANSI A300 guidelines. By holding ourselves to this standard, we ensure safe, controlled removals and research-informed tree care. Whether we are dismantling a hazardous tree inches from your foundation or preserving a prized specimen, the work follows a written rulebook, not one crew's judgment in the moment.",
+      text: "Your trees and your home are major investments, and we treat them that way. That's why we execute every job in accordance with ANSI A300 and ANSI Z133 guidelines. By holding ourselves to these standards, we ensure safe, controlled removals and research-based tree care. Whether we are dismantling a hazardous tree inches from your foundation or preserving a prized specimen, the work follows a written rulebook, not one crew's judgment in the moment.",
     },
     {
       icon: 'handshake',

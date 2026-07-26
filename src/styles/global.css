@@ -643,11 +643,36 @@ html:has(.lightbox:popover-open) body { overflow: hidden; touch-action: none; }
 .site-footer__logo { height: 64px; width: auto; border-radius: 8px; margin-bottom: 0.7rem; }
 .site-footer a { color: #fff; }
 .site-footer h3 { color: var(--c-accent-soft); font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; }
+/* The business name is the brand lockup, not a section label like "Hours"
+   or "Quick Links" — it takes the same --c-accent the header wordmark gives
+   "Tree Removal", so the name reads identically top and bottom of the page.
+   This is the one deliberate exception to accent-is-for-actions-only. */
+.site-footer h3.site-footer__name { color: var(--c-accent); }
 .site-footer__grid { display: grid; gap: 1.5rem; padding-block: 2.5rem; grid-template-columns: 1fr; }
 .site-footer__legal { border-top: 1px solid rgb(255 255 255 / 0.14); padding-block: 1rem; font-size: var(--fs-small); }
 .site-footer ul { list-style: none; margin: 0; padding: 0; }
 .site-footer li { padding-block: 0.28rem; }
 .site-footer .hours-list li { border-color: rgb(255 255 255 / 0.15); }
+/* Social/citation profile marks, under the NAP block in the identity
+   column. The brand logos carry themselves — no pill, no border, nothing
+   competing. Each 32px mark sits centered in a 48px box so the tap target
+   clears --tap-min without inflating the icon. The negative inline start
+   cancels that box's 8px of slack, so the first logo's edge lines up with
+   the address text above it. Nested selectors outrank the blanket
+   `.site-footer ul { margin: 0 }` and `.site-footer a { color: #fff }`. */
+.site-footer .site-footer__social {
+  /* Column gap 0: the 48px boxes already leave 16px between the 32px
+     discs, which is the spacing the marks want. */
+  display: flex; flex-wrap: wrap; gap: 0.25rem 0;
+  margin-top: 0.75rem; margin-inline-start: -8px;
+}
+.site-footer .site-footer__social li { padding-block: 0; }
+.site-footer .site-footer__social-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: var(--tap-min); height: var(--tap-min);
+}
+.site-footer__social-icon svg { display: block; }
+.site-footer__social-icon:hover { opacity: 0.82; }
 
 /* ── Breadcrumbs ── */
 .breadcrumbs { font-size: var(--fs-small); color: var(--c-ink-soft); padding-block: 0 0.9rem; }
