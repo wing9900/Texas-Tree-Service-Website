@@ -806,6 +806,8 @@ html:has(.lightbox:popover-open) body { overflow: hidden; touch-action: none; }
 
   .grid--3 { grid-template-columns: repeat(3, 1fr); }
   .photo-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  /* Opt-in 4-across variant, desktop only. Mobile/tablet stay 2-up. */
+  .photo-grid--4up { grid-template-columns: repeat(4, 1fr); }
   .grid--4 { grid-template-columns: repeat(4, 1fr); }
   .grid--4 > .card { height: 100%; }             /* equal card heights */
   .intro-split { display: grid; grid-template-columns: 55fr 45fr; gap: 3rem; align-items: center; }

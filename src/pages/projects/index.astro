@@ -24,15 +24,17 @@ const rendered = await Promise.all(
   projects.map(async (project) => {
     const { Content } = await render(project);
     const relatedService = await getEntry('services', project.data.service);
-    // The editorial link to the matching service page is REQUIRED
-    // (Rule 16) — fail the build instead of silently shipping without it.
+    // Rule 16 still applies: every project links to its service page. The
+    // link now lives in each project's own body copy so it reads as a
+    // sentence instead of the same tagline repeated on every card. This
+    // guard keeps the frontmatter slug honest, so a typo fails the build.
     if (!relatedService) {
       throw new Error(
         `Project "${project.id}" has service: "${project.data.service}", which matches no file in ` +
         `src/content/services/. Use the service page's filename slug (not a category slug).`
       );
     }
-    return { project, Content, relatedService };
+    return { project, Content };
   })
 );
 
@@ -57,18 +59,11 @@ const description = `Real, recent ${b.primaryCategory.toLowerCase()} projects co
   <section class="section">
     <div class="container">
       {rendered.length > 0 ? (
-        rendered.map(({ project, Content, relatedService }) => (
+        rendered.map(({ project, Content }) => (
           <article class="card card--flow">
             <h2 class="card-title">{project.data.title}</h2>
             <p>{project.data.description}</p>
             <Content />
-            <p>
-              Need something similar? See our{' '}
-              <a href={`/services/${relatedService.data.category}/${relatedService.id}/`}>
-                {relatedService.data.title.toLowerCase()} in {b.address.city}
-              </a>{' '}
-              page for what's included and what drives the price.
-            </p>
           </article>
         ))
       ) : (
