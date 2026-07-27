@@ -16,7 +16,7 @@ Clear Lake Shores is an island city, and tree work there has to respect that. Th
 
 ## How do you take a tree down on a tight canal lot?
 
-From the top, in small rigged sections, with nothing dropped free. There is no room to fell a whole tree in Clear Lake Shores, and a swung limb can reach a roof, a fence, and a boat all at once. So the climber lowers each piece on ropes and the wood leaves by hand and trailer. When a storm has already done the cutting, our [emergency tree removal](/services/tree-removal/emergency-tree-removal/) line is answered around the clock Monday through Saturday.
+From the top, in small rigged sections, with nothing dropped free. There is no room to fell a whole tree in Clear Lake Shores, and on the lots backing the water near Marina Bay Harbor a swung limb can reach a roof, a fence, and a boat all at once. So the climber lowers each piece on ropes and the wood leaves by hand and trailer. When a storm has already done the cutting, our [emergency tree removal](/services/tree-removal/emergency-tree-removal/) line is answered around the clock Monday through Saturday.
 
 ## What does bay wind do to island trees, and what helps?
 
@@ -25,5 +25,11 @@ It finds every weak limb, every season. Hurricane season on Galveston Bay is tra
 ## Do smaller island trees still need an arborist?
 
 Yes, because on lots this size every tree is close to something that matters. An ISA Certified Arborist decides what comes off, [tree pruning](/services/tree-trimming/tree-pruning/) to the ANSI A300 standard keeps the tree sound, and cleanup leaves the yard cleaner than we found it.
+
+## Do you need permission to remove a tree in Clear Lake Shores?
+
+Clear Lake Shores is its own incorporated city, so its rules are its own, not Webster's and not Houston's. That catches people who file the whole area under "Clear Lake" and assume one set of rules covers all of it. We check what applies to your specific address before anything gets scheduled.
+
+On a canal lot there is a second question worth settling first, which is where your property line actually falls relative to the bulkhead. It sits closer to the tree than most owners expect, and on lots this narrow that decides where the crew can set up and where the wood can come down. Both get worked out at the estimate, along with any easement the utility holds. None of this is legal advice and city rules do change.
 
 Estimates in Clear Lake Shores are free and the price is firm before we start. Call or text (281) 757-2938.

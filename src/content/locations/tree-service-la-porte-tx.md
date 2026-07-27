@@ -32,4 +32,6 @@ Yes, and Lomax is some of our favorite work. The larger lots off Sens Road and N
 
 The estimate is free and the price is firm before a saw starts. Size, access, and what the tree hangs over drive the number, and every removal includes [stump grinding](/services/stump-grinding/) at no added cost.
 
+Permit questions get handled at the same visit. Whether one applies depends on your city and on whether the tree stands in a utility easement or the public right-of-way, which is treated differently everywhere on the Gulf Coast. We are not lawyers and ordinances get amended, so we check your address rather than assume.
+
 Call or text (281) 757-2938 and Robert, the arborist who runs the crew, will look at your La Porte property himself.
