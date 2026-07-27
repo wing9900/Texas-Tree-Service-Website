@@ -28,7 +28,7 @@ We haul it. After hurricanes and derecho winds, city pickup schedules stretch ou
 
 ## Does Houston require a permit to take down your tree?
 
-Not for a tree standing in your own yard at an existing single-family home. Houston's Chapter 33 tree and shrub ordinance is built around development and the public right-of-way, and existing single-family residential property is not subject to its main requirements. Your back yard water oak is your call.
+Usually not, for a tree in the back yard at an existing single-family home. Houston's Chapter 33 tree and shrub ordinance is built around development and the public right-of-way, and existing single-family residential property is not subject to its main requirements. A large tree in the front setback along a major street is the exception worth knowing about, since the ordinance can still classify it as a protected corridor tree by size alone.
 
 The tree between the sidewalk and the street is a different animal. Removing one there takes written permission from the city's Urban Forestry Division, and the city's published guide cites penalties reaching $500 per day plus $90 per diameter inch for destroying a protected tree without it. That boundary is easy to misjudge from the driveway and expensive to get wrong, so we work out which side of it your tree sits on before we quote. New construction is the other trigger, since a new single-family home has to preserve or plant qualifying trees before final building inspection. The ordinance and the city's guide to it are posted at [houstontx.gov](https://www.houstontx.gov/planning/). None of this is legal advice and ordinances change, so we check it fresh per address.
 

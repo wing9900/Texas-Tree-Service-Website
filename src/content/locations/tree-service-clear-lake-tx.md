@@ -28,7 +28,7 @@ Often, yes. [Crown reduction](/services/tree-trimming/crown-reduction/) shortens
 
 ## Whose tree rules apply in the Clear Lake area?
 
-Whichever city your lot actually sits in, and that is rarely obvious from the mailing address. Clear Lake is a region rather than a municipality, and the boundaries run through it in ways that catch people out: Clear Lake City is City of Houston, the Armand Bayou side is Pasadena, and Webster, Seabrook, El Lago, Nassau Bay, and Taylor Lake Village each write their own. Two houses a few streets apart can sit under two different codes.
+Whichever city your lot actually sits in, and that is rarely obvious from the mailing address. Clear Lake is a region rather than a municipality, and the boundaries run through it in ways that catch people out: most of Clear Lake City is Houston, the Armand Bayou side is Pasadena, a small eastern slice belongs to Taylor Lake Village, and Webster, Seabrook, El Lago, and Nassau Bay each write their own rules besides. Two houses a few streets apart can sit under two different codes.
 
 That distinction changes the answer. Houston, for one, leaves existing single-family yards out of its Chapter 33 requirements but still controls the right-of-way strip between your sidewalk and the street. Deed restrictions are a separate layer that state law does not touch, and around here the HOA is often the stricter authority of the two. We work out which set applies to your address at the free estimate instead of guessing from a zip code, whether you are near Bay Area Park or further south toward Baybrook. None of this is legal advice and ordinances do change.
 
