@@ -9,63 +9,72 @@
 // DUPLICATION STEP: this is the first file you edit for a new business.
 // Copy every value CHARACTER-FOR-CHARACTER from the Google Business
 // Profile. "St." vs "Street" mismatches cost trust with the algorithm.
+//
+// CONROE TREE CO. STATUS: pre-GBP rank-and-rent build. This site
+// launches organic-only; the GBP arrives when the renting operator
+// verifies it. Every [BRACKETED] value below is pending real data and
+// MUST be resolved before launch (README §7: no brackets at launch).
 // ═══════════════════════════════════════════════════════════════════
 
 export const business = {
   // ── Identity ──────────────────────────────────────────────────────
-  name: 'Gulf Coast Tree Removal',            // confirm exact casing against the GBP before launch
-  brandLockup: ['Gulf Coast', 'Tree Removal'], // two-line header wordmark next to the logo
+  name: 'Conroe Tree Co.',
+  brandLockup: ['Conroe', 'Tree Co.'],  // two-line header wordmark next to the logo
   // Primary GBP category — the #1 local ranking factor. Most specific
   // option available. Drives the homepage title tag + H1 formulas.
-  primaryCategory: 'Tree Service',            // VERIFY on the GBP: most specific category, seasonal switch n/a
+  primaryCategory: 'Tree Service',
 
   // ── NAP (must match GBP character-for-character — Rule 12) ────────
+  // No GBP exists yet. Street stays bracketed until the renting
+  // operator's verified address is known; the site is written as a
+  // service-area business around Conroe either way.
   address: {
-    street: '913 Crenshaw Rd',
-    city: 'Pasadena',
+    street: '[PENDING — renter address or SAB, do not launch with brackets]',
+    city: 'Conroe',
     state: 'Texas',
     stateAbbr: 'TX',
-    zip: '77504',
+    zip: '77301',
     country: 'US',
   },
-  phone: '+12817572938',            // E.164 for tel: links + schema
-  phoneDisplay: '(281) 757-2938',   // exactly as displayed on the GBP
+  phone: '[PENDING-TWILIO-E164]',            // E.164 for tel: links + schema, e.g. +19365550100
+  phoneDisplay: '[PENDING 936 TRACKING NUMBER]',   // exactly as it will appear on the GBP
 
   // ── Geo + service area ────────────────────────────────────────────
-  geo: { lat: 29.6388129, lng: -95.1976134 },  // GBP pin (from the listing's own Maps embed)
+  geo: { lat: 30.3118769, lng: -95.4560512 },  // Conroe city center; replace with GBP pin once verified
   // Every town that gets a town page MUST also be listed here — this
   // feeds areaServed in LocalBusiness + Service schema, which is what
   // Google and AI assistants read to decide if you serve a searcher's town.
+  // Launch is single-location (README §3-A): no town pages yet, so this
+  // list stays short and honest — Conroe plus immediate Montgomery
+  // County neighbors a Conroe crew genuinely covers.
   serviceAreas: [
-    'Pasadena',
-    'Baytown',
-    'League City',
-    'Pearland',
-    'Houston',
-    'Deer Park',
-    'South Houston',
-    'Clear Lake',
-    'Clear Lake Shores',
-    'La Porte',
+    'Conroe',
+    'Willis',
+    'Montgomery',
+    'Panorama Village',
+    'Cut and Shoot',
+    'Grangerland',
   ],
 
   // ── Hours (match GBP exactly — Rule 7: open-at-time-of-search is top-5) ──
   // days: schema.org day names. 24/7 answering (AI receptionist)? Extend
   // legitimately — SABs rank through every hour competitors are closed.
   hours: [
-    // Mirrors the GBP as pasted by the owner July 2026 ("Updated by this
-    // business 8 weeks ago"): Open 24 hours Monday–Saturday, closed Sunday.
-    // 00:00–23:59 is the schema.org convention for open-all-day; components
-    // render it as "Open 24 hours".
-    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '00:00', closes: '23:59' },
+    // Emergency tree work answers around the clock; six Conroe
+    // competitors list "Open 24 hours". Mirror that seven days —
+    // CONFIRM with the renting operator before the GBP goes live.
+    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
   ],
 
   // ── Google Business Profile hooks ─────────────────────────────────
+  // No GBP yet (renter verifies it later). Empty strings + zero counts
+  // keep the build honest; components that render rating/review UI must
+  // be checked to gate on these before launch.
   gbp: {
-    mapsEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.7909997695315!2d-95.1976134!3d29.638812899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640996ef4776047%3A0xdb69e7f6437edf01!2sGULF%20COAST%20TREE%20REMOVAL!5e0!3m2!1sen!2s!4v1740410487934!5m2!1sen!2s',
-    profileUrl: 'https://maps.google.com/?cid=15810423011741196033',  // canonical Maps listing link
-    ratingValue: 5.0,   // owner-confirmed live number
-    reviewCount: 88,    // owner-confirmed live number
+    mapsEmbedUrl: '',   // [PENDING — GBP maps embed once the renter verifies the listing]
+    profileUrl: '',     // [PENDING — canonical Maps listing link]
+    ratingValue: 0,     // no reviews yet — never fabricate
+    reviewCount: 0,
   },
 
   // ── Schema ────────────────────────────────────────────────────────
@@ -73,10 +82,9 @@ export const business = {
   // (e.g. 'HomeAndConstructionBusiness', 'Plumber', 'RoofingContractor',
   // 'Electrician', 'HVACBusiness'). Falls back to 'LocalBusiness'.
   schemaType: 'HomeAndConstructionBusiness', // no tree-specific subtype exists; this is the closest
-  siteUrl: 'https://www.gulfcoasttreeremoval.com',   // must match astro.config.mjs `site`
+  siteUrl: 'https://conroetreeco.com',   // must match astro.config.mjs `site` + robots.txt Sitemap
   sameAs: [
-    'https://www.facebook.com/profile.php?id=100084997745447',
-    'https://www.yelp.com/biz/gulf-coast-tree-removal-pasadena',
+    // [PENDING — Facebook page URL once created; add citations as they go live]
   ],
 
   // ── SEO ───────────────────────────────────────────────────────────
@@ -87,13 +95,12 @@ export const business = {
     // titleTail = the OFFENSIVE LONG-TITLE zone: keyword space past the
     // ~60-char display truncation that no human sees but Google reads.
     // Load with neighborhood names + topical variants, pipe-separated.
-    // Leave '' to skip. e.g. 'Stump Grinding | Emergency Storm Cleanup | Pine Tree Removal | [Neighborhood 1] | [Neighborhood 2]'
-    titleTail: 'Tree Removal | Stump Grinding | Emergency Storm Cleanup | Lot Clearing | Cabling & Bracing | Deer Park | La Porte | South Houston',
+    titleTail: 'Tree Removal | Stump Grinding | Emergency Storm Cleanup | Land Clearing | Lake Conroe | Willis | Montgomery | River Plantation | Grand Central Park',
     // Social share image — path under /public (e.g. '/og-image.webp'),
     // 1200×630. Leave '' to skip.
-    ogImage: '/images/og-gulf-coast-tree-removal-pasadena-tx.jpg', // 1200×630 JPEG — some platforms mishandle WebP in og:image
+    ogImage: '',  // [PENDING — real Conroe/Montgomery County job photo, 1200×630 JPEG]
     homepageMetaDescription:
-      'Hazardous tree removal in Pasadena, TX from an ISA Certified Arborist. Free estimates, free stump grinding with every removal, no money due up front.',
+      'Tree removal, trimming, and stump grinding in Conroe, TX from a crew that knows Montgomery County pines and oaks. Free estimates, cleanup included.',
   },
 } as const;
 

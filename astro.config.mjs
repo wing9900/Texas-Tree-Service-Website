@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 // Also update the Sitemap line in /public/robots.txt to match.
 // ─────────────────────────────────────────────────────────────
 export default defineConfig({
-  site: 'https://www.gulfcoasttreeremoval.com',
+  site: 'https://conroetreeco.com',
   output: 'static', // LOCKED: static output only. No SSR, no client-rendered SPA (AI crawlers don't execute JS).
   integrations: [sitemap()],
   trailingSlash: 'ignore',
