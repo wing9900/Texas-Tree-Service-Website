@@ -35,7 +35,7 @@ const closedDays = WEEK.filter((d) => !covered.has(d));
       <h2 class="nap-heading">Contact Us in {cityState}</h2>
       <address class="nap-block">
         <strong>{b.name}</strong><br />
-        {b.address.street}<br />
+        {b.address.street && <Fragment>{b.address.street}<br /></Fragment>}
         {b.address.city}, {b.address.stateAbbr} {b.address.zip}<br />
         <a href={telHref}>{b.phoneDisplay}</a>
       </address>

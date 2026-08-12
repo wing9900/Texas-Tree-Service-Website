@@ -25,11 +25,12 @@ export const business = {
   primaryCategory: 'Tree Service',
 
   // ── NAP (must match GBP character-for-character — Rule 12) ────────
-  // No GBP exists yet. Street stays bracketed until the renting
-  // operator's verified address is known; the site is written as a
-  // service-area business around Conroe either way.
+  // Service-area business presentation: street stays EMPTY until the
+  // renting operator's verified GBP address exists (if the GBP ends up
+  // showing an address at all — SAB listings usually hide it). Every
+  // component and the schema omit the street line when this is ''.
   address: {
-    street: '[PENDING: renter address or SAB, do not launch with brackets]',
+    street: '',
     city: 'Conroe',
     state: 'Texas',
     stateAbbr: 'TX',

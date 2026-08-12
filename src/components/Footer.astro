@@ -85,7 +85,7 @@ const socialLinks = b.sameAs.map((href) => {
             <img class="site-footer__logo" …> line when the asset exists.] */}
         <h3 class="site-footer__name">{b.name}</h3>
         <address class="nap-block">
-          {b.address.street}<br />
+          {b.address.street && <Fragment>{b.address.street}<br /></Fragment>}
           {b.address.city}, {b.address.stateAbbr} {b.address.zip}<br />
           <a href={telHref}>{b.phoneDisplay}</a>
         </address>

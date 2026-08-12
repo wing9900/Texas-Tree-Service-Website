@@ -17,7 +17,9 @@ const schema: Record<string, unknown> = {
   telephone: b.phone,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: b.address.street,
+    // Street omitted for the service-area-business presentation: an
+    // empty street must not emit "streetAddress": "" in JSON-LD.
+    ...(b.address.street ? { streetAddress: b.address.street } : {}),
     addressLocality: b.address.city,
     addressRegion: b.address.stateAbbr,
     postalCode: b.address.zip,
