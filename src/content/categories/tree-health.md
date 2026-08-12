@@ -1,18 +1,20 @@
 ---
 title: "Tree Health & Preservation"
-h1: "Tree Health & Preservation in Pasadena, TX: Save the Tree Before It Becomes a Removal"
-metaDescription: "Tree health care in Pasadena, TX: disease treatment, deep root fertilization, borer control & cabling by an ISA Certified Arborist. Call (281) 757-2938."
-homepageBlurb: "Too many of the removals we get called about could have been avoided with proper diagnosis sooner. A tree struggling in compacted clay, showing early signs of oak wilt, or splitting at a major union isn't necessarily a lost cause. It needs the right intervention at the right time. Our ISA Certified Arborist assesses every tree first, then recommends what fits: deep root fertilization, targeted treatment for oak wilt or pine beetles, or cabling and bracing for a split trunk with good years left. If it can be saved, that's the first conversation. If not, you get an honest answer."
+h1: "Tree Health Care in Conroe, TX: Save the Trees Worth Saving"
+metaDescription: "Tree health services in Conroe, TX: pine beetle response, oak wilt precautions, disease treatment, cabling for storm-split trunks. Free on-site assessments."
+homepageBlurb: "The cheapest tree work is the kind that keeps a good tree standing. Conroe's pines run a constant gauntlet of bark beetles, its oaks decline quietly for years before anyone notices, and its fast-growing shade trees split at weak forks in the first serious blow. Health work catches those problems while they are still fixable: honest diagnosis first, then treatment, cabling, or a straight answer that the tree is past saving."
 order: 5
 faqs:
-  - q: "How can I tell if my tree is sick or just stressed from heat?"
-    a: "Thinning canopy, early leaf drop, and dead branch tips can be either. Sawdust at the base, oozing bark, or fungal shelves mean active disease or borers. An on-site look from a certified arborist settles it, and the estimate is free."
+  - q: "Why are the pines in my yard turning brown from the top down?"
+    a: "Top-down browning with sawdust or pitch tubes on the bark points at bark beetles, which hit drought-stressed loblollies hard in Montgomery County. It moves fast, so get eyes on the tree quickly. <a href=\"/services/tree-health/insect-borer-treatment/\">Beetle response is covered here</a>."
+  - q: "Is oak wilt a problem around Conroe?"
+    a: "It exists in Montgomery County, though it is less widespread than in Central Texas. The practical precautions are cheap: avoid pruning oaks February through June, seal oak cuts, and never move unseasoned oak firewood between properties."
+  - q: "Can a splitting tree be saved instead of removed?"
+    a: "Often, yes. A structurally sound tree with a weak fork can be cabled or braced to carry the load through storms. A trunk already cracked through, or one over a bedroom, is a different conversation. <a href=\"/services/tree-health/cabling-bracing/\">How cabling works</a>."
 ---
 
-Pasadena is a hard place to be a tree. The clay soil compacts until roots can barely breathe, summer heat bakes the moisture out of it, and every hurricane season tears wounds in the canopy that diseases and insects walk right through. A mature oak that survived all of that for sixty years can still decline fast once the stress stacks up.
+Removal companies see every tree as a removal. That math is backwards for most Conroe yards, where the mature pines and oaks are a real share of what the property is worth. A healthy 80 foot shade tree cannot be bought at a nursery at any price, so the first question here is never how fast it can come down. It is whether the tree can be kept.
 
-The good news: most of that decline is treatable if someone who knows what they're looking at sees it early. That's the difference this category is built on. Robert is an ISA Certified Arborist, credential TX-5075A, which [the International Society of Arboriculture lets you verify](https://www.treesaregood.org/findanarborist/verify). Diagnosis is arborist work, not chainsaw work: reading the canopy, the bark, and the root zone before deciding anything.
+The threats in Montgomery County are specific and worth knowing. Bark beetles, including the southern pine beetle the [Texas A&M Forest Service](https://tfsweb.tamu.edu/) monitors across East Texas, kill stressed loblollies in weeks. Post oaks tolerate almost no root disturbance, which is why they die a few years after driveways and additions get built over their roots. Water oaks hollow out with age and hide it well. Each of those has a different answer, and none of the answers is a guess.
 
-Sometimes the answer is [feeding the roots below the compacted clay](/services/tree-health/deep-root-fertilization/). Sometimes it's [treating the disease](/services/tree-health/tree-disease-treatment/) that's thinning the crown before it becomes fatal. And when a storm has already split a trunk, [cabling and bracing](/services/tree-health/cabling-bracing/) can keep a savable tree standing instead of scheduling its removal.
-
-Every visit ends the same way: an honest read on whether the tree can be saved and what it costs to save it. If treatment is throwing money at a dead tree, you'll hear that too. Removal is the last resort here, not the first quote.
+Health work here starts with a walk around the tree and ends with a plain recommendation. Sometimes that is [disease treatment](/services/tree-health/tree-disease-treatment/) or [beetle and borer response](/services/tree-health/insect-borer-treatment/). Sometimes it is [deep root fertilization](/services/tree-health/deep-root-fertilization/) for a tree struggling in compacted soil, [cabling and bracing](/services/tree-health/cabling-bracing/) for a split-prone fork, or a [root barrier](/services/tree-health/root-barrier-installation/) to end a war between a tree and your foundation. And sometimes the honest answer is that the tree is done, in which case you want [removal](/services/tree-removal/) before the weather decides the schedule for you.

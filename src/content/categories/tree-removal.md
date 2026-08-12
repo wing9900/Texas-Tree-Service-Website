@@ -1,24 +1,22 @@
 ---
 title: "Tree Removal"
-h1: "Tree Removal in Pasadena, TX: The Hazardous Jobs Other Crews Turn Down"
-metaDescription: "Safe tree removal in Pasadena, TX by an ISA-certified arborist. Hazardous, storm-damaged & large trees near lines and roofs. Free estimate: (281) 757-2938."
-homepageBlurb: "Some trees can't be saved, and the longer you wait, the greater the risk. A dead pine sheds limbs quietly at first. A storm-split oak leans a little further after every hard rain. Left alone, both eventually come down on whatever happens to be underneath them. We take trees down in controlled sections, roped and lowered piece by piece, so nothing free-falls near your roof, fence, or utility lines. Before any work starts, we look at the tree, assess the situation, and give you a clear quote. When the crew leaves, the wood is gone and the site is blown clean."
+h1: "Tree Removal in Conroe, TX: Tall Pines Down Safely, Yard Left Clean"
+metaDescription: "Tree removal in Conroe, TX done in controlled, roped sections, never free-falled near your home. Written quote up front, cleanup included. Free estimates."
+homepageBlurb: "Conroe grows the kind of trees that make removal a serious job: loblolly pines pushing past 90 feet, water oaks going hollow from the inside, sweetgums split by the last windstorm. Every removal here comes down in controlled sections, roped and lowered piece by piece, so nothing free-falls near your roof, fence, or driveway. You get a written price before the first cut, and when the crew leaves, the wood is hauled and the yard is raked."
 order: 1
 faqs:
-  - q: "Do I need the city's permission before removing a tree on my Pasadena property?"
-    a: "Most residential removals on private Pasadena lots don't require a permit, but easement and right-of-way trees can. When it applies to your tree, we tell you at the estimate."
-  - q: "How long does it take to remove a tree?"
-    a: "Most single-tree removals in Pasadena finish in under a day. Customers regularly mention morning starts wrapped by early afternoon, including cleanup. Large or hazardous trees, like a <a href=\"/services/tree-removal/large-tree-removal/\">65-foot pine near power lines</a>, can take longer."
-  - q: "What does it cost to remove a tree?"
-    a: "Pricing depends on height, how close the tree sits to structures that have to stay untouched, site access for equipment, and the condition of the wood. A manageable tree in an open yard and a large pine leaning over a roof are very different jobs at very different prices. Call or text (281) 757-2938 for a free estimate. Robert looks at the actual tree and gives you a price based on what the job requires."
-  - q: "Do I need a permit to remove a tree on my property in Texas?"
-    a: "Texas has no statewide law requiring a permit to remove a tree on private property. Whether a local ordinance applies depends on your city. Most residential properties in Pasadena and the surrounding Harris County area do not require a permit. The exceptions are trees in utility easements or right-of-ways, which are treated differently. If your tree falls into one of those categories, we let you know when we look at the job."
-  - q: "Can you remove a tree that is close to my house, fence, or power lines?"
-    a: "Yes, and that is exactly what our rigging setup is built for. We use professional arborist rigging equipment to control the descent of every piece so surrounding structures stay untouched. We walk through the plan with you during the free estimate."
+  - q: "Do I need the city's permission to remove a tree at my Conroe home?"
+    a: "For most single family lots in Conroe, no. The city's tree rules mainly apply to new development and commercial projects. HOA neighborhoods can have their own approval steps, and we flag either situation at the estimate."
+  - q: "How long does removing one tree take?"
+    a: "Most single-tree removals in Conroe are done in a day, cleanup included. A tall pine threaded between houses, or a removal that needs a crane, can run longer. The written estimate tells you which kind of job yours is."
+  - q: "What does tree removal cost in Conroe?"
+    a: "Height, access, and what sits under the tree set the price. A small tree in an open yard and a 100 foot pine over a roofline are very different jobs. Most removals fall somewhere between $500 and $3,000 or more. The estimate is free and the number is in writing."
+  - q: "Can you take down a tree that leans over my house or power lines?"
+    a: "Yes. Trees near structures come down in rigged pieces with the descent of every section controlled. Anything tangled in a service line waits until the utility makes it safe, and we tell you the order of operations at the estimate. Details on <a href=\"/services/tree-removal/hazardous-tree-removal/\">hazardous removals here</a>."
 ---
 
-You don't call about tree removal when everything is fine. You call because the oak is leaning further after every storm, the pine is dropping widow-makers over the driveway, or a dead trunk is one Gulf wind away from your roof. In Pasadena, ignoring that tree is a gamble with your house and your insurance deductible.
+Nobody calls about tree removal while everything is fine. You call because the pine out back leans a little more every wet month, the water oak dropped a limb the size of a fence post, or something is already resting on the shingles. In Conroe, waiting on that tree is a bet against the next storm, and the storms here win often enough.
 
-Removal here is different from removal in a place with mild weather and open yards. Pasadena lots put big trees close to houses, fences, pools, and overhead lines, and Gulf Coast storms load them past their limits. [Hurricane Beryl in 2024](https://www.weather.gov/hgx/) showed the whole Houston area what falling trees do to homes and power. That's why every removal is planned by an ISA Certified Arborist: the tree comes down in controlled, rigged sections, in the order the situation demands, instead of one big risky cut.
+This part of Montgomery County grows trees fast and tall. Loblolly pines top 90 feet on sandy soil that turns soft after a week of rain, which is exactly how healthy-looking trees end up on their sides with the root plate in the air. The 2024 storm season, from the May derecho through [Hurricane Beryl](https://www.weather.gov/hgx/), put trees through roofs from River Plantation to Willis. The removals that go wrong are almost always the ones where somebody let gravity make the plan.
 
-Whether you need [hazardous tree removal](/services/tree-removal/hazardous-tree-removal/) over a structure, fast [emergency tree removal](/services/tree-removal/emergency-tree-removal/) after a storm, or a [large tree removal](/services/tree-removal/large-tree-removal/) that other companies wouldn't quote, you get the same process: a free estimate, honest pricing, professional-grade equipment, and a fully insured crew. When the trunk is on the ground, we can [grind the stump](/services/stump-grinding/) the same trip so nothing is left in the yard but grass.
+Ours works differently. The tree comes down in sections, in an order chosen before anyone starts a saw, with rigging controlling where each piece lands. Whether you need a [hazardous tree](/services/tree-removal/hazardous-tree-removal/) taken off a roofline, [emergency removal](/services/tree-removal/emergency-tree-removal/) after a storm, or a [large pine](/services/tree-removal/large-tree-removal/) other companies would not quote, the process is the same: a free written estimate, a controlled dismantle, and a clean yard. Once the trunk is down, we can [grind the stump](/services/stump-grinding/) on the same visit so nothing is left behind but grass.

@@ -1,27 +1,29 @@
 ---
 title: "Debris Removal"
 category: "land-clearing"
-h1: "Tree Debris Removal in Pasadena, TX: Storm Piles and Yard Waste Hauled Off Fast"
-metaDescription: "Tree debris removal & hauling in Pasadena, TX: storm limbs, brush piles & cut wood loaded and gone, driveway blown clean. Call or text (281) 757-2938."
-categoryBlurb: "After a storm, or after a weekend of your own chainsaw work, the tree is down but the problem is now horizontal: limbs across the yard, a brush mountain at the curb the city truck keeps passing. Debris removal is the finish work we're known for. Crews load, chip, and haul everything off, then blow down the drive, the detail Pasadena reviewers bring up unprompted. Your yard back, in hours."
+h1: "Tree Debris Removal in Conroe, TX: The Yard Back by Dinner"
+metaDescription: "Tree debris removal in Conroe, TX: storm limbs, cut brush, and log piles chipped, loaded, and hauled off. One visit, clean ground behind it. Free estimates."
+categoryBlurb: "Tree work is not finished until the yard is empty: the limb pile from the storm, the brush stack the last project left behind, the log rounds too heavy to move. Debris removal chips what chips, loads what does not, and leaves raked ground where the mess used to be, whether we made the mess or the weather did."
 order: 3
 faqs:
-  - q: "Will the city of Pasadena pick up my storm debris?"
-    a: "Regular yard-waste collection has strict size and bundling limits, and big storm piles can sit for weeks awaiting special sweeps. Hauling is how a pile leaves this week instead."
-  - q: "Do you take fence boards and shingles mixed into the tree pile?"
-    a: "Tell us what's in the pile when you call. Vegetative debris is our lane, and mixed construction material may price differently or need a separate disposal path. No surprises at the truck."
+  - q: "Will the city of Conroe pick up my storm debris?"
+    a: "After major declared storms the city and county often run debris passes with rules about size and placement, and the schedule fills fast. For a single yard's worth, a haul-off is usually done weeks before the truck route arrives."
+  - q: "Do you take debris from trees you didn't cut?"
+    a: "Yes. Storm drops, a previous contractor's leftovers, the pile the last owner bequeathed you: if it is tree material, it loads. Construction debris and household junk are a different kind of hauler."
+  - q: "Can the wood stay as firewood instead?"
+    a: "Absolutely, bucked to length and stacked where you want it. Two cautions: pine is mediocre firewood, and beetle-killed pine or wilt-suspect oak should be chipped or hauled rather than stored. <a href=\"/services/land-clearing/wood-chipping/\">Chipping is covered here</a>."
 ---
 
-The tree work is done, somebody's tree work anyway, and now your yard is a lumber yard. A storm dropped a canopy's worth of limbs across the grass, or the oak you cut up yourself is stacked in a pile taller than the fence, and every week it sits there it kills the lawn under it and advertises to termites.
+Every tree job ends with the same math problem: a tree that stood ninety feet tall becomes a genuinely surprising amount of material on the ground. Storm limbs bury a lawn. A weekend of chainsaw ambition produces a pile that outweighs the car. Getting rid of it is its own job, with its own equipment, and it is the difference between tree work being done and merely being cut.
 
-Debris removal is the simplest service we offer and one of the most appreciated: we show up, it leaves.
+## What gets hauled and where does it go?
 
-## What kinds of debris do you haul in Pasadena?
+Everything tree: limbs, brush, trunk wood, root balls, stump grindings, the half-rotted pile behind the shed. Brush and limbs feed the [chipper](/services/land-clearing/wood-chipping/), which collapses volume by an order of magnitude before hauling; log wood loads out or gets bucked for your firewood stack; grindings top beds or ride along. What leaves goes to grinding and mulch operations rather than a landfill, which in a county that grows wood like this one is the only sensible destination for it.
 
-Everything tree work creates: storm-dropped limbs and hangers pulled from the yard, brush piles, bucked trunk rounds, old firewood stacks gone punky, and the slash left behind by clearing projects. If it grew, we haul it. Big pieces get processed on site first. [Wood chipping](/services/land-clearing/wood-chipping/) turns the branchy volume into a fraction of its size, which is often what makes a huge pile affordable to move at all.
+## Why do debris piles need to go promptly around here?
 
-## Why not just wait for heavy trash day?
+Because Montgomery County treats a brush pile as an invitation. Termites and carpenter ants colonize ground-contact wood fast, and a pile against the fence relocates them thirty feet from your slab. Beetle-killed pine wood incubates the next generation of [bark beetles](/services/tree-health/insect-borer-treatment/) unless chipped or removed, a point the [Texas A&M Forest Service](https://tfsweb.tamu.edu/) makes every outbreak year. Snakes appreciate the housing. And in burn-ban summers the pile is fuel parked next to whatever you value. A pile that sits becomes a worse pile; the visit that removes it same-day is cheap by comparison.
 
-Because storm debris and city collection run on different clocks. After a real blow like [Hurricane Beryl in 2024](https://www.weather.gov/hgx/), municipal debris missions across the Houston area took weeks to reach some streets, understandable at that scale and miserable if the pile is blocking your driveway now. Private hauling is how the pile leaves on your schedule, cut to the truck, loaded, and gone, with the pavement blown clean behind it.
+## What does a storm-week haul-off look like?
 
-Debris removal also closes out every bigger job we do: it's the last step of [emergency tree removal](/services/tree-removal/emergency-tree-removal/) after a storm strike, the cleanup phase of every [lot clearing](/services/land-clearing/lot-clearing/), and the answer when a [hazardous removal](/services/tree-removal/hazardous-tree-removal/) leaves more wood than you want to keep. One crew, one visit, nothing left behind but the yard you remembered having.
+Triage first, then thoroughness. After the derecho and Beryl in 2024, half the yards in Conroe were under limbs at once, and the order of operations was the same one we always run: anything on structures or blocking access first (that is the [emergency service](/services/tree-removal/emergency-tree-removal/)), then the systematic sweep, chipping and loading until the ground is clear enough to mow. If the storm also left standing damage, hangers, split forks, a leaner that finally committed, the same visit can scope the [trimming](/services/tree-trimming/) or [removal](/services/tree-removal/) it will take to make the yard whole, in writing, while the trucks are already there.

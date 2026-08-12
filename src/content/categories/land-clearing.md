@@ -1,18 +1,20 @@
 ---
 title: "Land Clearing"
-h1: "Land Clearing in Pasadena, TX: From Overgrown Lot to Buildable Ground"
-metaDescription: "Land clearing in Pasadena, TX: lot clearing, brush hogging, debris hauling & on-site wood chipping. Insured crew, honest bids. Free estimate (281) 757-2938."
-homepageBlurb: "An overgrown lot gets harder and more expensive to clear with every season that passes. Brush thickens, volunteer trees take root, and what could have been a half-day job turns into a full excavation if you wait long enough. We walk the property with you first, flagging what stays, so nothing comes down that shouldn't. Our brush hog cuts through heavy growth, the grapple skid steer handles trees and large debris, and the chipper processes brush into mulch or loads it for haul-off. When the work is done, you have clean, level ground, no loose ends, and no second contractor to coordinate."
+h1: "Land Clearing in Conroe, TX: From Overgrown Acreage to Usable Ground"
+metaDescription: "Land clearing in Conroe, TX for lots, acreage, and building sites. Underbrush, yaupon, pines, and haul-off handled with a written scope. Free estimates."
+homepageBlurb: "Raw land around Conroe does not stay raw politely. Yaupon and dewberry close over a neglected acre in a couple of seasons, volunteer pines come up like weeds, and the lot you bought to build on becomes the lot you cannot walk across. Clearing work spans the whole range: brush hogging that knocks pasture back to usable, selective clearing that keeps your best hardwoods standing, and full site preparation with everything hauled off."
 order: 4
 faqs:
-  - q: "What does it cost to clear a lot around Pasadena?"
-    a: "Pricing follows acreage, growth density, tree count, and haul-off volume. A brush-choked half acre and a wooded acre are different jobs. Walk-throughs and written bids are free."
-  - q: "Can you clear the brush but leave my good trees standing?"
-    a: "Yes, selective clearing is the normal request. We flag keeper oaks and pines with you first, then <a href=\"/services/land-clearing/brush-hogging/\">brush hog</a> and remove around them."
+  - q: "Do I need city approval before clearing my land near Conroe?"
+    a: "Acreage outside the city limits generally clears without a permit. Inside Conroe or a development, tree preservation rules can apply to the project, and drainage matters everywhere. We flag anything that needs checking when we scope the job."
+  - q: "Can you clear the underbrush but keep my big trees?"
+    a: "Yes, and around here that is usually the right call. Selective clearing takes the yaupon, vines, and volunteer growth while protecting the mature oaks and pines that give the property its value. <a href=\"/services/land-clearing/lot-clearing/\">See how lot clearing is scoped</a>."
+  - q: "What happens to everything you cut?"
+    a: "Your call: chipped on site into mulch, stacked for burning where rules allow it, or loaded and hauled away. Most residential jobs in Conroe end with a <a href=\"/services/land-clearing/debris-removal/\">full haul-off</a> so the ground is ready to use the day the crew leaves."
 ---
 
-Maybe you bought a lot to build on. Maybe the back acre got away from you, or the city sent a letter about the overgrowth. Either way, clearing land in Pasadena is equipment work. Gulf Coast brush grows back faster than hand tools can cut it, and the trees mixed into it need someone who knows which are worth keeping.
+Land in Montgomery County comes with a full-time opponent: the Piney Woods itself. The same growing conditions that put 90 foot loblollies over Conroe neighborhoods will bury an untended lot in yaupon, greenbrier, and volunteer pine in a few short years. Whether you bought two acres to build on, inherited a tangle behind the back fence, or need a pad site opened up, the job is the same fight at different scales.
 
-That's the difference an arborist-run clearing crew makes. Before anything is cut, we walk the property with you and mark what stays: the mature live oaks that add value, the healthy pines, the shade you actually want. Then the machines do what machines do best, and questionable trees get a professional call instead of a bulldozer's.
+The right way to clear depends on what the land is for. A build site needs everything gone, stumps included, which is [lot clearing](/services/land-clearing/lot-clearing/) with [stump grinding](/services/stump-grinding/) behind it. Pasture and trail work usually wants [brush hogging](/services/land-clearing/brush-hogging/) that mows the understory and leaves the ground cover to hold the sandy soil, a point the [Texas A&M AgriLife Extension](https://agrilifeextension.tamu.edu/) makes about erosion on cleared land in this part of the state. Wooded homesites do best with selective clearing that keeps the shade trees and opens everything under them.
 
-Most projects combine four services. [Lot clearing](/services/land-clearing/lot-clearing/) takes ground to a build- or sale-ready state. [Brush hogging](/services/land-clearing/brush-hogging/) knocks down the thick undergrowth on larger tracts and keeps easements open. [Wood chipping](/services/land-clearing/wood-chipping/) turns the cut material into mulch on site, and [debris removal](/services/land-clearing/debris-removal/) hauls off whatever shouldn't stay, including storm piles the city won't take. Harris County keeps [unincorporated-area lot rules](https://www.harriscountytx.gov/) that make neglected land a code problem; one clean mobilization makes it nobody's problem. Need standing trees taken out as part of the job? That's our [tree removal](/services/tree-removal/) specialty on the same visit.
+Whatever the scope, it gets written down before machines show up: what comes out, what stays, and where the material goes, whether that is [chipped on site](/services/land-clearing/wood-chipping/) or hauled with the rest of the [debris](/services/land-clearing/debris-removal/). Commercial sites, from storage yards along I-45 to church and school grounds, run through the same process at [commercial scale](/services/land-clearing/commercial-tree-services/).

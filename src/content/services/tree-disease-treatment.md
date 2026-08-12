@@ -1,31 +1,29 @@
 ---
 title: "Tree Disease Treatment"
 category: "tree-health"
-h1: "Tree Disease Treatment in Pasadena, TX: Oak Wilt, Canker, and Root Rot Diagnosed Early"
-metaDescription: "Tree disease treatment in Pasadena, TX: oak wilt, hypoxylon canker & fungal disease diagnosed by an ISA Certified Arborist. Free estimates: (281) 757-2938."
-categoryBlurb: "A sick tree rarely announces itself until it's half dead: thinning crown, bark falling in sheets, mushrooms at the base. Diagnosis by an ISA Certified Arborist catches oak wilt, hypoxylon canker, and root rot while treatment is still cheaper than removal. If the tree can be saved, we save it; if it can't, you hear that honestly too."
+h1: "Tree Disease Treatment in Conroe, TX: Diagnose First, Then Act"
+metaDescription: "Tree disease treatment in Conroe, TX: hypoxylon on stressed oaks, needle and leaf diseases, root rot. Honest diagnosis before any treatment plan. Free look."
+categoryBlurb: "Tree diseases in Montgomery County mostly prey on stress: droughted oaks that hypoxylon finishes off, waterlogged roots that rot, canopies weakened until every passing fungus finds a foothold. Treatment starts with an actual diagnosis, because spraying the wrong problem wastes your money and the tree's remaining time."
 order: 2
 faqs:
-  - q: "Is oak wilt a problem in the Houston area?"
-    a: "Yes. Oak wilt is confirmed across Harris County, and live oaks can spread it root-to-root. Early diagnosis matters; a certified arborist can tell wilt from look-alike stress in one site visit."
+  - q: "My oak's bark is falling off in patches with silver-gray underneath. What is that?"
+    a: "That pattern suggests hypoxylon canker, a fungus that finishes off drought-stressed oaks. By the time bark sloughs, the tree is usually beyond saving and becoming brittle, so get it assessed quickly for safety."
+  - q: "Can oak wilt be treated?"
+    a: "High-value oaks can get preventive fungicide injections, and infected red oaks nearby raise the urgency. Prevention beats treatment by a mile here: prune oaks outside February through June, seal cuts, and do not import unseasoned oak firewood."
+  - q: "Why does my tree look thinner every year with no obvious disease?"
+    a: "Slow decline is usually roots, not leaves: compaction, grade changes, trenching, or drainage that shifted. The crown just reports it. A ground-level look finds the cause more often than a leaf sample does. <a href=\"/services/tree-health/deep-root-fertilization/\">Root-zone care is covered here</a>."
 ---
 
-Trees don't limp. A sick oak stands there looking mostly fine while the disease works, and by the time the whole crown browns out, the cheap options are gone. The window where treatment beats removal is real, but you have to catch the tree inside it.
+Trees rarely announce disease with anything as helpful as a symptom chart. They thin a little, brown early, hold dead twigs through spring. By the time a Conroe homeowner is sure something is wrong, the tree has usually been fighting it for two or three seasons, which is exactly why the first visit matters more than the first treatment.
 
-## What diseases actually kill trees in Pasadena?
+## What diseases actually matter in Montgomery County?
 
-The short list: oak wilt, hypoxylon canker, and root rot. Oak wilt is a fungal disease that moves through root grafts between live oaks and rides beetles to fresh pruning cuts. It's confirmed across Harris County, and [Texas A&M Forest Service tracks it](https://tfsweb.tamu.edu/) as one of the most destructive tree diseases in the state. Hypoxylon shows up as bark sloughing off in sheets with a gray-black crust beneath, usually on drought-stressed oaks. Root rots announce themselves with mushrooms or shelf fungus at the base, the visible fruit of decay that's been eating the anchoring wood for years.
+A short, serious list. Hypoxylon canker is the big oak killer locally: a fungus that lives quietly in healthy trees and takes over when drought or root damage knocks the tree's defenses down, leaving sloughing bark and silver-gray patches on its way to killing the tree. Oak wilt is present in Texas and worth precautions on every oak job, though this county sees far less of it than the Hill Country; the [Texas oak wilt partnership](https://texasoakwilt.org/) maintains the definitive map and guidance. Add root rots in chronically wet ground, needle diseases on stressed pines, and the leaf spots that panic owners in wet springs but rarely hurt established trees.
 
-Every one of them exploits stress. Pasadena's compacted clay, brutal summers, and hurricane wounds hand these diseases their opening.
+## What does treatment look like when it is honest?
 
-## How does an arborist diagnose a sick tree?
+It looks like triage. Some problems have real treatments: injections for high-value oaks under wilt pressure, fungicide and culture changes for root disease caught early, and stress relief, water, mulch, and [root-zone fertilization](/services/tree-health/deep-root-fertilization/), which is the actual cure behind many recoveries. Some problems have none, and hypoxylon past the bark-slough stage is one; there the honest service is a safety assessment and a plan for [removal](/services/tree-removal/hazardous-tree-removal/) before the tree gets brittle enough to be dangerous to take down. Nobody here will sell you a spray program for a tree that needs a straight answer.
 
-By reading the whole tree, not just the symptom. Crown thinning patterns, bark condition, what's happening at the root flare, and which limbs died first. An ISA Certified Arborist (Robert holds credential TX-5075A) puts those together into a diagnosis in one site visit, and tells the difference between active disease and plain heat stress that a watering schedule would fix.
+## Why do stressed trees get sick in the first place?
 
-That distinction is the whole game. Treating a stressed tree for a disease it doesn't have wastes your money; missing early oak wilt costs you the tree, and maybe the neighbors' trees too.
-
-## Can a diseased tree actually be saved?
-
-Often, yes, if it's caught early and the treatment fits the disease. Fungicide injections, pruning out infected wood on the safe calendar, correcting the soil and water stress underneath it, and [deep root fertilization](/services/tree-health/deep-root-fertilization/) to fund the recovery. Trees weakened by disease also become magnets for [borers and bark beetles](/services/tree-health/insect-borer-treatment/), so treatment usually watches both doors.
-
-And when a tree is past saving, you'll hear it straight. A dead or dying tree near the house is a liability that belongs in [hazardous tree removal](/services/tree-removal/hazardous-tree-removal/) before a storm makes the decision for you. Either way the diagnosis visit is free, and the answer is honest.
+Because pathogens here are opportunists. The droughts that bake Conroe some summers, the construction that cuts roots, the compacted fill that suffocates them: each one drains the reserves a tree uses to wall off infection. That is why disease work and [insect response](/services/tree-health/insect-borer-treatment/) overlap so much, beetles read stress the same way fungi do, and why the best disease treatment on many lots is fixing what the site is doing to the tree. Catch it early enough and the conversation stays in this category instead of moving to [removal estimates](/services/tree-removal/).

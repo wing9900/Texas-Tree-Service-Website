@@ -1,27 +1,29 @@
 ---
 title: "Emergency Tree Removal"
 category: "tree-removal"
-h1: "Emergency Tree Removal in Pasadena, TX: Call or Text (281) 757-2938"
-metaDescription: "Storm-damaged tree on the house or blocking the drive in Pasadena, TX? Emergency tree removal by an insured, ISA Certified crew. Call or text (281) 757-2938."
-categoryBlurb: "When the storm has already won, with a tree on the roof, a trunk across the driveway, or a limb hanging by fibers over the walk, you need a crew that answers and knows how to work a loaded tree. Emergency removals in Pasadena get priority response, careful cuts on wood under tension, and coordination around downed lines, from a company whose phone is on around the clock Monday through Saturday."
+h1: "Emergency Tree Removal in Conroe, TX: Storm Damage Jumps the Line"
+metaDescription: "Tree on the house or blocking the driveway in Conroe, TX? Emergency removal crews that understand loaded wood, insurance photos, and Entergy lines. Call now."
+categoryBlurb: "When the storm has already won, with a pine across the roof, a trunk pinning the fence, or a limb hanging by fibers over the sidewalk, you need a crew that answers the phone and knows how to cut wood under load. Emergency calls in Conroe get priority response, careful staged cuts on spring-loaded trunks, and coordination around downed lines before anyone touches the tree."
 order: 2
 faqs:
-  - q: "Who do I call first when a tree is tangled in a power line?"
-    a: "The utility, which in Pasadena is CenterPoint Energy, and keep everyone away until the line is confirmed dead. We handle the tree once the electrical hazard is cleared."
-  - q: "What should I photograph before the emergency crew arrives?"
-    a: "The tree on the structure from several angles, the damage up close, and the whole scene. Your insurance adjuster will want all of it before anything is cut or moved."
+  - q: "A tree took down a power line with it. Who do I call first?"
+    a: "The utility, which for most of Conroe is Entergy Texas, and keep everyone far away until the line is confirmed dead. No tree crew should touch wood in contact with a line before then, and you should be suspicious of any that would."
+  - q: "What should I photograph before anything gets cut?"
+    a: "The tree on the structure from several angles, the point of impact up close, and a wide shot of the whole scene. Your insurance adjuster wants the story as the storm left it, so shoot first and cut second."
 ---
 
-The storm passes, and now there's a tree where a tree should never be: across the roof, pinning the fence, blocking the only way out of the driveway. What you do in the next few hours matters, and the first move is calling someone who works loaded trees for a living. Call or text (281) 757-2938; the line is answered around the clock Monday through Saturday.
+The storm rolls off toward Cleveland, the rain quits, and now there is a tree where no tree belongs: across the ridge of the roof, through the carport, or dropped flat across the only way out of your driveway. The next few hours matter, and the first move is getting someone on the phone who works loaded trees for a living. [Reach us here](/contact/), any day of the week, and say the word emergency.
 
-## What counts as a tree emergency in Pasadena?
+## What counts as a tree emergency in Conroe?
 
-Anything where waiting adds damage or danger: a tree or limb on a structure or vehicle, a trunk blocking access, a large branch hanging broken over where people walk, or a storm-tipped tree whose root plate has lifted the lawn. Pasadena gets these in batches: hurricanes like [Beryl in 2024](https://www.weather.gov/hgx/), spring squall lines, the occasional ice glaze. After every one, the dangerous work is the tree that's down but still under load.
+Anything where waiting adds damage or danger: a tree or limb on a structure or vehicle, a trunk blocking access, a broken branch hanging over where people walk, or a storm-tipped pine whose root plate has lifted your lawn like a trapdoor. Montgomery County gets these in batches. The May 2024 derecho and [Hurricane Beryl](https://www.weather.gov/hgx/) six weeks later put trees into houses across the county, and every big blow off the Gulf does some version of the same.
 
-## Why is storm-damaged wood so dangerous to cut?
+## Why is storm-dropped wood the most dangerous wood to cut?
 
-Because it's spring-loaded. A trunk resting on a roof or a bent limb pinned under weight stores enormous tension, and the wrong cut releases it instantly, into the house or into the person cutting. This is chainsaw work with an arborist's read of the load: where the wood is binding, what moves when it's relieved, and how to stage the lift so the structure takes no second hit. Thirty years of Gulf Coast storm work is exactly the experience you're hiring.
+Because it is spring-loaded. A trunk resting on a roof or a limb pinned under its own weight stores tension like a drawn bow, and the wrong cut releases all of it at once, into the structure or into whoever is holding the saw. Working it safely means reading the load first: where the wood binds, what shifts when it is relieved, and how to stage cuts and lifting so your house takes no second hit. That read is what you are actually hiring. The chainsaw is the cheap part.
 
-## Does insurance cover emergency removal?
+## Does homeowners insurance cover this?
 
-When a tree damages a covered structure, removal from the structure is typically part of the claim, so document everything first and keep your receipt. What policies rarely pay for is the hazard you knew about beforehand, which is why the leaning tree you've been watching belongs in [hazardous tree removal](/services/tree-removal/hazardous-tree-removal/) before the next storm, and the limbs over the roof belong in [storm preparation trimming](/services/tree-trimming/storm-preparation-trimming/) each spring. After the urgent cut, we can handle the whole yard's aftermath too, with [debris removal](/services/land-clearing/debris-removal/) for the scattered limbs and [stump grinding](/services/stump-grinding/) for what the storm left behind.
+When a tree damages a covered structure, removing it from the structure is typically part of the claim, so document everything and keep your receipts. What policies rarely cover is the hazard you watched grow for years, which is why the leaner you have been eyeing belongs in [hazardous removal](/services/tree-removal/hazardous-tree-removal/) before the season, and the limbs over your roof belong in [storm preparation trimming](/services/tree-trimming/storm-preparation-trimming/) every spring.
+
+After the urgent piece is off the house, the rest can go too: [debris hauling](/services/land-clearing/debris-removal/) for the yard full of limbs, and [stump grinding](/services/stump-grinding/) for whatever the wind snapped at the base.

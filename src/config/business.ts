@@ -29,7 +29,7 @@ export const business = {
   // operator's verified address is known; the site is written as a
   // service-area business around Conroe either way.
   address: {
-    street: '[PENDING — renter address or SAB, do not launch with brackets]',
+    street: '[PENDING: renter address or SAB, do not launch with brackets]',
     city: 'Conroe',
     state: 'Texas',
     stateAbbr: 'TX',

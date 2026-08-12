@@ -1,29 +1,29 @@
 ---
 title: "Insect & Borer Treatment"
 category: "tree-health"
-h1: "Insect & Borer Treatment in Pasadena, TX: Stop Beetles Before They Take the Tree"
-metaDescription: "Tree insect & borer treatment in Pasadena, TX. Stop pine bark beetles & wood borers before they kill the tree. Free arborist estimate: (281) 757-2938."
-categoryBlurb: "Sawdust trails at the base, tiny D-shaped holes in bark, a pine fading from the top down. Borers and bark beetles kill Gulf Coast trees fast once they're established, and storm-stressed trees are their first target. Treatment works when it's early. An ISA Certified Arborist identifies the pest, treats the tree, and tells you honestly when a tree is past saving."
+h1: "Pine Beetle and Borer Treatment in Conroe, TX: Days Matter, Not Weeks"
+metaDescription: "Bark beetle and borer response in Conroe, TX: fast assessment of hit pines, protection for the rest of the stand, honest calls on what cannot be saved."
+categoryBlurb: "In pine country, the beetle question is never academic. Southern pine beetle and Ips engravers kill stressed loblollies in weeks, and by the time a crown goes red the fight in that tree is over. Fast assessment sorts the savable from the finished, protects the neighbors still standing, and gets dead wood down before it becomes brittle overhead."
 order: 3
 faqs:
-  - q: "Why are borers attacking my tree now when it was fine for years?"
-    a: "Borers pick stressed trees. Drought, storm damage, and root disturbance drop a tree's defenses, and Pasadena trees have had all three. Treating the stress matters as much as treating the insect."
+  - q: "How do I know if beetles are in my pine?"
+    a: "Popcorn-sized pitch tubes on the bark, fine reddish sawdust in the crevices and at the base, and fading in the top of the crown. Any of those on a Conroe loblolly is worth a same-week look, not a someday one."
+  - q: "Can a beetle-hit pine be saved?"
+    a: "Usually not once they are established in it; the realistic goal shifts to the trees around it. Preventive treatment and quick removal of infested trunks is how a one-tree problem stays a one-tree problem."
+  - q: "Why is my healthy-looking pine suddenly dying after the neighbor built a pool?"
+    a: "Construction is the classic trigger: cut roots and compacted soil stress a pine, and stressed pines broadcast chemical signals beetles home in on. The pool is not a coincidence. <a href=\"/services/tree-health/deep-root-fertilization/\">Stress relief for the survivors helps</a>."
 ---
 
-Sawdust at the base of the trunk is never good news. It means something is chewing galleries through the wood that moves the tree's water, and by the time a pine fades from the top down, the colony inside it is already established. Borers don't kill trees slowly. The window for treatment is measured in weeks, not seasons.
+A loblolly pine does not die slowly of beetles. It stands green while the insects girdle it under the bark, then the crown fades to yellow, then rust-red, in the space of weeks. By the red stage, every neighbor pine is at risk and the dead tree is already turning into overhead hazard. In Conroe, where whole neighborhoods stand under mature pine, this is the insect problem that matters.
 
-## What insects attack trees around Pasadena?
+## Which insects are we actually talking about?
 
-Pine bark beetles and hardwood borers do most of the damage. Bark beetles, the group that includes the southern pine beetle [Texas A&M Forest Service monitors across East Texas](https://tfsweb.tamu.edu/), tunnel under pine bark and cut off the tree's circulation; a faded, reddening top is often the first visible sign. Hardwood borers hit oaks, ash, and stressed shade trees, leaving telltale exit holes, some D-shaped and some round, plus frass trails that look like sawdust spilled down the bark.
+Three bark beetles do the local damage. Southern pine beetle is the infamous one, capable of killing healthy trees during outbreak years; the [Texas A&M Forest Service](https://tfsweb.tamu.edu/) runs seasonal trapping across East Texas to watch for exactly those outbreaks. Ips engraver beetles are the everyday killers, finishing off pines stressed by drought, lightning, or construction. Black turpentine beetles work the lower trunk of damaged trees. Hardwoods have their own borer problems, but around here the phone calls are overwhelmingly about pines, and speed decides how those calls end.
 
-## Why is my tree suddenly under attack?
+## What does a beetle response look like?
 
-Because something weakened it first. A healthy tree drowns invaders in sap and defensive chemistry; a stressed one can't. Drought summers, hurricane damage, construction cuts through the root zone. Pasadena trees have taken all three in recent years, and beetles find the weakened trees with unnerving precision.
+Triage in the yard, then containment. First, an honest read on each tree: active pitch tubes and a green crown may justify a fight, while fading crowns and dry exit holes mean that tree's job now is to come down before it hurts something, which is [removal work](/services/tree-removal/hazardous-tree-removal/) with a deadline. Second, protecting the stand: preventive bark treatments on the high-value pines nearby, and removing infested trunks quickly so the brood inside them does not graduate into your other trees. Firewood from beetle-killed pine should be chipped or hauled, not stacked against the fence to incubate, which our [chipping crew](/services/land-clearing/wood-chipping/) handles in the same visit.
 
-That's why real treatment has two halves: kill the infestation, then fix the stress that invited it. Insecticide alone on a starving tree just schedules the next attack. Pairing treatment with [deep root fertilization](/services/tree-health/deep-root-fertilization/) rebuilds the defenses that keep it from happening again. And because stressed trees rarely have just one problem, the arborist checks for [disease](/services/tree-health/tree-disease-treatment/) working the same opening.
+## Can the next attack be prevented?
 
-## When is a borer-infested tree past saving?
-
-When the infestation has girdled the trunk or the canopy is mostly dead. At that point no treatment brings it back, and a beetle-killed pine drops limbs fast as it dries. You'll get that verdict honestly, because a dead pine near the house is a [hazardous tree removal](/services/tree-removal/hazardous-tree-removal/) waiting on a windy day, and pretending otherwise serves nobody.
-
-Catch it early and it's a different story. If you're seeing sawdust, exit holes, or a fading top anywhere in Pasadena, the arborist's look and the estimate are both free.
+Mostly, yes, because beetles pick on stress. Deep watering in drought, mulch instead of turf over the root zone, no fill dirt or trenching inside the drip line, and [root-zone fertilization](/services/tree-health/deep-root-fertilization/) where soil is compacted all lower a pine's profile to beetles hunting by scent. Thinning overcrowded pines helps too, since packed stands stress each other; that is a [selective clearing](/services/land-clearing/lot-clearing/) conversation on acreage. If you lose the tree anyway, [grind the stump](/services/stump-grinding/stump-removal/) rather than leaving beetle real estate in the yard.

@@ -1,25 +1,29 @@
 ---
 title: "Large Tree Removal"
 category: "tree-removal"
-h1: "Large Tree Removal in Pasadena, TX: 60-Foot Pines and Mature Oaks, Rigged Down Clean"
-metaDescription: "Large tree removal in Pasadena, TX: mature oaks & 60-ft+ pines near homes and lines, sectioned down with pro rigging by an ISA Certified Arborist crew."
-categoryBlurb: "Big trees are why 'get a tree guy' becomes 'get the right tree guy.' A mature Pasadena pine can run past 65 feet with nowhere to fall, and a spreading live oak weighs more than most people guess by a factor of ten. We take them down in rigged sections with professional-grade equipment. One recent job dropped a 65-foot pine beside power lines and ground the stump the same visit."
+h1: "Large Tree Removal in Conroe, TX: The 100 Foot Pines Are Our Home Game"
+metaDescription: "Large tree removal in Conroe, TX for pines and oaks other crews walk away from. Sectional rigging, tight-access dismantles, written pricing. Free estimates."
+categoryBlurb: "Conroe's signature removal is a loblolly pine touching 100 feet with a house on one side, a fence on the other, and nowhere to drop anything. Big trees do not come down here so much as get taken apart: climbed or bucketed, rigged limb by limb, the trunk lowered in logs short enough to control. If a company looked at your tree and quietly stopped returning calls, this is the page you were looking for."
 order: 3
 faqs:
-  - q: "How big does a tree have to be before it's a 'large removal'?"
-    a: "Once a tree clears roughly 50 feet or its canopy spreads over structures, felling it whole stops being an option. Every piece has to be lowered on purpose."
-  - q: "Do you cut the trunk into firewood lengths if I want to keep the wood?"
-    a: "Ask at the estimate. Bucking the trunk into rounds for you is a common request, and everything you don't keep leaves with us via wood chipping and haul-off."
+  - q: "How big does a tree have to be before it counts as a large removal?"
+    a: "Around here the practical line is when the tree can no longer be felled whole on the property, which covers most mature loblollies and any hardwood over a structure. Height matters less than what is underneath it."
+  - q: "Does removing a big tree tear up the yard?"
+    a: "Less than people fear when the job is rigged instead of dropped. Logs get lowered, not free-falled, and ground protection goes down where equipment tracks. The turf takes a workout, not a demolition."
+  - q: "Do you use a crane for large removals?"
+    a: "When access allows and the tree calls for it, a crane makes the job faster and safer. Plenty of Conroe backyards allow no crane at all, and those trees come down the traditional way: a climber, rigging, and patience."
 ---
 
-There's no yard in Pasadena big enough for a 65-foot pine to fall freely. That's the whole problem with large tree removal: the tree is taller than the lot is forgiving, and everything under it is inside the fall radius: roof, pool, fence, cars, and the neighbor's everything.
+There is a species of phone silence every Conroe homeowner with a monster pine eventually hears. A crew comes out, looks up for a long time, takes some pictures, and never sends the quote. Big trees scare off companies whose equipment and experience top out at medium, and the tall pine country between Loop 336 and Lake Conroe grows a lot of trees past that line.
 
-So nothing falls. A large removal done right is a controlled dismantle: climb or reach the canopy, take the limbs, then bring the trunk down in sections that are rigged and lowered, each one landing where the ground crew is ready for it. One recent customer's review describes exactly that job: a pine past 65 feet, close to the power lines, brought down completely and the stump ground the same day.
+## How does a 100 foot pine come down without hitting anything?
 
-## Why do large removals cost more than the quote from the guy with a ladder?
+In pieces, in order, on ropes. A climber or bucket operator works down from the top: limbs first, rigged and lowered through gaps in what is below, then the trunk itself in logs sized to what the rigging and the landing zone can handle. Every piece has a planned path and a person controlling it. The result looks slow from a lawn chair and is anything but; a practiced crew dismantles in hours what an amateur should not attempt at any speed.
 
-Because the price is buying control. Height multiplies every risk: heavier wood, longer lowering runs, more rigging, more crew time, and the consequences of a mistake scale with the tree. A cheap bid on a big tree usually means someone plans to free-fall wood your property can't afford to catch. Ours is a written, honest number from a fully insured company, and Pasadena reviewers note we're routinely the middle bid that wins on trust.
+## Why are Conroe's pines a special case?
 
-## Do mature oaks really need to come down, or can they be saved?
+Loblollies carry their weight high. Most of the crown mass sits in the top third, on a trunk that runs straight and limbless for 50 or 60 feet, so there is no working your way up gradually. That is the [signature tree of the Piney Woods](https://tfsweb.tamu.edu/), the same species standing in the plantations of W.G. Jones State Forest south of town, and the same one that dominates removals from Wedgewood to Willis. Hardwoods bring the opposite problem: massive spreading limbs over roofs, which is where [crown reduction](/services/tree-trimming/crown-reduction/) sometimes buys a tree more years before this page becomes relevant.
 
-Often they can be saved, and we'll tell you which, because we're arborists before we're removers. A structurally sound live oak crowding the house may only need [canopy trimming](/services/tree-trimming/canopy-trimming/); the [Texas A&M Forest Service](https://tfsweb.tamu.edu/) is a good read on what mature Texas oaks tolerate. But decay in the trunk, a dead top, or a lean toward a target moves a big tree into [hazardous tree removal](/services/tree-removal/hazardous-tree-removal/) territory, where sentiment loses to physics. Whichever way the call goes, we finish the job whole: [stump grinding](/services/stump-grinding/) to erase the base, and [wood chipping](/services/land-clearing/wood-chipping/) to turn a canopy's worth of brush into a clean yard.
+## What does a big removal cost?
+
+More than a small one, priced on the same honest inputs: height, access, condition of the wood, and what has to be protected underneath. You get the number in writing before work is scheduled, itemized so you can see what the [stump grind](/services/stump-grinding/stump-removal/) and full [haul-off](/services/land-clearing/debris-removal/) add. If the tree is dangerous rather than merely large, read the [hazardous removal page](/services/tree-removal/hazardous-tree-removal/) too, because a decayed giant is a different job than a healthy one, and the estimate needs to know which one it is bidding.

@@ -1,18 +1,20 @@
 ---
 title: "Stump Grinding"
-h1: "Stump Grinding in Pasadena, TX: Stumps and Roots Gone, Not Just Cut Low"
-metaDescription: "Stump grinding in Pasadena, TX: stumps ground below grade, root balls removed, invasive roots cut. Insured ISA Certified Arborist. Call (281) 757-2938."
-homepageBlurb: "An old stump does not go away on its own. It sprouts suckers every season, damages mower blades, and gives termites a foothold close to your house. Before we grind, we carefully assess the area and have underground utility and irrigation lines marked so the work is done safely and without costly surprises. Our tracked grinder fits through standard fence gates, reaching stumps other machines can't and grinding out the deep lateral roots that make replanting impossible. When we're done, the stump is gone, and the space is yours to use however you want."
+h1: "Stump Grinding in Conroe, TX: Finish the Job the Chainsaw Started"
+metaDescription: "Stump grinding in Conroe, TX that takes stumps well below grade so grass grows back. Roots, surface runners, and haul-off handled. Free written estimates."
+homepageBlurb: "A removal is not finished while the stump is still sitting there. In Conroe yards a leftover stump feeds termites and carpenter ants, sprouts suckers all summer, and blocks every future plan for that corner of the lawn, from sod to fence posts. Grinding takes the stump well below grade, the surface roots with it if you want them gone, and leaves you with soil you can actually plant instead of a slowly rotting obstacle."
 order: 3
 faqs:
-  - q: "How far down do you grind a stump?"
-    a: "Deep enough for what's next: several inches below grade for grass, deeper when you're replanting or pouring. We set the depth with you at the free estimate."
-  - q: "Is grinding the stump better than digging the whole thing out?"
-    a: "For most Pasadena yards, yes. Grinding is faster, cheaper, and doesn't crater the lawn. Full <a href=\"/services/stump-grinding/stump-removal/\">stump removal</a> earns its cost when the roots themselves have to go."
+  - q: "How far down does stump grinding go?"
+    a: "Standard grinding runs several inches below grade, enough for grass to grow over the spot. Planting a new tree there, or pouring concrete, calls for a deeper grind, which is worth saying when you ask for the estimate."
+  - q: "What happens to all the grindings?"
+    a: "Your choice: the mulch can backfill the hole, top your beds, or leave with the crew. A big pine stump makes more mulch than most people expect, so having it hauled is a popular answer. <a href=\"/services/stump-grinding/stump-removal/\">More on the process here</a>."
+  - q: "Will grinding hurt pipes or lines buried near the stump?"
+    a: "Utilities get located before grinding anything near where lines could run. Sprinkler systems are the more common hazard in Conroe yards, so walk the crew through where your irrigation runs and heads sit before the grinder starts."
 ---
 
-Every stump in your yard is a decision you're putting off. You mow around it, the suckers keep coming back, and the spot where a tree used to be stays the spot where nothing else can go. In Pasadena's warm, wet climate, an old stump also becomes a buffet for termites, carpenter ants, and fungus, all of them settling in close to your house.
+Every stump in your yard is a decision you have not made yet. Leave it, and Conroe's climate goes to work: termites and carpenter ants move into the softening wood, mushrooms circle it every wet spring, and pine and sweetgum stumps push up sucker growth like the tree is trying again. Mow around it for a few seasons and the novelty wears off completely.
 
-Grinding solves it in one visit. The machine chews the stump into mulch well below the soil line, we rake out the grindings or leave them to settle as you prefer, and the ground is ready for sod or beds. It's the same finish customers see on our removals. One review describes a 65-foot pine taken down and the stump ground the same day.
+Grinding settles it in an afternoon. The machine chews the stump into mulch well below the soil line, takes the flared surface roots with it when you want the whole footprint gone, and leaves a spot you can seed, sod, or plant. If you are clearing the way for something specific, a fence line, a slab, a new driveway, say so up front, because [full stump removal](/services/stump-grinding/stump-removal/) and [root removal](/services/stump-grinding/root-removal/) go deeper than a standard cosmetic grind.
 
-Two related jobs go beyond the grinder. When a root system has to come out completely, whether for a new driveway, a foundation-adjacent replant, or crepe myrtles that resprout from anything left behind, that's full [stump removal](/services/stump-grinding/stump-removal/) with the root ball pulled. And when live roots are lifting concrete or heading under the house, targeted [root removal](/services/stump-grinding/root-removal/) cuts the offender without killing a tree you want to keep; Texas A&M AgriLife's guidance on [trees and root systems](https://agrilifeextension.tamu.edu/) is the standard we follow for how much root a healthy tree can lose. Pair grinding with a [tree removal](/services/tree-removal/) or a [lot clearing](/services/land-clearing/lot-clearing/) and the whole problem disappears in one mobilization.
+Two things worth knowing before anyone grinds anything in Montgomery County. First, call 811 or let us handle the [utility locate](https://www.texas811.org/), because a grinder does not care what it hits. Second, if the stump belongs to a tree that died suddenly, it is worth a look at [what killed it](/services/tree-health/) before you replant the same species in the same dirt. Grinding pairs naturally with [tree removal](/services/tree-removal/), and most customers book both in one visit so the crew and the equipment only mobilize once.
