@@ -4,8 +4,14 @@
  * hours matching the GBP, quick links. Footer links don't pass authority
  * (Rule 16) — they're user convenience only.
  */
+import { getCollection } from 'astro:content';
 import { business as b, cityState, telHref } from '../config/business';
 const year = new Date().getFullYear();
+
+// Proof-page links gate on their proof existing (matches Header.astro):
+// projects on gallery entries, reviews on a live GBP rating.
+const hasProjects = (await getCollection('projects')).length > 0;
+const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
 
 // Collapse only CONTIGUOUS day runs (matches MapNAP.astro) so exception
 // days render as "Mon, Wed–Fri" instead of a contradictory "Mon–Fri".
@@ -75,7 +81,8 @@ const socialLinks = b.sameAs.map((href) => {
   <div class="container">
     <div class="site-footer__grid">
       <div>
-        <img class="site-footer__logo" src="/images/gulf-coast-tree-removal-logo.webp" alt={`${b.name} logo`} width="316" height="317" loading="lazy" decoding="async" />
+        {/* [PENDING — Conroe Tree Co. logo. Restore the
+            <img class="site-footer__logo" …> line when the asset exists.] */}
         <h3 class="site-footer__name">{b.name}</h3>
         <address class="nap-block">
           {b.address.street}<br />
@@ -119,8 +126,8 @@ const socialLinks = b.sameAs.map((href) => {
         <ul>
           <li><a href="/services/">All Services</a></li>
           <li><a href="/locations/">Areas We Serve</a></li>
-          <li><a href="/projects/">Recent Work</a></li>
-          <li><a href="/testimonials/">Customer Reviews</a></li>
+          {hasProjects && <li><a href="/projects/">Recent Work</a></li>}
+          {hasRating && <li><a href="/testimonials/">Customer Reviews</a></li>}
           <li><a href="/about/">About Us</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul>

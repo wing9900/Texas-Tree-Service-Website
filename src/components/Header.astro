@@ -10,13 +10,20 @@ import { getCollection } from 'astro:content';
 import { business as b, telHref } from '../config/business';
 
 const hasAreas = (await getCollection('locations')).length > 0;
+// Nav items for proof pages gate on their proof existing: projects on
+// gallery entries, reviews on a live GBP rating. They reappear on their
+// own the day the data is real — nothing to remember at fill-in time.
+const hasProjects = (await getCollection('projects')).length > 0;
+const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
 ---
 
 <header class="site-header">
   <div class="container">
     <div class="site-header__bar">
       <a class="site-header__brand" href="/" aria-label={`${b.name}, back to homepage`}>
-        <img class="site-header__logo" src="/images/gulf-coast-tree-removal-logo.webp" alt="" width="316" height="317" />
+        {/* [PENDING — Conroe Tree Co. logo. Restore the
+            <img class="site-header__logo" …> line when the asset exists;
+            the wordmark carries the brand until then.] */}
         <span class="site-header__wordmark">
           {(b.brandLockup ?? [b.name]).map((line) => <span>{line}</span>)}
         </span>
@@ -37,8 +44,8 @@ const hasAreas = (await getCollection('locations')).length > 0;
           <li><a href="/">Home</a></li>
           <li><a href="/services/">Services</a></li>
           {hasAreas && <li><a href="/locations/">Areas We Serve</a></li>}
-          <li><a href="/projects/">Recent Work</a></li>
-          <li><a href="/testimonials/">Reviews</a></li>
+          {hasProjects && <li><a href="/projects/">Recent Work</a></li>}
+          {hasRating && <li><a href="/testimonials/">Reviews</a></li>}
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul>

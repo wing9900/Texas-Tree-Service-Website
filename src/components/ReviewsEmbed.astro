@@ -1,13 +1,15 @@
 ---
 /**
- * REVIEWS (Rule 23, owner-amended July 2026): the live-widget slot is
- * replaced by static cards quoting REAL Google reviews VERBATIM (typos
- * preserved) until the owner gains access to the Google account for a
- * live embed. Quotes sourced from the business's public review listings
- * July 2026; every one is verifiable on the Google profile linked below.
- * NEVER invent, edit, or embellish a review. Initials avatars only, no
- * scraped reviewer photos. Swap this block for the live widget when the
- * embed code exists.
+ * REVIEWS (Rule 23): static cards quoting REAL Google reviews VERBATIM
+ * (typos preserved), sourced from the business's public listing. NEVER
+ * invent, edit, or embellish a review. Initials avatars only unless the
+ * reviewer's real profile photo is saved locally. Swap this block for a
+ * live widget when embed code exists.
+ *
+ * CONROE TREE CO.: the GBP does not exist yet, so there are ZERO real
+ * reviews and this array stays EMPTY. The whole section renders nothing
+ * until real Conroe reviews are pasted in. Do not seed it from any other
+ * business's listing — that includes Gulf Coast Tree Removal.
  */
 import { business as b } from '../config/business';
 
@@ -15,61 +17,55 @@ interface Props { heading?: string }
 const { heading = 'What Our Customers Say' } = Astro.props;
 const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
 
-// Real 5-star Google reviews supplied by the owner from the live listing
-// (screenshots, July 2026), lightly normalized for spelling only, nothing
-// added. `when` converts the listing's relative stamp to the real month.
-// Charala and Charles have real profile photos (already saved in
-// /images/reviewers/ for the hero pill); the other three use initials on
-// Google itself, so their cards mirror that with Google's avatar colors.
-const reviews: ReadonlyArray<{ name: string; when: string; text: string; img?: string; bg?: string }> = [
-  { name: 'Charles Hendrickson', img: '/images/reviewers/reviewer-2.webp', when: 'June 2026', text: 'Absolutely fantastic job. Gulf Coast Tree Removal got to my house first thing in the morning. Started right away and was done by 2pm. Trees look fantastic! No more worrying about a storm dropping limbs through my roof. Thanks Robert, great job! I will refer Gulf Coast Tree Removal to everyone now! 10 out of 10.' },
-  { name: 'Karl Busing', bg: '#4a5c68', when: 'March 2026', text: 'They did a great job and I was totally impressed with this company, equipment, people and attitude. They were on time, worked steadily, performed the job as estimated and agreed on. They will be my go to tree company in the future.' },
-  { name: 'Charala Holloway', img: '/images/reviewers/reviewer-3.webp', when: 'October 2025', text: 'I have to say these two guys were awesome. The trim of trees took out the dead, did a fantastic job. The price was great, actually cleaned up and blew my driveway clean. I would highly recommend these two guys, very honest and very true to their word. Fantastic job.' },
-  { name: 'Jill Massie', bg: '#b3390f', when: '2025', text: 'Called Robert and he responded the same day to give a quote. And completed the job the next day. We are not easy customers and he did everything to meet our requests and did it 100%. Price was spot on for all the hard work he did. Will definitely use him again.' },
-  { name: 'Rickey Nelson', bg: '#e0561f', when: '2025', text: "Robert did an amazing and professional job of removing a tree that was lying on my house and garage. He made sure he didn't damage the structures any more than they were. I highly recommend him for your small and large tree jobs." },
-  { name: 'Samantha Samuel', img: '/images/reviewers/samantha-samuel.webp', when: '2025', text: "After weeks of looking for a reputable company to take down a huge tree in my backyard, I finally found these guys. The owner was very nice and respectful. His crew did a bang up job removing such a large tree while carefully avoiding the fence, power lines and my gas line (right next to the tree!). These guys even cleaned up the yard after the job was done. I highly recommend these guys and this company to anyone needing a tree or limbs removed. You'll be in good hands." },
-];
+// [PENDING — real Conroe Tree Co. Google reviews, verbatim, once the
+// listing is live and reviewed. Shape:
+//   { name, when, text, img? OR bg? }
+// ]
+const reviews: ReadonlyArray<{ name: string; when: string; text: string; img?: string; bg?: string }> = [];
 
 const gLogo = '<svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>';
 ---
 
-<section class="section section--alt reviews-section">
-  <div class="container">
-    <h2>{heading}</h2>
-    <p class="reviews-sub">We're proud to be the top-rated choice for exceptional tree service.</p>
+{reviews.length > 0 && (
+  <section class="section section--alt reviews-section">
+    <div class="container">
+      <h2>{heading}</h2>
 
-    {hasRating && (
-      <div class="rating-card">
-        <span class="rating-card__excellent">Excellent</span>
-        <span class="stars" aria-hidden="true">★★★★★</span>
+      {hasRating && (
+        <div class="rating-card">
+          <span class="rating-card__excellent">Excellent</span>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+        </div>
+      )}
+
+      <div class="gbp-reviews">
+        {reviews.map((r) => (
+          <article class="gbp-review">
+            <header class="gbp-review__head">
+              {r.img ? (
+                <img class="gbp-review__avatar gbp-review__avatar--photo" src={r.img} alt="" width="40" height="40" loading="lazy" decoding="async" />
+              ) : (
+                <span class="gbp-review__avatar" style={`background:${r.bg}`} aria-hidden="true">{r.name.charAt(0)}</span>
+              )}
+              <span class="gbp-review__id">
+                <span class="gbp-review__name">{r.name}</span>
+                <span class="gbp-review__meta"><Fragment set:html={gLogo} />{r.when && <span>{r.when}</span>}</span>
+              </span>
+            </header>
+            <span class="stars gbp-review__stars" aria-label="5 star rating">★★★★★</span>
+            <p>&ldquo;{r.text}&rdquo;</p>
+          </article>
+        ))}
       </div>
-    )}
 
-    <div class="gbp-reviews">
-      {reviews.map((r) => (
-        <article class="gbp-review">
-          <header class="gbp-review__head">
-            {r.img ? (
-              <img class="gbp-review__avatar gbp-review__avatar--photo" src={r.img} alt="" width="40" height="40" loading="lazy" decoding="async" />
-            ) : (
-              <span class="gbp-review__avatar" style={`background:${r.bg}`} aria-hidden="true">{r.name.charAt(0)}</span>
-            )}
-            <span class="gbp-review__id">
-              <span class="gbp-review__name">{r.name}</span>
-              <span class="gbp-review__meta"><Fragment set:html={gLogo} />{r.when && <span>{r.when}</span>}</span>
-            </span>
-          </header>
-          <span class="stars gbp-review__stars" aria-label="5 star rating">★★★★★</span>
-          <p>&ldquo;{r.text}&rdquo;</p>
-        </article>
-      ))}
+      {b.gbp.profileUrl && (
+        <p class="reviews-cta">
+          <a class="btn btn--reviews" href={b.gbp.profileUrl} rel="noopener">
+            <Fragment set:html={gLogo} />
+            See All Our Reviews on Google
+          </a>
+        </p>
+      )}
     </div>
-
-    <p class="reviews-cta">
-      <a class="btn btn--reviews" href={b.gbp.profileUrl} rel="noopener">
-        <Fragment set:html={gLogo} />
-        See All Our Reviews on Google
-      </a>
-    </p>
-  </div>
-</section>
+  </section>
+)}

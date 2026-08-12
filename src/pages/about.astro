@@ -3,8 +3,12 @@
  * ABOUT PAGE — supporting trust content. Even here, open by talking to
  * the visitor about what the business does FOR them; history appears
  * only as brief supporting proof (Rule 22), never the opener.
- * FILL-IN: real team photos with descriptive filenames + specific alt
- * text (Rule 26). No stock, no AI-generated people (Rule 29).
+ *
+ * CONROE TREE CO.: no named people, credentials, or photos are claimed
+ * until they are real. Trust here comes from how the work is quoted and
+ * done, plus honest consumer guidance. FILL-IN when the operating crew
+ * is signed: real team photos (descriptive filenames + specific alt
+ * text, Rule 26), any real credentials, and the crew's own story.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTA from '../components/CTA.astro';
@@ -12,99 +16,71 @@ import MapNAP from '../components/MapNAP.astro';
 import { business as b, cityState } from '../config/business';
 
 const title = `About ${b.name} | ${b.primaryCategory} in ${cityState}`;
-const description = `Meet the ISA Certified Arborist behind ${b.name}: the credentials, guarantees, and Gulf Coast experience ${cityState} homeowners rely on.`;
+const description = `How ${b.name} works: written estimates before any cut, ANSI A300 trimming practices, and full cleanup on every Conroe, TX tree job. See what to ask any tree service.`;
 ---
 
 <BaseLayout title={title} description={description}>
   <section class="hero">
     <div class="container">
-      <h1>The {b.address.city} Team Behind {b.name}</h1>
-      <p class="hero__sub">A certified arborist, his crew, and the equipment to take down anything Pasadena's weather can throw at a tree.</p>
+      <h1>The Way Tree Work Should Be Done in {b.address.city}</h1>
+      <p class="hero__sub">Written estimates, controlled removals, and a yard that looks better when the trucks leave than it did when they showed up.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <h2>Who You're Hiring</h2>
+      <h2>What You Are Hiring</h2>
       <p>
-        When a tree is leaning over your roof, the person you want deciding
-        how it comes down is a certified arborist, not the lowest bidder with
-        a ladder. Gulf Coast Tree Removal is owned and operated by Robert
-        Ebbecke, an ISA Certified Arborist (credential TX-5075A, verifiable
-        through the International Society of Arboriculture) with 30 years of
-        tree work on the Gulf Coast.
+        When a 90 foot loblolly is leaning over your roof, you are not really
+        buying a chainsaw. You are buying judgment: which limbs come off first,
+        where each log lands, and whether the tree even needs to come down at
+        all. That judgment is the product here. Every job in {b.address.city}
+        starts with someone walking the property with you, saying out loud what
+        the tree is doing and what it will cost to fix, and putting that number
+        in writing before a single saw starts.
       </p>
       <p>
-        The promises are simple and they are on every invoice: free on-site
-        estimates, fully insured for your protection, free stump grinding
-        with every removal, a 10% senior discount, and no money due until the
-        job is finished and you are satisfied. You deal with the arborist
-        directly from the first call or text to the final cleanup.
-      </p>
-      <p>
-        That's not marketing copy. It made the news. In January 2024,
-        <a href="https://www.click2houston.com/news/local/2024/01/10/certain-things-are-more-important-than-money-business-owner-clears-pasadena-moms-yard-after-storm/" rel="noopener">KPRC 2
-        covered Robert clearing a storm-damaged yard for a Pasadena single
-        mother at no charge</a>. As he told the reporter, some things matter
-        more than money. That's who shows up when you call.
-      </p>
-      <figure class="cert-figure">
-        <img
-          src="/images/isa-certified-arborist-certificate-tx-5075a.webp"
-          alt="ISA Certified Arborist certificate issued to Robert Ebbecke by the International Society of Arboriculture, credential number TX-5075A"
-          width="1200" height="934" loading="lazy" decoding="async"
-        />
-        <figcaption>The credential itself: ISA Certified Arborist, ANAB-accredited, credential number TX-5075A. Verify it anytime through the ISA registry.</figcaption>
-      </figure>
-      <figure class="cert-figure cert-figure--logo">
-        <img
-          src="/images/isa-certified-arborist-logo.webp"
-          alt="International Society of Arboriculture Certified Arborist logo, the credential held by Gulf Coast Tree Removal owner Robert Ebbecke"
-          width="400" height="678" loading="lazy" decoding="async"
-        />
-        <figcaption><a href="https://www.treesaregood.org/findanarborist/verify">Verify credential TX-5075A in the ISA registry</a>.</figcaption>
-      </figure>
-      <p>
-        See the crews and equipment in action on the
-        <a href="/projects/">recent work page</a>, or start with the full list
-        of <a href="/services/">tree services for Pasadena and the surrounding
-        area</a>.
+        The work itself covers the full list a Montgomery County property
+        throws at you: <a href="/services/tree-removal/">removals</a> from
+        easy-access front yards to pines threaded between houses,
+        {' '}<a href="/services/tree-trimming/">trimming and pruning</a> to
+        ANSI A300 practices, <a href="/services/stump-grinding/">stump
+        grinding</a>, <a href="/services/land-clearing/">lot and brush
+        clearing</a>, and <a href="/services/tree-health/">tree health
+        work</a> for pines under beetle pressure and oaks in decline.
       </p>
 
-      <div class="photo-grid photo-grid--about">
-        <figure>
-          <img
-            src="/images/tree-service-team-kubota-tractor-pasadena-tx.webp"
-            alt="Gulf Coast Tree Removal team member in front of a Kubota tractor loading a cedar log at the Pasadena, TX yard"
-            width="765" height="1020" loading="lazy" decoding="async"
-          />
-          <figcaption>Robert Ebbecke, owner and ISA Certified Arborist (TX-5075A).</figcaption> <!-- CONFIRM the person pictured is Robert before launch -->
-        </figure>
-        <figure>
-          <img
-            src="/images/tree-service-truck-chipper-fleet-pasadena-tx.webp"
-            alt="Gulf Coast Tree Removal forestry bucket truck and Bandit chipper rig lettered with 24-hour emergency disaster relief service"
-            width="1100" height="484" loading="lazy" decoding="async"
-          />
-          <figcaption>The rig: forestry bucket truck, chip box, and Bandit chipper, sized for Pasadena's biggest removals.</figcaption>
-        </figure>
-        <figure>
-          <img
-            src="/images/bucket-truck-limb-removal-pasadena-tx.webp"
-            alt="Bucket truck operator cutting back a dead limb high above the tree canopy at sunrise in Pasadena, TX"
-            width="765" height="1020" loading="lazy" decoding="async"
-          />
-          <figcaption>First light in Pasadena. Crews start early so your yard is done by dinner.</figcaption>
-        </figure>
-        <figure>
-          <img
-            src="/images/forestry-bucket-truck-boom-extended-pasadena-tx.webp"
-            alt="Gulf Coast Tree Removal forestry bucket truck with the boom fully extended into tall pines at the Pasadena, TX yard"
-            width="768" height="1020" loading="lazy" decoding="async"
-          />
-          <figcaption>Full boom extension reaches Pasadena's tallest pines without a crane rental.</figcaption>
-        </figure>
-      </div>
+      <h2>What to Ask Any Tree Service Before You Hire One</h2>
+      <p>
+        Texas does not license tree companies. There is no state test, no
+        registry, and nothing stopping anyone with a truck from taking a
+        deposit on work they cannot do safely. So ask three questions before
+        you hire anyone, including us. Ask for the price in writing. Ask for
+        proof of liability insurance. Ask what standard the trimming follows.
+        A good company answers all three without blinking, and the
+        {' '}<a href="https://tfsweb.tamu.edu/" rel="noopener">Texas A&amp;M
+        Forest Service</a> publishes solid guidance on hiring tree care
+        professionals if you want a neutral source.
+      </p>
+      <p>
+        You will get our answers on the first call: the estimate is free and
+        written, insurance documentation comes with it on request, and
+        trimming follows the ANSI A300 standard, which spells out where cuts
+        belong and how much live canopy a healthy trim takes.
+      </p>
+
+      <h2>Where We Work</h2>
+      <p>
+        The service area is {b.address.city} and the towns around it in
+        Montgomery County: Willis, Montgomery and the Lake Conroe shoreline,
+        Panorama Village, Cut and Shoot, and Grangerland. If you are close to
+        that footprint but not in it, call anyway. The honest answer might be
+        a referral, but you will get it in one phone call instead of three.
+      </p>
+
+      <!-- [PENDING — real crew and equipment photos from the operating
+           crew, with descriptive filenames + specific alt text, once the
+           Conroe operator is signed. No stock, no AI imagery (Rule 29). -->
     </div>
   </section>
 

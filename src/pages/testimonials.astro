@@ -3,23 +3,26 @@
  * TESTIMONIALS PAGE, built for the machines (Rule 23).
  * LLMs demonstrably cite a business's own testimonials page when
  * recommending it. This page serves both audiences without faking
- * anything: live GBP review embed (human trust) + the aggregate count
- * and rating in plain crawlable HTML (machine trust) + AggregateRating
- * schema (already emitted site-wide from LocalBusinessSchema).
- * NEVER re-typed testimonial text on this page.
+ * anything: real review cards (ReviewsEmbed) + the aggregate count
+ * and rating in plain crawlable HTML + AggregateRating schema
+ * (emitted site-wide from LocalBusinessSchema once real).
+ *
+ * CONROE TREE CO.: no GBP and no reviews yet, so this page ships
+ * NOINDEXED and honest. It self-upgrades: when business.ts gbp fields
+ * go live and ReviewsEmbed gets real reviews, the page indexes and the
+ * header/footer links to it reappear on their own.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ReviewsEmbed from '../components/ReviewsEmbed.astro';
-import NewsFeature from '../components/NewsFeature.astro';
 import CTA from '../components/CTA.astro';
 import { business as b, cityState } from '../config/business';
 
 const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
 const title = `${b.name} Reviews | ${b.primaryCategory} in ${cityState}`;
-const description = `Read verified Google reviews for ${b.name}, a ${b.primaryCategory.toLowerCase()} serving ${cityState}. See our live rating, review count, and what local customers say.`;
+const description = `Reviews for ${b.name}, a ${b.primaryCategory.toLowerCase()} serving ${cityState}. Every review shown here is a verifiable Google review from a real local job.`;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} noindex={!hasRating}>
   <section class="hero">
     <div class="container">
       <h1>What {b.address.city} Says About {b.name}</h1>
@@ -34,31 +37,25 @@ const description = `Read verified Google reviews for ${b.name}, a ${b.primaryCa
 
   <ReviewsEmbed heading={`Verified Google Reviews from ${b.address.city} Customers`} />
 
-  <NewsFeature />
-
   <section class="section">
     <div class="container">
-      <h2>Why Reviews From Real {b.address.city} Customers Matter</h2>
+      <h2>How Reviews Work on This Page</h2>
       <p>
-        Every review above is a live Google review from a real job. Nothing on this
-        page is re-typed, curated, or paid for. Anyone can read the same reviews
-        directly on the company's Google listing, which is exactly the point: what
-        you see here is what your neighbors actually said.
+        Every review shown on this page is a live Google review from a real
+        {' '}{b.address.city} job. Nothing here is re-typed, curated, or paid
+        for, and anyone can read the same reviews directly on Google.
       </p>
       <p>
-        The reviews get earned the same way every time. Robert, an ISA Certified
-        Arborist holding credential TX-5075A, answers the phone himself, shows up for a
-        free on-site estimate, and puts the promises in writing: fully insured, free
-        stump grinding with every <a href="/services/tree-removal/">tree removal</a>,
-        a 10% senior discount, and no money due until the work is done and you're
-        satisfied.
-      </p>
-      <p>
-        That last one matters most. When payment only comes after you are satisfied,
-        a {b.gbp.ratingValue}-star average is what finished work earned, not advertising.
+        If the page looks light right now, that is the reason: we would rather
+        show you nothing than show you filler. In the meantime, the way we work
+        is simple to check for yourself. Ask for a
+        {' '}<a href="/contact/">free written estimate</a>, compare it against
+        anyone else's, and see how the numbers and the answers stack up. Our
+        {' '}<a href="/services/">tree services for Conroe</a> are priced in
+        writing before any work starts.
       </p>
     </div>
   </section>
 
-  <CTA heading={`Join Our Happy Customers in ${b.address.city}`} />
+  <CTA heading={`Get Your Free Estimate in ${b.address.city}`} />
 </BaseLayout>

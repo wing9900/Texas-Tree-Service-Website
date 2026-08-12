@@ -71,7 +71,9 @@ export const business = {
   // keep the build honest; components that render rating/review UI must
   // be checked to gate on these before launch.
   gbp: {
-    mapsEmbedUrl: '',   // [PENDING — GBP maps embed once the renter verifies the listing]
+    // City-level Conroe embed until the GBP exists; swap for the GBP pin's
+    // own "Share → Embed a map" URL the day the listing is verified.
+    mapsEmbedUrl: 'https://maps.google.com/maps?q=Conroe%2C%20TX&z=11&output=embed',
     profileUrl: '',     // [PENDING — canonical Maps listing link]
     ratingValue: 0,     // no reviews yet — never fabricate
     reviewCount: 0,
