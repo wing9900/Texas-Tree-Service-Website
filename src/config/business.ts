@@ -90,6 +90,18 @@ export const business = {
     // [PENDING — Facebook page URL once created; add citations as they go live]
   ],
 
+  // ── Lead capture ──────────────────────────────────────────────────
+  // The contact form posts straight to Web3Forms (no JavaScript, no
+  // third-party script, nothing to maintain). Submissions email the
+  // address the key was issued to. Get a free key in 30 seconds at
+  // web3forms.com: enter the inbox you want leads in, paste the key it
+  // emails you below, and the form switches itself on. Empty key leaves
+  // a visible placeholder instead of a broken form.
+  forms: {
+    accessKey: '',      // [PENDING: Web3Forms access key]
+    redirectUrl: '',    // optional thank-you page URL after submit
+  },
+
   // ── SEO ───────────────────────────────────────────────────────────
   seo: {
     // Homepage title formula (Rule 17): [Primary category] + [City, ST] + [Brand]

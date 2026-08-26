@@ -11,7 +11,7 @@ import MapNAP from '../components/MapNAP.astro';
 import { business as b, cityState, telHref } from '../config/business';
 
 const title = `Contact ${b.name} | ${b.primaryCategory} in ${cityState}`;
-const description = `Call ${b.name} at ${b.phoneDisplay} or send a quick request online. Free estimates for tree removal, trimming & stump grinding in ${cityState}.`;
+const description = `Call ${b.name} at ${b.phoneDisplay} or send a quick request online. Free estimates for tree removal, trimming, stump grinding, and storm cleanup in ${cityState}.`;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -29,12 +29,35 @@ const description = `Call ${b.name} at ${b.phoneDisplay} or send a quick request
     <div class="container split">
       <div>
         <h2>Prefer to Send Details?</h2>
-        <!-- ═══ GHL FORM EMBED / ACTION GOES HERE ═══
-             Keep fields to the minimum: name, phone, short message.
-             Every extra field costs conversions. -->
-        <div class="gbp-embed-placeholder">
-          Quote form embed (name · phone · message), wire to GHL at fill-in
-        </div>
+        {b.forms.accessKey ? (
+          <form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
+            {/* Web3Forms: no JavaScript, no third-party script, plain POST.
+                Submissions email the address the access key was issued to. */}
+            <input type="hidden" name="access_key" value={b.forms.accessKey} />
+            <input type="hidden" name="subject" value={`New estimate request from ${b.name}`} />
+            <input type="hidden" name="from_name" value={b.name} />
+            {b.forms.redirectUrl && <input type="hidden" name="redirect" value={b.forms.redirectUrl} />}
+            {/* Honeypot: bots fill it, humans never see it. */}
+            <input type="checkbox" name="botcheck" class="quote-form__botcheck" tabindex="-1" autocomplete="off" />
+
+            <label class="quote-form__label" for="qf-name">Your name</label>
+            <input class="quote-form__input" id="qf-name" type="text" name="name" autocomplete="name" required />
+
+            <label class="quote-form__label" for="qf-phone">Phone</label>
+            <input class="quote-form__input" id="qf-phone" type="tel" name="phone" autocomplete="tel" required />
+
+            <label class="quote-form__label" for="qf-message">What do you need done?</label>
+            <textarea class="quote-form__input" id="qf-message" name="message" rows="4" placeholder="Example: tall pine leaning toward the house, off Longmire" required></textarea>
+
+            <button class="btn btn--primary quote-form__submit" type="submit">Request My Free Estimate</button>
+            <p class="quote-form__note">Estimate requests get answered the same day. If a tree is already on a structure, call instead so it gets scheduled faster.</p>
+          </form>
+        ) : (
+          <div class="gbp-embed-placeholder">
+            [PENDING: quote form. Get a free access key at web3forms.com, then
+            set forms.accessKey in business.ts to switch this on.]
+          </div>
+        )}
       </div>
       <div>
         <h2>What Happens Next</h2>

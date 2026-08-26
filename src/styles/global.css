@@ -39,8 +39,8 @@
 :root {
   /* ── Brand tokens: Conroe Tree Co. ──
      Deep pine from the canopy and the truck livery; warm paper base;
-     safety orange lifted straight from the TREE WORK AHEAD sign in the
-     client's own job photos. Orange belongs to ACTIONS ONLY (call,
+     safety orange lifted from the TREE WORK AHEAD signs that stand at every
+     roadside job site. Orange belongs to ACTIONS ONLY (call,
      estimate) so the eye lands on the conversion path every time. */
   --c-primary: #175338;        /* pine — links, headers, structure */
   --c-primary-dark: #0d2a1b;   /* canopy shadow — hero/footer depth (matches hero scrim) */
@@ -867,3 +867,24 @@ html:has(.lightbox:popover-open) body { overflow: hidden; touch-action: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ── Quote form (contact page) ──────────────────────────────────────
+   Minimum fields, big tap targets, zero JS. The honeypot is visually
+   removed but stays reachable to bots that parse the DOM. */
+.quote-form { display: flex; flex-direction: column; gap: 0.25rem; }
+.quote-form__label {
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
+  letter-spacing: 0.02em; color: var(--c-ink); margin-top: 0.9rem;
+}
+.quote-form__input {
+  font-family: var(--font-body); font-size: 1rem; color: var(--c-ink);
+  background: #fff; border: 2px solid var(--c-line); border-radius: var(--radius);
+  padding: 0.7rem 0.85rem; min-height: var(--tap-min); width: 100%;
+  transition: border-color 120ms ease;
+}
+textarea.quote-form__input { min-height: 7rem; resize: vertical; line-height: 1.5; }
+.quote-form__input:focus { border-color: var(--c-primary); outline: none; }
+.quote-form__input:focus-visible { outline: 3px solid var(--c-accent); outline-offset: 1px; }
+.quote-form__submit { margin-top: 1.15rem; }
+.quote-form__note { font-size: var(--fs-small); color: var(--c-ink-soft); margin-top: 0.75rem; }
+.quote-form__botcheck { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
