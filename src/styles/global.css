@@ -747,19 +747,26 @@ html:has(.lightbox:popover-open) body { overflow: hidden; touch-action: none; }
   .grid--2, .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); }
   .site-footer__grid { grid-template-columns: repeat(2, 1fr); }
 
-  /* Nav: always visible, horizontal. Flex `order` (CSS-only, DOM
-     untouched so the mobile checkbox nav is unaffected) arranges the
-     bar as: brand left · nav centred · phone + estimate right. */
+  /* Nav: always visible, horizontal, arranged as brand left · nav
+     centred · phone + estimate right. Grid instead of flex order: flex
+     + auto-margin only centres the nav in the LEFTOVER space between
+     brand and actions, which drifts visibly off true-centre once the
+     actions block (phone + estimate buttons) is wider than the brand
+     block. Two equal 1fr outer columns guarantee the nav sits at the
+     bar's exact horizontal centre no matter how wide either side's
+     content is. DOM order stays brand, actions, nav — explicit
+     grid-column placement does the visual arrangement (CSS-only, the
+     mobile checkbox nav is unaffected). */
+  .site-header__bar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: 2rem; flex-wrap: nowrap; }
+  .site-header__brand { grid-column: 1; justify-self: start; }
   .nav-toggle-label { display: none; }
-  .site-nav { display: block !important; position: static; min-width: 0; max-width: none; max-height: none; overflow: visible; background: transparent; border: 0; box-shadow: none; padding: 0; order: 1; margin-inline: auto; }
+  .site-nav { grid-column: 2; justify-self: center; display: block !important; position: static; min-width: 0; max-width: none; max-height: none; overflow: visible; background: transparent; border: 0; box-shadow: none; padding: 0; margin-inline: 0; }
   .site-nav__cta { display: none; }
-  .site-header__actions { order: 2; }
-  .site-header__estimate { order: 2; } /* estimate button outermost right */
+  .site-header__actions { grid-column: 3; justify-self: end; }
   .site-nav li + li { border-top: 0; }
   .nav-scrim { display: none !important; }
   .site-nav ul { display: flex; gap: 1.4rem; padding: 0; }
   .site-nav a { min-height: 0; padding: 0; }
-  .site-header__bar { flex-wrap: nowrap; }
 }
 
 /* ════════════════════════════════════════════════════════════════════
@@ -814,14 +821,9 @@ html:has(.lightbox:popover-open) body { overflow: hidden; touch-action: none; }
   .intro-split__media { margin-top: 0; }
   .intro-split__img { width: 100%; height: auto; max-height: 34rem; object-fit: cover; object-position: center 22%; }
 
-  /* Header at desktop: logo left, nav centered, CTA pair far right with
-     the estimate button outermost (order set in the 48rem block, which
-     now applies this same arrangement from tablet up). DOM order (brand,
-     actions, nav) is untouched; flexbox order does the visual move.
-     Nav gap tightens 1024-1280 to avoid crowding. */
-  .site-header__brand { order: 0; }
-  .site-nav { order: 1; margin-inline: auto; }
-  .site-header__actions { order: 2; }
+  /* Header at desktop: the 48rem grid (logo left, nav true-centred,
+     CTA pair right) already applies from tablet up — this tier just
+     tightens the nav gap for the 1024-1280 range. */
   .site-header__logo { height: 50px; }
   .site-nav ul { gap: 0.9rem; }
   /* space valve: short phone label in the tightest desktop range */

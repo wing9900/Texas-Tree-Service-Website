@@ -12,17 +12,22 @@ export const homepage = {
     // H1 formula (Rule 18): primary category + city + HOOK. Reworded from
     // the title tag, not copied — humans see this one, so spend the extra
     // words on a benefit, differentiator, or social proof.
-    h1: 'Conroe Tree Service for Tall Pines, Big Oaks, and Storm Emergencies',
-    benefits: ['Free Written Estimates', 'Emergency Storm Response', 'Cleanup Included on Every Job'],
+    h1: "Conroe's Top Rated Tree Service",
+    benefits: ['Free Estimates', '24/7 Emergency Service', 'Fully Licensed & Insured'],
     pillText: 'Serving Conroe and Montgomery County',
 
     ctaLabel: 'Get a Free Estimate',
 
-    // Hero photo (Rule 21): none yet. Component falls back to the gradient.
-    // [PENDING — replace with one real Conroe/Montgomery County job photo
-    // (licensed from the operating crew), compressed WebP, descriptive
-    // filename + alt, before launch if at all possible.]
-    image: undefined,
+    // Hero photo — DEMO ONLY, not a real Conroe job photo (violates Rule
+    // 29's no-stock policy). Dropped in for a founder walkthrough video;
+    // swap for a real, licensed Conroe/Montgomery County crew photo
+    // (per IMAGES.md's pipeline) before this site actually launches.
+    image: {
+      src: '/images/hero-bucket-truck-demo.webp',
+      alt: 'A bucket truck lifts an arborist in a hard hat up into a mature tree to trim branches on a quiet residential street',
+      width: 1672,
+      height: 941,
+    },
   },
 
   // Opening paragraph (Rule 13 #5 + Rule 21): talks TO the visitor about

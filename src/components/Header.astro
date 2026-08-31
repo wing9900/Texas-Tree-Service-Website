@@ -30,9 +30,9 @@ const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
       </a>
       <div class="site-header__actions">
         <a class="site-header__estimate" href="/contact/">Free Estimate</a>
-        <a class="site-header__phone" href={telHref} aria-label={`Call ${b.name} at ${b.phoneDisplay}`}>
+        <a class="site-header__phone" href={telHref} aria-label={`Call ${b.name}`}>
           <span class="site-header__phone-short">Call</span>
-          <span class="site-header__phone-full">{b.phoneDisplay}</span>
+          <span class="site-header__phone-full">Call Now</span>
         </a>
       </div>
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu" />
@@ -52,7 +52,7 @@ const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
         {/* Menu CTAs — phone overlay only (hidden ≥48rem, where the header
             bar already shows both). Plain links: tel: + /contact/, zero JS. */}
         <div class="site-nav__cta">
-          <a class="btn btn--primary" href={telHref}>Call {b.phoneDisplay}</a>
+          <a class="btn btn--primary" href={telHref}>Call Now</a>
           <a class="btn btn--outline" href="/contact/">Get a Free Estimate</a>
         </div>
       </nav>
