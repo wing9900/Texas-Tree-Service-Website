@@ -80,6 +80,37 @@ const whyIcons: Record<string, string> = {
 
   <!-- 4. Social-proof band: rating + review count + badges -->
 
+  <!-- Quote form, first thing after the hero (GHL/LeadConnector embed --
+       same widget as /contact/; see contact.astro for the sizing notes). -->
+  <section class="section section--alt">
+    <div class="container" style="max-width: 40rem;">
+      <p class="eyebrow" style="text-align: center;">Get a Free Estimate</p>
+      <h2 style="text-align: center;">Tell Us What Your Tree Needs</h2>
+      <div class="quote-form-embed">
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/IOj05Ci2FjifEoSyWk4o"
+          style="width:100%;height:100%;border:none;border-radius:8px"
+          id="inline-IOj05Ci2FjifEoSyWk4o"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Form 0"
+          data-height="963"
+          data-layout-iframe-id="inline-IOj05Ci2FjifEoSyWk4o"
+          data-form-id="IOj05Ci2FjifEoSyWk4o"
+          data-cookie-consent="true"
+          data-cookie-consent-provider="auto"
+          title="Form 0"
+        ></iframe>
+      </div>
+      <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
+    </div>
+  </section>
+
   <!-- 5. Opening paragraph: visitor's situation + USP (Rule 21, never "Welcome to…") -->
   <section class="section">
     <div class="container intro-split">
