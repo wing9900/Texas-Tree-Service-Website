@@ -75,17 +75,13 @@ const whyIcons: Record<string, string> = {
 ---
 
 <BaseLayout title={title} description={b.seo.homepageMetaDescription}>
-  <!-- 1–3. H1 + subheadline + primary CTA + tap-to-call phone, above the fold -->
-  <Hero h1={hp.hero.h1} benefits={hp.hero.benefits} reviewers={hp.googleReviewers} pillText={hp.hero.pillText} ctaLabel={hp.hero.ctaLabel} image={hp.hero.image} />
-
-  <!-- 4. Social-proof band: rating + review count + badges -->
-
-  <!-- Quote form, first thing after the hero (GHL/LeadConnector embed --
-       same widget as /contact/; see contact.astro for the sizing notes). -->
-  <section class="section section--alt">
-    <div class="container" style="max-width: 40rem;">
-      <p class="eyebrow" style="text-align: center;">Get a Free Estimate</p>
-      <h2 style="text-align: center;">Tell Us What Your Tree Needs</h2>
+  <!-- 1–3. H1 + subheadline + primary CTA + tap-to-call phone, above the fold.
+       The form slot makes this a two-column split on desktop (copy left,
+       form right, both in the first screen) -- see .hero--split in
+       global.css. Below desktop it stacks: hero content, then the form. -->
+  <Hero h1={hp.hero.h1} benefits={hp.hero.benefits} reviewers={hp.googleReviewers} pillText={hp.hero.pillText} ctaLabel={hp.hero.ctaLabel} image={hp.hero.image}>
+    <Fragment slot="form">
+      <p class="hero__form-eyebrow">Get a Free Estimate</p>
       <div class="quote-form-embed">
         <iframe
           src="https://api.leadconnectorhq.com/widget/form/IOj05Ci2FjifEoSyWk4o"
@@ -107,9 +103,11 @@ const whyIcons: Record<string, string> = {
           title="Form 0"
         ></iframe>
       </div>
-      <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
-    </div>
-  </section>
+    </Fragment>
+  </Hero>
+  <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+  <!-- 4. Social-proof band: rating + review count + badges -->
 
   <!-- 5. Opening paragraph: visitor's situation + USP (Rule 21, never "Welcome to…") -->
   <section class="section">

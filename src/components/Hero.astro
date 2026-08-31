@@ -32,9 +32,15 @@ interface Props {
 }
 const { eyebrow, h1, benefits = [], reviewers = [], pillText = 'Trusted by Your Neighbors', ctaLabel = 'Get a Free Estimate', ctaHref = '/contact/', image } = Astro.props;
 const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
+// Optional `form` slot: when a page passes one (homepage only, today),
+// the hero becomes a two-column split on desktop -- copy/CTA left, the
+// form visible in the first screen, right -- instead of the usual
+// single centred column. See the .hero--split rules in global.css.
+const hasForm = Astro.slots.has('form');
+const heroClass = ['hero', image && 'hero--photo', hasForm && 'hero--split'].filter(Boolean).join(' ');
 ---
 
-<section class={image ? 'hero hero--photo' : 'hero'}>
+<section class={heroClass}>
   {image && (
     <picture>
       {image.mobileSrc && (
@@ -54,36 +60,43 @@ const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
     </picture>
   )}
   <div class="container">
-    {eyebrow && <p class="hero__eyebrow">{eyebrow}</p>}
-    <h1>{h1}</h1>
-    {benefits.length > 0 && (
-      <p class="hero__benefits">
-        {benefits.map((item) => <span>{item}</span>)}
-      </p>
-    )}
-    {hasRating && (
-      <a class="hero__pill" href={b.gbp.profileUrl} aria-label={`Read our ${b.gbp.reviewCount}+ Google reviews`}>
-        <svg class="hero__pill-g" viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        {reviewers.length > 0 && (
-          <span class="hero__avatars" aria-hidden="true">
-            {reviewers.map((r) =>
-              r.img ? (
-                <img class="hero__avatar hero__avatar--photo" src={r.img} alt="" width="34" height="34" loading="lazy" decoding="async" />
-              ) : (
-                <span class="hero__avatar" style={`background:${r.bg ?? '#5c6bc0'}`}>{r.initials}</span>
-              )
-            )}
+    <div class="hero__text">
+      {eyebrow && <p class="hero__eyebrow">{eyebrow}</p>}
+      <h1>{h1}</h1>
+      {benefits.length > 0 && (
+        <p class="hero__benefits">
+          {benefits.map((item) => <span>{item}</span>)}
+        </p>
+      )}
+      {hasRating && (
+        <a class="hero__pill" href={b.gbp.profileUrl} aria-label={`Read our ${b.gbp.reviewCount}+ Google reviews`}>
+          <svg class="hero__pill-g" viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+          {reviewers.length > 0 && (
+            <span class="hero__avatars" aria-hidden="true">
+              {reviewers.map((r) =>
+                r.img ? (
+                  <img class="hero__avatar hero__avatar--photo" src={r.img} alt="" width="34" height="34" loading="lazy" decoding="async" />
+                ) : (
+                  <span class="hero__avatar" style={`background:${r.bg ?? '#5c6bc0'}`}>{r.initials}</span>
+                )
+              )}
+            </span>
+          )}
+          <span class="hero__pill-col">
+            <span class="hero__pill-stars" aria-hidden="true">★★★★★</span>
+            <span class="hero__pill-text">{pillText}</span>
           </span>
-        )}
-        <span class="hero__pill-col">
-          <span class="hero__pill-stars" aria-hidden="true">★★★★★</span>
-          <span class="hero__pill-text">{pillText}</span>
-        </span>
-      </a>
-    )}
-    <div class="hero__cta">
-      <a class="btn btn--primary" href={telHref}>Call Now</a>
-      <a class="btn btn--outline" href={ctaHref}>{ctaLabel}</a>
+        </a>
+      )}
+      <div class="hero__cta">
+        <a class="btn btn--primary" href={telHref}>Call Now</a>
+        <a class="btn btn--outline" href={ctaHref}>{ctaLabel}</a>
+      </div>
     </div>
+    {hasForm && (
+      <div class="hero__form-panel">
+        <slot name="form" />
+      </div>
+    )}
   </div>
 </section>

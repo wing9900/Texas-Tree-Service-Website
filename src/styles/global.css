@@ -400,6 +400,49 @@ p:last-child { margin-bottom: 0; }
   }
 }
 
+/* ── Hero + quote form split (homepage only, via Hero's `form` slot) ──
+   Below desktop there isn't room for photo + copy + a lead form in one
+   screen, so it just stacks: normal centred hero, form card below it,
+   page scrolls. The unconditional min-height/display overrides here
+   beat .hero--photo's own (single-class vs. this rule's two classes),
+   which is what lets a taller mobile stack grow past one screen while
+   .hero--photo alone still locks to exactly 100vh on every other page. */
+.hero--photo.hero--split { min-height: auto; display: block; padding-block: 2.5rem 2.5rem; }
+.hero__form-eyebrow {
+  font-size: 0.95rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--c-primary); margin: 0 0 0.75rem; text-align: center;
+}
+.hero__form-panel {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.5rem 1.5rem 0.75rem;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.38);
+}
+@media (min-width: 64rem) {
+  /* Desktop: true side-by-side split, both columns visible in the first
+     screen (the whole point -- a visitor sees the form on landing,
+     no scroll). Copy switches to left-aligned since a centred column
+     reads oddly at half-width next to a form. */
+  .hero--photo.hero--split {
+    min-height: min(100lvh, 86rem);
+    display: grid; align-content: center; padding-block: 0;
+  }
+  .hero--split .container { display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: 3.5rem; text-align: left; }
+  .hero--split .hero__text { text-align: left; }
+  .hero--split .hero__text h1 { margin-inline: 0; max-width: none; }
+  .hero--split .hero__benefits { justify-content: flex-start; margin-inline: 0; }
+  .hero--split .hero__cta { justify-content: flex-start; margin-inline: 0; max-width: none; }
+  .hero--split .hero__form-eyebrow { text-align: left; }
+  .hero--split .hero__form-panel {
+    margin-top: 0;
+    /* Caps the card to the available viewport height minus header/margins;
+       the embed scrolls internally rather than pushing the hero taller. */
+    max-height: min(620px, calc(100vh - 9rem));
+    overflow-y: auto;
+  }
+}
+
 /* ── Photo grid (Recent Work entries + About) ──
    Static grid, all photos visible on load — never a carousel or lightbox
    (Rule 24). Square tiles keep mixed portrait/landscape sets tidy; explicit

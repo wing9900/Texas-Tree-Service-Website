@@ -12,8 +12,10 @@ export const homepage = {
     // H1 formula (Rule 18): primary category + city + HOOK. Reworded from
     // the title tag, not copied — humans see this one, so spend the extra
     // words on a benefit, differentiator, or social proof.
+    // Kept short deliberately: the hero is a two-column split next to the
+    // quote form on desktop, so the copy column is roughly half-width.
     h1: "Conroe's Top Rated Tree Service",
-    benefits: ['Free Estimates', '24/7 Emergency Service', 'Fully Licensed & Insured'],
+    benefits: ['Free Estimates', '24/7 Service', 'Licensed & Insured'],
     pillText: 'Serving Conroe and Montgomery County',
 
     ctaLabel: 'Get a Free Estimate',
