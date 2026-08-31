@@ -874,8 +874,10 @@ html:has(.lightbox:popover-open) body { overflow: hidden; touch-action: none; }
 }
 
 /* ── Quote form (contact page) ──────────────────────────────────────
-   Minimum fields, big tap targets, zero JS. The honeypot is visually
-   removed but stays reachable to bots that parse the DOM. */
+   GHL (LeadConnector) embed. The iframe is height:100%, so the wrapper
+   needs a real starting height -- matches the widget's own data-height;
+   form_embed.js resizes both live via postMessage once it loads. */
+.quote-form-embed { height: 963px; max-height: 80vh; }
 .quote-form { display: flex; flex-direction: column; gap: 0.25rem; }
 .quote-form__label {
   font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
