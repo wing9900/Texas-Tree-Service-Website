@@ -170,7 +170,10 @@ p:last-child { margin-bottom: 0; }
 .site-header { background: var(--c-bg); border-bottom: 1px solid var(--c-line); position: sticky; top: 0; z-index: 60; box-shadow: 0 2px 12px rgb(13 42 27 / 0.07); }
 .site-header__bar { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding-block: 0.75rem; }
 .site-header__brand { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-.site-header__logo { width: auto; height: 46px; border-radius: 8px; box-shadow: 0 1px 4px rgb(13 42 27 / 0.18); }
+/* Logo ships as a circular mark on a transparent background, so no card
+   treatment (border-radius/shadow) — that's for a rectangular photo logo,
+   and would draw a faint square shadow behind the transparent corners. */
+.site-header__logo { width: auto; height: 46px; border-radius: 0; box-shadow: none; }
 .site-header__wordmark {
   display: flex; flex-direction: column; line-height: 0.94;
   font-family: var(--font-display); font-weight: 700; font-size: 1.18rem;

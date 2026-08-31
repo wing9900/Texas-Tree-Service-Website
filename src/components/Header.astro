@@ -21,9 +21,7 @@ const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
   <div class="container">
     <div class="site-header__bar">
       <a class="site-header__brand" href="/" aria-label={`${b.name}, back to homepage`}>
-        {/* [PENDING — Conroe Tree Co. logo. Restore the
-            <img class="site-header__logo" …> line when the asset exists;
-            the wordmark carries the brand until then.] */}
+        <img class="site-header__logo" src="/images/conroe-tree-co-logo.webp" alt="" width="241" height="248" />
         <span class="site-header__wordmark">
           {(b.brandLockup ?? [b.name]).map((line) => <span>{line}</span>)}
         </span>
