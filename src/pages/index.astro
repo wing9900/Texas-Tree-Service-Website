@@ -84,9 +84,17 @@ const whyIcons: Record<string, string> = {
       {/* No label here -- the GHL form now renders its own "Get a Free
           Quote" heading + logo, so a page-level one on top was redundant. */}
       <div class="quote-form-embed">
+        {/* No `height:100%` here (the contact page's copy still has it):
+            inside the hero card the iframe owns its own height, so that
+            form_embed.js's live resize -- which writes the real form
+            height straight onto iframe.style.height -- makes the white
+            card hug the form exactly. Against a height:100% iframe in a
+            fixed-height wrapper that resize is a no-op, which is what
+            left a band of empty white inside the card. The CSS starting
+            height is only the placeholder until that message arrives. */}
         <iframe
           src="https://api.leadconnectorhq.com/widget/form/IOj05Ci2FjifEoSyWk4o"
-          style="width:100%;height:100%;border:none;border-radius:8px"
+          style="width:100%;border:none;border-radius:8px"
           id="inline-IOj05Ci2FjifEoSyWk4o"
           data-layout="{'id':'INLINE'}"
           data-trigger-type="alwaysShow"

@@ -382,24 +382,25 @@ p:last-child { margin-bottom: 0; }
 }
 .hero--photo::before {
   z-index: 1;
-  /* Heavy where the copy sits, light where the truck sits. The stack
-     occupies roughly the top two thirds, so the lower third only needs
-     enough tint to keep the buttons legible. Alphas halved from the
-     original (0.92/0.80/0.40) per a direct "lighten the tint by 50%"
-     request -- the photo now shows through noticeably more; if text
-     legibility suffers on brighter photos, that's the trade-off made. */
+  /* Heavy where the copy sits, lighter over the truck. Alphas sit between
+     the original (0.92/0.80/0.40) and the halved set that replaced it: at
+     the halved values the photo read as a washed-out, low-contrast mess
+     behind the white quote card, with the card's edge barely separating
+     from the sky. This is the middle ground -- the photo is still clearly
+     a photo, but it reads as a backdrop instead of competing with the
+     copy and the form. */
   background-image: linear-gradient(180deg,
-    rgba(13, 42, 27, 0.46) 0%,
-    rgba(13, 42, 27, 0.40) 45%,
-    rgba(13, 42, 27, 0.20) 100%);
+    rgba(11, 36, 23, 0.68) 0%,
+    rgba(11, 36, 23, 0.58) 45%,
+    rgba(11, 36, 23, 0.52) 100%);
 }
 @media (min-width: 48rem) {
   .hero--photo .hero__img { object-position: center 42%; }
   .hero--photo::before {
     background-image: linear-gradient(180deg,
-      rgba(13, 42, 27, 0.45) 0%,
-      rgba(13, 42, 27, 0.37) 55%,
-      rgba(13, 42, 27, 0.28) 100%);
+      rgba(11, 36, 23, 0.62) 0%,
+      rgba(11, 36, 23, 0.50) 55%,
+      rgba(11, 36, 23, 0.46) 100%);
   }
 }
 
@@ -410,87 +411,120 @@ p:last-child { margin-bottom: 0; }
    beat .hero--photo's own (single-class vs. this rule's two classes),
    which is what lets a taller mobile stack grow past one screen while
    .hero--photo alone still locks to exactly 100vh on every other page. */
-.hero--photo.hero--split { min-height: auto; display: block; padding-block: 2rem 2rem; }
+.hero--photo.hero--split { min-height: auto; display: block; padding-block: 2.5rem 2.75rem; }
+
 /* Below-desktop copy sizing: the site's normal --fs-h1 clamp (up to
    9vw) is tuned for a headline that's the ONLY thing in the hero. With
    a full form stacked right underneath it here, that size read as
    oversized/cramped against everything else competing for the same
    screen -- capped lower and tightened line-height so it sits more
    comfortably above the CTAs and form. */
-.hero--split .hero__text h1 { font-size: clamp(2rem, 7vw, 2.75rem); line-height: 1.08; }
-.hero--split .hero__benefits { margin-top: 0.6rem; font-size: 0.95rem; }
-/* Compact, auto-width CTAs instead of the site's normal full-width
-   mobile buttons (a deliberate thumb-target pattern everywhere else,
-   but paired with a stacked form below it just reads as two oversized
-   blocks eating the screen). */
-.hero--split .hero__cta { flex-direction: row; flex-wrap: wrap; width: auto; margin-top: 1.25rem; }
-.hero--split .hero__cta .btn { width: auto; min-width: 0; padding: 0.7rem 1.3rem; font-size: 1.05rem; }
+.hero--split .hero__text h1 { font-size: clamp(2.1rem, 6.2vw, 3.25rem); line-height: 1.06; max-width: 18ch; }
+.hero--split .hero__benefits { margin-top: 0.8rem; font-size: 1rem; }
+
+/* The bullet separator is an ::before on the FOLLOWING item, so the
+   moment the line wraps the second line opens with a stray leading dot
+   -- which is what "Free Estimates - 24/7 Service / - Licensed &
+   Insured" was doing. Wherever the three benefits can't hold one line
+   at a readable size, drop the dots and separate on gap instead: wraps
+   cleanly, no orphaned bullet. Two such bands: phones under 30rem, and
+   the 64-80rem desktop split, where the copy column is only ~390-480px
+   wide. Between them (tablets, and the full-width centred hero) the
+   line has room to spare and keeps its dots. */
+@media (max-width: 29.99rem), (min-width: 64rem) and (max-width: 79.99rem) {
+  .hero--split .hero__benefits { column-gap: 1.15rem; row-gap: 0.15rem; }
+  .hero--split .hero__benefits span + span::before { content: none; margin-inline: 0; }
+}
+
+/* CTA pair: a 2-up grid, not a flex row.
+   auto-fit + minmax means the two buttons are ALWAYS exactly equal
+   width -- side by side when the column can hold both, stacked (still
+   equal, still full width) when it can't. The old flex row sized each
+   button to its own label, so "CALL NOW" and "GET A FREE ESTIMATE"
+   came out visibly different widths with a ragged edge between them,
+   and the inherited `margin-inline: auto; max-width: 24rem` from the
+   base .hero__cta left the pair off-centre under the centred headline
+   on phones. Both are fixed here. */
+.hero--split .hero__cta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 28rem;
+  margin: 1.5rem auto 0;
+}
+.hero--split .hero__cta .btn {
+  width: 100%; min-width: 0;
+  padding: 0.8rem 1rem; font-size: 1.12rem;
+}
+
+/* The form card. Previously the panel had no background of its own and
+   the embed was shrunk with transform: scale() to force it into a
+   hand-picked fixed height -- which is what made the form look blurry
+   and squashed, and left a tall band of dead white inside the card
+   whenever the form's real content came up short of that height.
+   Now: a real white card that simply wraps the embed at its natural
+   size. No transform, no fixed panel height, nothing clipped. */
 .hero__form-panel {
-  margin-top: 1.5rem;
-  /* No card padding/background -- the GHL form renders its own white
-     background and rounded corners (inline style on the iframe itself),
-     so a colored frame around it just added a mismatched border. The
-     form sits directly on the hero photo now. */
-  border-radius: var(--radius);
-  box-shadow: 0 12px 32px rgb(0 0 0 / 0.3);
-  /* Same scale-to-fit approach as the desktop split (see the 64rem
-     block below): no way to measure the form's real height from here,
-     so it's shrunk to a size that reliably fits under a tightened
-     headline/CTA row instead of running the page on for another
-     screen-and-a-half. Scaled smaller than desktop's 0.73 since this
-     card stacks BELOW the copy instead of beside it, sharing the same
-     vertical budget. */
-  height: 520px;
+  margin-top: 1.75rem;
+  max-width: 34rem;
+  margin-inline: auto;
+  background: #fff;
+  border-radius: 14px;
   overflow: hidden;
+  box-shadow: 0 20px 48px rgb(6 26 17 / 0.45), 0 0 0 1px rgb(255 255 255 / 0.4);
 }
-.hero__form-panel .quote-form-embed {
-  max-height: none;
-  transform: scale(0.54);
-  transform-origin: top left;
-  width: 185%;
+/* The wrapper takes its height from the iframe, and the iframe carries a
+   placeholder height only for the moment before form_embed.js reports
+   the real one (it writes that straight onto iframe.style.height, which
+   outranks this rule). display:block kills the inline-element baseline
+   gap that would otherwise leave a few px of white under the form. */
+.hero__form-panel .quote-form-embed { width: 100%; height: auto; max-height: none; }
+.hero__form-panel iframe { display: block; width: 100%; height: 880px; }
+
+@media (min-width: 48rem) {
+  .hero--photo.hero--split { padding-block: 3rem 3.25rem; }
+  .hero--split .hero__form-panel { margin-top: 2rem; }
 }
+
 @media (min-width: 64rem) {
-  /* Desktop: true side-by-side split, form visible next to the headline
-     from the first screen. min-height is a floor, not a cap: on a short
-     laptop screen the full-height form card is taller than one viewport,
-     and the hero (and photo, which covers via object-fit) simply grows
-     to match -- the page scrolls, nothing scrolls inside a cramped box.
-     Copy switches to left-aligned since a centred column reads oddly
-     at half-width next to a form. */
+  /* Desktop: true side-by-side split, form beside the headline from the
+     first screen. min-height is a floor, not a cap -- the form card is
+     taller than a short laptop viewport, so the hero (and the photo,
+     which covers via object-fit) grows and the page scrolls a little.
+     That is the deliberate trade: the previous build kept everything
+     inside one screen by scaling the embed to 73%, which cost legible
+     form text and left the dead white band inside the card.
+     The floor is 52rem rather than the viewport height so a tall
+     portrait tablet (iPad Pro, 1024x1366) no longer stretches the hero
+     to 1366px, stranding the copy in the lower-left corner of a mostly
+     empty photo. */
   .hero--photo.hero--split {
-    min-height: min(100lvh, 86rem);
-    display: grid; align-content: center; padding-block: 3rem 3rem;
+    min-height: min(100lvh, 52rem);
+    display: grid; align-content: center; padding-block: 3.25rem 3.25rem;
   }
-  /* Form column widened (0.85fr/1.15fr, was 1.05fr/0.95fr) on the chance
-     GHL's own field layout collapses to fewer rows at the extra width
-     (e.g. Name/Phone/Email side-by-side instead of stacked) -- can't be
-     verified from here (no network path to the live GHL widget in this
-     sandbox), so check the live result before assuming it helped. */
+  /* Form column stays the wider of the two: at ~600px GHL lays Phone and
+     Email side by side instead of stacking them, which keeps the card
+     meaningfully shorter. */
   .hero--split .container { display: grid; grid-template-columns: 0.85fr 1.15fr; align-items: center; gap: 3rem; text-align: left; }
   .hero--split .hero__text { text-align: left; }
-  .hero--split .hero__text h1 { margin-inline: 0; max-width: none; }
-  .hero--split .hero__benefits { justify-content: flex-start; margin-inline: 0; }
-  /* Column, not row: the widened form column leaves too little room for
-     both CTA buttons side by side at their normal min-width (that's what
-     was wrapping "Get a Free Estimate" onto two lines). */
-  .hero--split .hero__cta { flex-direction: column; align-items: flex-start; justify-content: flex-start; margin-inline: 0; max-width: 20rem; }
-  /* No-scroll fix: this sandbox has no network path to the live GHL
-     widget, so there's no way to measure the form's real rendered
-     height and size the card to match exactly. Capping height + hiding
-     overflow would just crop fields off (worse than scrolling); instead
-     the whole embed is visually scaled down to a size that reliably
-     fits the space next to the headline, with width compensated so the
-     shrunk content still fills the panel edge to edge. Nothing is cut
-     off, it's just smaller -- if it still needs the scale nudged
-     (bigger/smaller) once you see it live, the two numbers to tune
-     together are the scale() factor and its 1/factor width below. */
-  .hero--split .hero__form-panel { margin-top: 0; height: 703px; overflow: hidden; }
-  .hero--split .quote-form-embed {
-    max-height: none;
-    transform: scale(0.73);
-    transform-origin: top left;
-    width: 137%;
+  .hero--split .hero__text h1 {
+    margin-inline: 0; max-width: 15ch;
+    font-size: clamp(2.5rem, 3.4vw, 3.75rem);
   }
+  .hero--split .hero__benefits { justify-content: flex-start; margin-inline: 0; font-size: 1.12rem; }
+  /* Left-aligned under the headline instead of centred, and no longer a
+     flex column -- the grid above keeps both buttons the same width. */
+  .hero--split .hero__cta { margin: 1.9rem 0 0; max-width: 27rem; }
+  .hero--split .hero__cta .btn { padding: 0.9rem 1.1rem; font-size: 1.2rem; }
+  /* `margin: 0` matters: an auto inline margin on a grid item beats
+     justify-self: stretch, so the panel shrink-wrapped to the iframe's
+     default 300px intrinsic width instead of filling its column. */
+  .hero--split .hero__form-panel { margin: 0; max-width: none; }
+  /* The subject sits left of centre in the frame; nudge it further left
+     on the split so the truck and the bucket stay in the band of photo
+     the form card doesn't cover. */
+  .hero--photo.hero--split .hero__img { object-position: 38% 45%; }
 }
 
 /* ── Photo grid (Recent Work entries + About) ──
