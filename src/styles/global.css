@@ -410,15 +410,44 @@ p:last-child { margin-bottom: 0; }
    beat .hero--photo's own (single-class vs. this rule's two classes),
    which is what lets a taller mobile stack grow past one screen while
    .hero--photo alone still locks to exactly 100vh on every other page. */
-.hero--photo.hero--split { min-height: auto; display: block; padding-block: 2.5rem 2.5rem; }
+.hero--photo.hero--split { min-height: auto; display: block; padding-block: 2rem 2rem; }
+/* Below-desktop copy sizing: the site's normal --fs-h1 clamp (up to
+   9vw) is tuned for a headline that's the ONLY thing in the hero. With
+   a full form stacked right underneath it here, that size read as
+   oversized/cramped against everything else competing for the same
+   screen -- capped lower and tightened line-height so it sits more
+   comfortably above the CTAs and form. */
+.hero--split .hero__text h1 { font-size: clamp(2rem, 7vw, 2.75rem); line-height: 1.08; }
+.hero--split .hero__benefits { margin-top: 0.6rem; font-size: 0.95rem; }
+/* Compact, auto-width CTAs instead of the site's normal full-width
+   mobile buttons (a deliberate thumb-target pattern everywhere else,
+   but paired with a stacked form below it just reads as two oversized
+   blocks eating the screen). */
+.hero--split .hero__cta { flex-direction: row; flex-wrap: wrap; width: auto; margin-top: 1.25rem; }
+.hero--split .hero__cta .btn { width: auto; min-width: 0; padding: 0.7rem 1.3rem; font-size: 1.05rem; }
 .hero__form-panel {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   /* No card padding/background -- the GHL form renders its own white
      background and rounded corners (inline style on the iframe itself),
      so a colored frame around it just added a mismatched border. The
      form sits directly on the hero photo now. */
   border-radius: var(--radius);
   box-shadow: 0 12px 32px rgb(0 0 0 / 0.3);
+  /* Same scale-to-fit approach as the desktop split (see the 64rem
+     block below): no way to measure the form's real height from here,
+     so it's shrunk to a size that reliably fits under a tightened
+     headline/CTA row instead of running the page on for another
+     screen-and-a-half. Scaled smaller than desktop's 0.73 since this
+     card stacks BELOW the copy instead of beside it, sharing the same
+     vertical budget. */
+  height: 520px;
+  overflow: hidden;
+}
+.hero__form-panel .quote-form-embed {
+  max-height: none;
+  transform: scale(0.54);
+  transform-origin: top left;
+  width: 185%;
 }
 @media (min-width: 64rem) {
   /* Desktop: true side-by-side split, form visible next to the headline
