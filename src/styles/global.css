@@ -506,16 +506,23 @@ p:last-child { margin-bottom: 0; }
   /* Form column stays the wider of the two: at ~600px GHL lays Phone and
      Email side by side instead of stacking them, which keeps the card
      meaningfully shorter. */
-  .hero--split .container { display: grid; grid-template-columns: 0.85fr 1.15fr; align-items: center; gap: 3rem; text-align: left; }
-  .hero--split .hero__text { text-align: left; }
+  .hero--split .container { display: grid; grid-template-columns: 0.85fr 1.15fr; align-items: center; gap: 3rem; }
+  /* The copy column stays centred on desktop rather than switching to
+     left-aligned, so the headline sits centred over the CTA pair the way
+     it already does at every width below this breakpoint. Centring the
+     whole column (headline, benefits, buttons) is what keeps it reading
+     as one stack -- a centred headline over left-aligned buttons just
+     looks like two different alignments. Each piece needs its own
+     centring because they centre by different mechanisms: the h1 and the
+     button grid are width-capped blocks (auto inline margins), the
+     benefits row is a flex line (justify-content). */
+  .hero--split .hero__text { text-align: center; }
   .hero--split .hero__text h1 {
-    margin-inline: 0; max-width: 15ch;
+    margin-inline: auto; max-width: 15ch;
     font-size: clamp(2.5rem, 3.4vw, 3.75rem);
   }
-  .hero--split .hero__benefits { justify-content: flex-start; margin-inline: 0; font-size: 1.12rem; }
-  /* Left-aligned under the headline instead of centred, and no longer a
-     flex column -- the grid above keeps both buttons the same width. */
-  .hero--split .hero__cta { margin: 1.9rem 0 0; max-width: 27rem; }
+  .hero--split .hero__benefits { justify-content: center; margin-inline: auto; font-size: 1.12rem; }
+  .hero--split .hero__cta { margin: 1.9rem auto 0; max-width: 27rem; }
   .hero--split .hero__cta .btn { padding: 0.9rem 1.1rem; font-size: 1.2rem; }
   /* `margin: 0` matters: an auto inline margin on a grid item beats
      justify-self: stretch, so the panel shrink-wrapped to the iframe's
