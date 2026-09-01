@@ -489,19 +489,18 @@ p:last-child { margin-bottom: 0; }
 
 @media (min-width: 64rem) {
   /* Desktop: true side-by-side split, form beside the headline from the
-     first screen. min-height is a floor, not a cap -- the form card is
-     taller than a short laptop viewport, so the hero (and the photo,
-     which covers via object-fit) grows and the page scrolls a little.
-     That is the deliberate trade: the previous build kept everything
-     inside one screen by scaling the embed to 73%, which cost legible
-     form text and left the dead white band inside the card.
-     The floor is 52rem rather than the viewport height so a tall
-     portrait tablet (iPad Pro, 1024x1366) no longer stretches the hero
-     to 1366px, stranding the copy in the lower-left corner of a mostly
-     empty photo. */
+     first screen.
+     NO viewport-height floor here. The previous min(100lvh, 52rem) is
+     what forced the page to scroll: on any screen shorter than 52rem it
+     resolved to 100lvh, sizing the hero to the WHOLE viewport -- while
+     the sticky header still takes its own space in flow above it. Header
+     plus a full-viewport hero overflows the viewport by the header's
+     height, every time, on every short laptop. The base rule's
+     min-height:auto stands instead, so the content sets the height and
+     the hero is the shortest it can honestly be without shrinking the
+     form. On a tall screen it still fills most of the first screen. */
   .hero--photo.hero--split {
-    min-height: min(100lvh, 52rem);
-    display: grid; align-content: center; padding-block: 3.25rem 3.25rem;
+    display: grid; align-content: center; padding-block: 3.25rem;
   }
   /* Form column stays the wider of the two: at ~600px GHL lays Phone and
      Email side by side instead of stacking them, which keeps the card
@@ -532,6 +531,26 @@ p:last-child { margin-bottom: 0; }
      on the split so the truck and the bucket stay in the band of photo
      the form card doesn't cover. */
   .hero--photo.hero--split .hero__img { object-position: 38% 45%; }
+}
+
+/* ── Short desktop viewports (laptops) ──────────────────────────────
+   Reclaim the hero's OWN whitespace so the whole hero -- headline, CTA
+   pair and the complete quote form -- clears the fold without scrolling.
+   The old build bought the same no-scroll result by scaling the embed to
+   73%, which is what made the form blurry and undersized; giving up our
+   own padding costs nothing and touches the form not at all.
+   Keyed on viewport height, not width, because height is what actually
+   runs out: a 1512x850 laptop and a 1920x1080 desktop are the same width
+   class but not the same problem. */
+@media (min-width: 64rem) and (max-height: 56rem) {
+  .hero--photo.hero--split { padding-block: 1.5rem; }
+  .hero--split .hero__cta { margin-top: 1.4rem; }
+}
+@media (min-width: 64rem) and (max-height: 51rem) {
+  .hero--photo.hero--split { padding-block: 0.85rem; }
+  .hero--split .container { gap: 2.25rem; }
+  .hero--split .hero__benefits { margin-top: 0.6rem; }
+  .hero--split .hero__cta { margin-top: 1.1rem; }
 }
 
 /* ── Photo grid (Recent Work entries + About) ──
