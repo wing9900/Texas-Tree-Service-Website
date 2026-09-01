@@ -384,19 +384,22 @@ p:last-child { margin-bottom: 0; }
   z-index: 1;
   /* Heavy where the copy sits, light where the truck sits. The stack
      occupies roughly the top two thirds, so the lower third only needs
-     enough tint to keep the buttons legible. */
+     enough tint to keep the buttons legible. Alphas halved from the
+     original (0.92/0.80/0.40) per a direct "lighten the tint by 50%"
+     request -- the photo now shows through noticeably more; if text
+     legibility suffers on brighter photos, that's the trade-off made. */
   background-image: linear-gradient(180deg,
-    rgba(13, 42, 27, 0.92) 0%,
-    rgba(13, 42, 27, 0.80) 45%,
-    rgba(13, 42, 27, 0.40) 100%);
+    rgba(13, 42, 27, 0.46) 0%,
+    rgba(13, 42, 27, 0.40) 45%,
+    rgba(13, 42, 27, 0.20) 100%);
 }
 @media (min-width: 48rem) {
   .hero--photo .hero__img { object-position: center 42%; }
   .hero--photo::before {
     background-image: linear-gradient(180deg,
-      rgba(13, 42, 27, 0.9) 0%,
-      rgba(13, 42, 27, 0.74) 55%,
-      rgba(13, 42, 27, 0.55) 100%);
+      rgba(13, 42, 27, 0.45) 0%,
+      rgba(13, 42, 27, 0.37) 55%,
+      rgba(13, 42, 27, 0.28) 100%);
   }
 }
 
@@ -410,19 +413,11 @@ p:last-child { margin-bottom: 0; }
 .hero--photo.hero--split { min-height: auto; display: block; padding-block: 2.5rem 2.5rem; }
 .hero__form-panel {
   margin-top: 2rem;
-  /* Brand-dark card, not a plain white box floating on the photo -- so
-     it reads as one integrated piece with the hero's dark scrim instead
-     of a mismatched card slapped on top. This ONLY colors the card
-     around the iframe; the form's own background is still whatever's
-     set in the GHL builder. For this to actually look seamless (not a
-     dark frame around a white rectangle), set the form's background in
-     GHL to this same color -- #0d2a1b -- with white heading/label text.
-     Until then this is a visible, deliberate step toward that, not the
-     whole fix: the fussy heading size, the oversized logo, and the
-     field count all live inside the form itself. */
-  background: var(--c-primary-dark);
+  /* No card padding/background -- the GHL form renders its own white
+     background and rounded corners (inline style on the iframe itself),
+     so a colored frame around it just added a mismatched border. The
+     form sits directly on the hero photo now. */
   border-radius: var(--radius);
-  padding: 1.5rem 1.5rem 0.75rem;
   box-shadow: 0 12px 32px rgb(0 0 0 / 0.3);
 }
 @media (min-width: 64rem) {
@@ -450,11 +445,23 @@ p:last-child { margin-bottom: 0; }
      both CTA buttons side by side at their normal min-width (that's what
      was wrapping "Get a Free Estimate" onto two lines). */
   .hero--split .hero__cta { flex-direction: column; align-items: flex-start; justify-content: flex-start; margin-inline: 0; max-width: 20rem; }
-  .hero--split .hero__form-panel { margin-top: 0; }
-  /* The shared .quote-form-embed rule caps at 80vh for the contact page's
-     standalone section; here that cap is exactly what forced the inner
-     scrollbar, so let the embed render at its full declared height. */
-  .hero--split .quote-form-embed { max-height: none; }
+  /* No-scroll fix: this sandbox has no network path to the live GHL
+     widget, so there's no way to measure the form's real rendered
+     height and size the card to match exactly. Capping height + hiding
+     overflow would just crop fields off (worse than scrolling); instead
+     the whole embed is visually scaled down to a size that reliably
+     fits the space next to the headline, with width compensated so the
+     shrunk content still fills the panel edge to edge. Nothing is cut
+     off, it's just smaller -- if it still needs the scale nudged
+     (bigger/smaller) once you see it live, the two numbers to tune
+     together are the scale() factor and its 1/factor width below. */
+  .hero--split .hero__form-panel { margin-top: 0; height: 703px; overflow: hidden; }
+  .hero--split .quote-form-embed {
+    max-height: none;
+    transform: scale(0.73);
+    transform-origin: top left;
+    width: 137%;
+  }
 }
 
 /* ── Photo grid (Recent Work entries + About) ──
