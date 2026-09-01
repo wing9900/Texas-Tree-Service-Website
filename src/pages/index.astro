@@ -81,7 +81,8 @@ const whyIcons: Record<string, string> = {
        global.css. Below desktop it stacks: hero content, then the form. -->
   <Hero h1={hp.hero.h1} benefits={hp.hero.benefits} reviewers={hp.googleReviewers} pillText={hp.hero.pillText} ctaLabel={hp.hero.ctaLabel} image={hp.hero.image}>
     <Fragment slot="form">
-      <p class="hero__form-eyebrow">Get a Free Estimate</p>
+      {/* No label here -- the GHL form now renders its own "Get a Free
+          Quote" heading + logo, so a page-level one on top was redundant. */}
       <div class="quote-form-embed">
         <iframe
           src="https://api.leadconnectorhq.com/widget/form/IOj05Ci2FjifEoSyWk4o"

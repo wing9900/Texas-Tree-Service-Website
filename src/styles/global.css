@@ -408,10 +408,6 @@ p:last-child { margin-bottom: 0; }
    which is what lets a taller mobile stack grow past one screen while
    .hero--photo alone still locks to exactly 100vh on every other page. */
 .hero--photo.hero--split { min-height: auto; display: block; padding-block: 2.5rem 2.5rem; }
-.hero__form-eyebrow {
-  font-size: 0.95rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--c-primary); margin: 0 0 0.75rem; text-align: center;
-}
 .hero__form-panel {
   margin-top: 2rem;
   background: #fff;
@@ -433,7 +429,6 @@ p:last-child { margin-bottom: 0; }
   .hero--split .hero__text h1 { margin-inline: 0; max-width: none; }
   .hero--split .hero__benefits { justify-content: flex-start; margin-inline: 0; }
   .hero--split .hero__cta { justify-content: flex-start; margin-inline: 0; max-width: none; }
-  .hero--split .hero__form-eyebrow { text-align: left; }
   .hero--split .hero__form-panel {
     margin-top: 0;
     /* Caps the card to the available viewport height minus header/margins;
