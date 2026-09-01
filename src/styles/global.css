@@ -427,11 +427,19 @@ p:last-child { margin-bottom: 0; }
     min-height: min(100lvh, 86rem);
     display: grid; align-content: center; padding-block: 3rem 3rem;
   }
-  .hero--split .container { display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: 3.5rem; text-align: left; }
+  /* Form column widened (0.85fr/1.15fr, was 1.05fr/0.95fr) on the chance
+     GHL's own field layout collapses to fewer rows at the extra width
+     (e.g. Name/Phone/Email side-by-side instead of stacked) -- can't be
+     verified from here (no network path to the live GHL widget in this
+     sandbox), so check the live result before assuming it helped. */
+  .hero--split .container { display: grid; grid-template-columns: 0.85fr 1.15fr; align-items: center; gap: 3rem; text-align: left; }
   .hero--split .hero__text { text-align: left; }
   .hero--split .hero__text h1 { margin-inline: 0; max-width: none; }
   .hero--split .hero__benefits { justify-content: flex-start; margin-inline: 0; }
-  .hero--split .hero__cta { justify-content: flex-start; margin-inline: 0; max-width: none; }
+  /* Column, not row: the widened form column leaves too little room for
+     both CTA buttons side by side at their normal min-width (that's what
+     was wrapping "Get a Free Estimate" onto two lines). */
+  .hero--split .hero__cta { flex-direction: column; align-items: flex-start; justify-content: flex-start; margin-inline: 0; max-width: 20rem; }
   .hero--split .hero__form-panel { margin-top: 0; }
   /* The shared .quote-form-embed rule caps at 80vh for the contact page's
      standalone section; here that cap is exactly what forced the inner
