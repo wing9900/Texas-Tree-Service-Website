@@ -410,10 +410,20 @@ p:last-child { margin-bottom: 0; }
 .hero--photo.hero--split { min-height: auto; display: block; padding-block: 2.5rem 2.5rem; }
 .hero__form-panel {
   margin-top: 2rem;
-  background: #fff;
+  /* Brand-dark card, not a plain white box floating on the photo -- so
+     it reads as one integrated piece with the hero's dark scrim instead
+     of a mismatched card slapped on top. This ONLY colors the card
+     around the iframe; the form's own background is still whatever's
+     set in the GHL builder. For this to actually look seamless (not a
+     dark frame around a white rectangle), set the form's background in
+     GHL to this same color -- #0d2a1b -- with white heading/label text.
+     Until then this is a visible, deliberate step toward that, not the
+     whole fix: the fussy heading size, the oversized logo, and the
+     field count all live inside the form itself. */
+  background: var(--c-primary-dark);
   border-radius: var(--radius);
   padding: 1.5rem 1.5rem 0.75rem;
-  box-shadow: 0 24px 60px rgb(0 0 0 / 0.38);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.3);
 }
 @media (min-width: 64rem) {
   /* Desktop: true side-by-side split, form visible next to the headline
