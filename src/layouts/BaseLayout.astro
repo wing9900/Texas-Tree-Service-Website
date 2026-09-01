@@ -57,6 +57,15 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <slot />
     </main>
     <Footer />
+    {/* GHL (LeadConnector) chat widget -- floats site-wide, every page,
+        via this shared layout. Loader is self-contained: it injects its
+        own launcher bubble and panel, nothing else here to wire up. */}
+    <script
+      src="https://widgets.leadconnectorhq.com/loader.js"
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+      data-widget-id="6a966412ae1cc8254ada5874"
+      is:inline
+    ></script>
     <!--
       Scroll restoration override. The browser restores the previous scroll
       offset on back/forward and sometimes on same-origin navigations, so
