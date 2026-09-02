@@ -806,6 +806,12 @@ html:has(.lightbox:popover-open) body { overflow: hidden; touch-action: none; }
 .site-footer h3.site-footer__name { color: var(--c-accent); }
 .site-footer__grid { display: grid; gap: 1.5rem; padding-block: 2.5rem; grid-template-columns: 1fr; }
 .site-footer__legal { border-top: 1px solid rgb(255 255 255 / 0.14); padding-block: 1rem; font-size: var(--fs-small); }
+/* Two stacked lines in the legal bar: policy links above the copyright.
+   Both stay small; the links get a touch more weight so a reviewer (and a
+   customer) can find Privacy/Terms without hunting. */
+.site-footer__legal p { margin: 0; }
+.site-footer__policy-links { margin-bottom: 0.35rem !important; }
+.site-footer__policy-links a { font-weight: 600; }
 .site-footer ul { list-style: none; margin: 0; padding: 0; }
 .site-footer li { padding-block: 0.28rem; }
 .site-footer .hours-list li { border-color: rgb(255 255 255 / 0.15); }

@@ -135,7 +135,17 @@ const socialLinks = b.sameAs.map((href) => {
     </div>
 
     <div class="site-footer__legal">
-      © {year} {b.name} · Serving {cityState} and surrounding areas
+      {/* Policy links live in the sitewide footer, not just the Quick Links
+          column, because the toll-free SMS verification reviewer checks
+          that both are reachable from any page (rejection code 30493). */}
+      <p class="site-footer__policy-links">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/terms-and-conditions/#sms-terms">SMS Terms</a>
+      </p>
+      <p>© {year} {b.name} · Serving {cityState} and surrounding areas</p>
     </div>
   </div>
 </footer>

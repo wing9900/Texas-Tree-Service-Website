@@ -1,0 +1,333 @@
+---
+/**
+ * PRIVACY POLICY — also the document a carrier reviewer opens during
+ * toll-free SMS verification, so it is written to clear the specific
+ * rejection codes that kill those applications:
+ *
+ *   30519  no accessible policy / does not explain collection, storage,
+ *          use and protection of personal data
+ *   30520  policy contains language PERMITTING opt-in data to be shared
+ *   30521  opt-in data shared with third parties
+ *   30493  policy/terms links not published on the site
+ *
+ * The "Text Messaging" section is the load-bearing one. Its
+ * no-sharing sentences are the exact form carriers look for — do not
+ * soften them, and never add a "we may share with marketing partners"
+ * clause anywhere on this page. Any future edit that introduces the
+ * words sell / rent / trade / share in connection with phone numbers
+ * or consent will fail the review.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { business as b, cityState, telHref, hasPhone, legalName, postalLine } from '../config/business';
+
+const title = `Privacy Policy | ${b.name} | ${cityState}`;
+const description = `How ${b.name} collects, uses, and protects the information you share with us, including phone numbers and text message consent, which are never sold or shared.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="hero">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="hero__sub">How {legalName} handles the information you give us. Effective {b.legal.effectiveDate}.</p>
+    </div>
+  </section>
+
+  <section class="section legal">
+    <div class="container">
+      <p class="lead">
+        {legalName}{legalName !== b.name && <Fragment> (&ldquo;{b.name}&rdquo;)</Fragment>},
+        referred to below as &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our,&rdquo; provides tree
+        care services in {cityState} and the surrounding communities. This policy explains what
+        personal information we collect through this website, our phone and text lines, and our
+        contact forms; why we collect it; how long we keep it; how we protect it; and the choices
+        you have. It applies to everyone who contacts us or uses this website.
+      </p>
+
+      <h2 id="information-we-collect">1. Information We Collect</h2>
+      <p>
+        We only collect information that helps us quote and perform tree work. We do not buy
+        contact lists, and we do not collect information about you from data brokers.
+      </p>
+      <h3>Information you give us directly</h3>
+      <ul>
+        <li>
+          <strong>Quote and contact requests.</strong> When you submit the estimate form on this
+          site, we collect your name, phone number, email address, and the description of the work
+          you need done.
+        </li>
+        <li>
+          <strong>Chat messages.</strong> If you use the chat window on this site, we collect the
+          name, phone number, or email you provide there along with the content of your messages.
+        </li>
+        <li>
+          <strong>Calls and text messages.</strong> When you call or text us, we collect your phone
+          number and the content of the conversation so we can respond and keep a record of what
+          was agreed.
+        </li>
+        <li>
+          <strong>Text message consent.</strong> If you check the box consenting to receive text
+          messages, we record that you consented, the wording you agreed to, and the date and time
+          you agreed to it.
+        </li>
+        <li>
+          <strong>Job and service information.</strong> To quote and complete work we collect the
+          service address, notes and photographs of the trees and property conditions relevant to
+          the job, appointment times, and records of estimates, invoices, and payments.
+        </li>
+      </ul>
+      <h3>Information collected automatically</h3>
+      <ul>
+        <li>
+          <strong>Basic technical data.</strong> Our hosting provider records standard server
+          information such as IP address, browser type, the pages requested, and the date and time
+          of the request. This is used to keep the site running and secure.
+        </li>
+        <li>
+          <strong>Cookies.</strong> The pages of this website do not set advertising or tracking
+          cookies of our own. The embedded quote form and chat window, which are provided by our
+          messaging platform, may set cookies necessary for those tools to function, and the
+          embedded map may set cookies set by Google. You can block or delete cookies in your
+          browser settings; the form and chat may not work correctly if you do.
+        </li>
+      </ul>
+      <p>
+        <strong>We do not knowingly collect sensitive personal information.</strong> Please do not
+        send us Social Security numbers, financial account numbers, health information, or
+        government identification numbers through this website, the chat window, or text message.
+        We do not need them to quote or perform tree work.
+      </p>
+
+      <h2 id="how-we-use-information">2. How We Use Your Information</h2>
+      <p>We use the information described above only to:</p>
+      <ul>
+        <li>respond to your estimate request, question, or emergency call;</li>
+        <li>prepare and send you a written estimate;</li>
+        <li>schedule, confirm, and perform the work, and reach you or your crew on the job day;</li>
+        <li>send you appointment reminders, arrival notices, follow-ups, invoices, and receipts;</li>
+        <li>answer service questions and handle warranty or follow-up requests;</li>
+        <li>keep records required for accounting, insurance, and tax purposes;</li>
+        <li>maintain the security of this website and prevent fraud and abuse; and</li>
+        <li>comply with the law and with the messaging rules described in Section 4.</li>
+      </ul>
+      <p>
+        <strong>We do not sell your personal information. We do not rent, trade, or license it. We
+        do not share it with anyone for their own advertising or marketing.</strong>
+      </p>
+
+      <h2 id="text-messaging">3. Text Messaging and Mobile Information</h2>
+      <p>
+        This section governs every phone number and text message consent we hold, and it controls
+        over anything else in this policy.
+      </p>
+      <p>
+        <strong>
+          No mobile information will be shared with third parties or affiliates for marketing or
+          promotional purposes. Text messaging originator opt-in data and consent will not be
+          shared with any third parties.
+        </strong>
+      </p>
+      <p>
+        Mobile phone numbers, SMS opt-in records, and the consent you give us are collected and
+        used solely by {legalName} to communicate with you about your own estimate or job. They are
+        never sold, never rented, never traded, and never disclosed to any other business for that
+        business&rsquo;s own use. This applies to affiliates and marketing partners exactly as it
+        applies to strangers. The only parties who ever handle this data are the messaging and
+        scheduling vendors described in Section 5, who act on our written instructions, may use it
+        only to deliver our messages to you, and are prohibited from using it for any purpose of
+        their own.
+      </p>
+      <p>
+        We send text messages only to people who asked us to. Consent to receive text messages is
+        never required in order to get an estimate, buy anything, or receive service from us. You
+        may withdraw it at any time by replying <strong>STOP</strong> to any message from us, and
+        we will stop. Reply <strong>HELP</strong> to any message for help, or contact us using the
+        details in Section 11. Message and data rates may apply.
+        {' '}{b.legal.sms.frequency}. The full terms of our messaging program, including the
+        categories of messages we send, are published in our
+        {' '}<a href="/terms-and-conditions/#sms-terms">SMS Terms and Conditions</a>.
+      </p>
+
+      <h2 id="disclosure">4. When We Disclose Information</h2>
+      <p>
+        We disclose personal information in four narrow situations, and in no others:
+      </p>
+      <ul>
+        <li>
+          <strong>To our own crew.</strong> The people performing your job receive the service
+          address, contact number, and job notes they need to do the work.
+        </li>
+        <li>
+          <strong>To service providers acting for us.</strong> Described in Section 5.
+        </li>
+        <li>
+          <strong>When the law requires it.</strong> In response to a valid subpoena, court order,
+          or other lawful demand, or where disclosure is necessary to investigate suspected fraud,
+          protect our legal rights, or protect someone&rsquo;s safety.
+        </li>
+        <li>
+          <strong>In a business transfer.</strong> If the business is sold or merged, customer
+          records may transfer to the buyer, who must continue to honor this policy. Text
+          messaging opt-in data and consent are excluded from any such transfer; consent does not
+          transfer, and a buyer wishing to text you must obtain your consent again.
+        </li>
+      </ul>
+
+      <h2 id="service-providers">5. Service Providers</h2>
+      <p>
+        We use a small number of vendors to run the business. They may process your information
+        only to provide their service to us, under contract, and may not use it for their own
+        purposes or disclose it to anyone else:
+      </p>
+      <ul>
+        <li>
+          <strong>Customer messaging and scheduling platform.</strong> Hosts our quote form, chat
+          window, customer records, and our phone and text messaging. This is the platform through
+          which our text messages are sent and received.
+        </li>
+        <li>
+          <strong>Telecommunications carriers.</strong> Deliver calls and text messages between us
+          and you. Carriers handle message traffic as part of delivering it.
+        </li>
+        <li>
+          <strong>Website hosting.</strong> Serves the pages of this site and keeps standard server
+          logs.
+        </li>
+        <li>
+          <strong>Mapping.</strong> The map embedded on our contact page is served by Google, which
+          may collect data as described in its own privacy policy.
+        </li>
+        <li>
+          <strong>Payment processing and accounting.</strong> Handle invoices and payments. We do
+          not store full payment card numbers ourselves.
+        </li>
+      </ul>
+      <p>
+        These vendors are processors acting for us, not independent recipients of your data.
+        Engaging them is not a sale or a sharing of your information, and, as stated in Section 3,
+        none of them is permitted to use your phone number or your text message consent for
+        anything other than delivering our own communications to you.
+      </p>
+
+      <h2 id="retention">6. How Long We Keep Information</h2>
+      <ul>
+        <li>
+          <strong>Estimate requests that never became jobs:</strong> up to two years, then deleted.
+        </li>
+        <li>
+          <strong>Customer and job records, including invoices:</strong> at least four years, to
+          meet Texas tax and recordkeeping requirements and to support warranty and insurance
+          claims.
+        </li>
+        <li>
+          <strong>Text message consent and opt-out records:</strong> kept for as long as we hold
+          your number and for at least four years after, because messaging rules require us to be
+          able to prove both that you consented and that we honored your opt-out. This is the one
+          category we keep after you opt out, and we keep it specifically so that you are not
+          texted again.
+        </li>
+        <li>
+          <strong>Server logs:</strong> typically 30 to 90 days.
+        </li>
+      </ul>
+
+      <h2 id="security">7. How We Protect Information</h2>
+      <p>
+        This website is served only over an encrypted HTTPS connection, and information you submit
+        through our form or chat is encrypted in transit. Customer records are held in
+        password-protected, access-controlled accounts on our messaging and scheduling platform,
+        and access is limited to the owner and the staff who need it to do their jobs. We review
+        who has access when someone joins or leaves. No method of transmission or storage is
+        completely secure, and we cannot guarantee absolute security, but if a breach affecting
+        your personal information occurs we will notify you and the Texas Attorney General as
+        required by Texas Business and Commerce Code Chapter 521.
+      </p>
+
+      <h2 id="your-rights">8. Your Choices and Your Rights</h2>
+      <p>Regardless of where you live, you may at any time:</p>
+      <ul>
+        <li>reply <strong>STOP</strong> to any text message to stop all further texts from us;</li>
+        <li>ask us to stop calling or emailing you;</li>
+        <li>ask us for a copy of the information we hold about you;</li>
+        <li>ask us to correct information that is wrong; or</li>
+        <li>
+          ask us to delete your information, subject to the records we are required to keep under
+          Section 6.
+        </li>
+      </ul>
+      <p>
+        <strong>Texas residents.</strong> Under the Texas Data Privacy and Security Act you have
+        the right to confirm whether we process your personal data, to access it, to correct it, to
+        delete it, to obtain a portable copy, and to opt out of targeted advertising, the sale of
+        personal data, and profiling with legal effects. <strong>We do not sell personal data, do
+        not process it for targeted advertising, and do not profile anyone,</strong> so those
+        opt-outs have nothing to apply to, but the right exists and we will confirm that in writing
+        on request. To exercise any right, contact us using Section 11. We will verify your request
+        by matching the details you give us against our records and will respond within 45 days,
+        with one 45-day extension if reasonably necessary. There is no charge for the first
+        request in a 12-month period. If we deny a request you may appeal by replying to our
+        decision, and we will respond to the appeal within 60 days; if the appeal is denied you may
+        submit a complaint to the Texas Attorney General at
+        {' '}<a href="https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint" rel="noopener">texasattorneygeneral.gov</a>.
+      </p>
+      <p>
+        <strong>Residents of other states.</strong> If you live in a state with a comprehensive
+        privacy law, such as California, Colorado, Connecticut, or Virginia, we will honor the
+        equivalent rights that law gives you. Because we do not sell personal information or share
+        it for cross-context behavioral advertising, we have no &ldquo;Do Not Sell or Share My
+        Personal Information&rdquo; process to offer; the answer is that we do not do it.
+      </p>
+
+      <h2 id="children">9. Children</h2>
+      <p>
+        This website and our services are directed to property owners and managers, not to
+        children. We do not knowingly collect personal information from anyone under 13. If you
+        believe a child has given us information, contact us and we will delete it.
+      </p>
+
+      <h2 id="third-party-links">10. Links to Other Sites</h2>
+      <p>
+        This site links to outside resources, such as the Texas A&amp;M Forest Service. We do not
+        control those sites and are not responsible for their privacy practices. This policy covers
+        only {legalName}.
+      </p>
+
+      <h2 id="contact">11. How to Contact Us</h2>
+      <p>
+        For any privacy question, to exercise a right described above, or to be removed from our
+        contact lists:
+      </p>
+      <address class="nap-block">
+        <strong>{legalName}</strong><br />
+        {postalLine}<br />
+        Email: <a href={`mailto:${b.legal.email}`}>{b.legal.email}</a>
+        {hasPhone && <Fragment><br />Phone: <a href={telHref}>{b.phoneDisplay}</a></Fragment>}
+      </address>
+      <p>
+        We answer privacy requests within 45 days, and we act on requests to stop contacting you
+        immediately.
+      </p>
+
+      <h2 id="changes">12. Changes to This Policy</h2>
+      <p>
+        If we change how we handle personal information we will post the revised policy here and
+        update the effective date at the top. We will not apply a materially different practice to
+        information we already hold without telling you first. In particular, we will never amend
+        this policy to permit the sale or sharing of mobile phone numbers or text message consent;
+        that commitment in Section 3 is permanent.
+      </p>
+      <p class="legal__date">Last updated: {b.legal.effectiveDate}</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Long-form legal copy: the site's body scale is set for marketing
+     paragraphs, so lists and sub-headings need explicit rhythm here or
+     twelve sections run together into a wall. */
+  .legal h2 { margin-top: 2.5rem; }
+  .legal h3 { margin-top: 1.75rem; font-size: 1.05rem; }
+  .legal ul { margin: 0 0 1.25rem 1.25rem; max-width: 68ch; }
+  .legal li { margin-bottom: 0.6rem; }
+  .legal address { margin-bottom: 1.5rem; font-style: normal; }
+  .legal__date { margin-top: 2.5rem; font-size: 0.9rem; color: var(--c-ink-soft); }
+</style>

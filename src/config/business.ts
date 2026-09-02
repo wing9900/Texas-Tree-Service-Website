@@ -102,6 +102,37 @@ export const business = {
     redirectUrl: '',    // optional thank-you page URL after submit
   },
 
+  // ── Legal / compliance ────────────────────────────────────────────
+  // Feeds /privacy-policy/ and /terms-and-conditions/. These two pages
+  // are what carriers open when they review the toll-free SMS
+  // verification, so every value here has to be REAL before submitting.
+  legal: {
+    // Registered entity name. Toll-free verification rejects when the
+    // name on the site does not match the business registration
+    // (error 30484) or the DBA filing (30488). Leave '' to fall back to
+    // `name` above — only correct if the brand IS the registered name.
+    legalName: '',                        // e.g. 'Conroe Tree Co. LLC'
+    // Contact mailbox for privacy/legal requests. MUST be on the site's
+    // own domain — carriers reject gmail/yahoo/outlook addresses
+    // (error 30482). Create this mailbox before launch; it has to
+    // actually receive mail, because opt-out and data requests land here.
+    email: 'office@conroetreeco.com',
+    // Optional postal line for the policies. '' renders the city/state/zip
+    // from `address` above, which is correct for a service-area business.
+    mailingAddress: '',
+    // Last substantive revision, shown at the top of both policies.
+    effectiveDate: 'September 2, 2026',
+    // The messaging program as it is described to consumers and on the
+    // toll-free verification form. Keep these three in sync with the
+    // opt-in checkbox wording in the GHL form (error 30507: opt-in text
+    // must match the stated use case).
+    sms: {
+      programName: 'Conroe Tree Co. Customer Care',
+      // Plain-English frequency estimate. Never say "unlimited".
+      frequency: 'Message frequency varies; most customers receive fewer than 10 messages per month',
+    },
+  },
+
   // ── SEO ───────────────────────────────────────────────────────────
   seo: {
     // Homepage title formula (Rule 17): [Primary category] + [City, ST] + [Brand]
@@ -122,3 +153,15 @@ export const business = {
 // Convenience strings used across templates
 export const cityState = `${business.address.city}, ${business.address.stateAbbr}`;
 export const telHref = `tel:${business.phone}`;
+
+// Placeholder-safe accessors. Config ships [BRACKETED] values until the
+// real number is issued; anything user-facing must gate on these so a
+// bracket can never render on a live page (least of all on a legal page
+// a carrier reviewer is reading).
+export const hasPhone = !business.phone.includes('[') && !business.phoneDisplay.includes('[');
+export const legalName = business.legal.legalName || business.name;
+export const postalLine =
+  business.legal.mailingAddress ||
+  [business.address.street, `${business.address.city}, ${business.address.stateAbbr} ${business.address.zip}`]
+    .filter(Boolean)
+    .join(', ');

@@ -1,0 +1,335 @@
+---
+/**
+ * TERMS AND CONDITIONS — service terms plus the standalone SMS Terms
+ * that toll-free verification requires (rejection code 30522: "publish
+ * compliant SMS terms and conditions"). The #sms-terms anchor is the
+ * URL to hand a carrier reviewer, and it is linked from the opt-in
+ * checkbox and from the privacy policy.
+ *
+ * Section 13 must keep ALL of these, because a reviewer checks for each
+ * one individually: program name · who the sender is · what kinds of
+ * messages · message frequency · "message and data rates may apply" ·
+ * HELP keyword and what it returns · STOP keyword and every alias ·
+ * "consent is not a condition of purchase" (code 30505) · carriers are
+ * not liable for undelivered messages · link to the privacy policy.
+ * Deleting any one of them is enough to fail the review.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { business as b, cityState, telHref, hasPhone, legalName, postalLine } from '../config/business';
+
+const title = `Terms and Conditions | ${b.name} | ${cityState}`;
+const description = `Service terms, estimate and payment terms, and the SMS text messaging terms for ${b.name} in ${cityState}. Reply STOP to opt out, HELP for help.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="hero">
+    <div class="container">
+      <h1>Terms and Conditions</h1>
+      <p class="hero__sub">The terms that govern this website, our estimates and tree work, and our text messages. Effective {b.legal.effectiveDate}.</p>
+    </div>
+  </section>
+
+  <section class="section legal">
+    <div class="container">
+      <p class="lead">
+        These Terms and Conditions are an agreement between you and
+        {' '}{legalName}{legalName !== b.name && <Fragment> (&ldquo;{b.name}&rdquo;)</Fragment>},
+        a tree care company serving {cityState} and the surrounding communities. By using this
+        website, requesting an estimate, hiring us, or exchanging text messages with us, you agree
+        to them. If you do not agree, please do not use the site or our services. Our
+        {' '}<a href="/privacy-policy/">Privacy Policy</a> is part of these terms.
+      </p>
+      <p>
+        Looking for the text messaging rules? Go straight to
+        {' '}<a href="#sms-terms">Section 13, SMS Terms and Conditions</a>.
+      </p>
+
+      <h2 id="use-of-site">1. Use of This Website</h2>
+      <p>
+        You may use this site to learn about our services and to request an estimate. You may not
+        use it to send unlawful, threatening, or fraudulent messages, to scrape or harvest contact
+        information, to submit requests on someone else&rsquo;s behalf without their permission, or
+        to interfere with the operation of the site. We may refuse service to anyone.
+      </p>
+
+      <h2 id="information-accuracy">2. Information on This Site Is Not a Quote</h2>
+      <p>
+        Service descriptions, service areas, and any general guidance published here are for
+        information only. They are not an offer, a price, or an arborist&rsquo;s opinion about your
+        particular tree. No price exists until we put one in writing for your property. We work to
+        keep this site accurate but do not warrant that every detail is current or error-free, and
+        we may change our services, coverage area, and content at any time.
+      </p>
+
+      <h2 id="estimates">3. Estimates</h2>
+      <p>
+        Estimates are free and are provided in writing before any work begins. An estimate lists
+        the work to be performed and the price for that work. It is valid for 30 days unless it
+        says otherwise, and it becomes a contract only when you accept it. Verbal quotes are not
+        binding.
+      </p>
+
+      <h2 id="scope-changes">4. Scope, Hidden Conditions, and Change Orders</h2>
+      <p>
+        Trees hide their defects. If, after work begins, we find internal decay, embedded metal,
+        unmarked utility lines, unstable soil, buried structures, wasp or bee colonies, or any
+        other condition that materially changes the work or the risk, we will stop, tell you what
+        we found, and give you a revised price in writing. No additional charge applies unless you
+        approve it. If you decline the revision, you owe only the work performed to that point.
+      </p>
+
+      <h2 id="access">5. Property Access and Your Responsibilities</h2>
+      <p>By hiring us, you confirm that:</p>
+      <ul>
+        <li>
+          you own the property or are authorized to approve work on it, and the trees to be worked
+          on are on your property;
+        </li>
+        <li>
+          you have told us about any known underground utilities, septic systems, sprinkler lines,
+          drain fields, invisible fencing, or property line disputes;
+        </li>
+        <li>
+          you will provide clear access for trucks, chippers, and equipment on the scheduled day,
+          and will move vehicles, and secure pets and children away from the work area; and
+        </li>
+        <li>
+          you are responsible for obtaining any permit, homeowners association approval, or
+          neighbor consent that your property requires, unless we have agreed in writing to obtain
+          it for you.
+        </li>
+      </ul>
+      <p>
+        Heavy equipment on soft ground can leave ruts and can affect lawns, driveways, walkways,
+        and irrigation components, even when operated carefully. We take reasonable care and we
+        clean up, but normal surface impact of this kind is not damage we can avoid entirely.
+      </p>
+
+      <h2 id="scheduling">6. Scheduling, Weather, and Emergencies</h2>
+      <p>
+        Scheduled dates are targets, not guarantees. Tree work is weather-dependent, and storms
+        move the whole schedule; we will keep you informed when a date moves. Emergency work, such
+        as a tree on a structure or blocking access, is prioritized ahead of routine work, which
+        may delay routine jobs. If you need to cancel or reschedule, tell us as far ahead as you
+        can. We may charge a reasonable fee for a cancellation made after a crew has been
+        dispatched to your property.
+      </p>
+
+      <h2 id="payment">7. Payment</h2>
+      <p>
+        Payment is due on completion of the work unless the written estimate states other terms. We
+        do not take a deposit for routine work. Invoices unpaid 30 days after completion may accrue
+        interest at the lower of 1.5% per month or the maximum rate allowed by Texas law, and you
+        agree to pay the reasonable costs, including attorney&rsquo;s fees, of collecting a past-due
+        balance. Texas law gives contractors lien rights for unpaid work, and we reserve them.
+      </p>
+
+      <h2 id="workmanship">8. Workmanship and What We Do Not Warrant</h2>
+      <p>
+        We warrant that our work will be performed in a workmanlike manner, that pruning will
+        follow ANSI A300 standards, and that we will correct defective workmanship reported to us
+        within 30 days of completion. We cannot and do not warrant the biological outcome for any
+        living tree. Trees are living organisms exposed to weather, disease, insects, drought, and
+        soil conditions we do not control. We do not guarantee that a trimmed tree will survive,
+        that a treated tree will recover, that a preserved tree will not later fail, or that a
+        ground stump will not regrow suckers. Except as stated in this section, and to the fullest
+        extent Texas law allows, we disclaim all other warranties, express or implied, including
+        implied warranties of merchantability and fitness for a particular purpose.
+      </p>
+
+      <h2 id="insurance">9. Insurance</h2>
+      <p>
+        We carry general liability insurance and, where required, workers&rsquo; compensation
+        coverage. A certificate of insurance is available on request before work begins. Damage
+        caused by our negligence should be reported to us in writing within seven days of the work
+        so we can inspect it and involve our insurer.
+      </p>
+
+      <h2 id="liability">10. Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by Texas law, our total liability arising out of any job is
+        limited to the amount you paid us for that job, and we are not liable for indirect,
+        incidental, consequential, special, or punitive damages, including lost use, lost profits,
+        or diminution in property value. We are not liable for damage caused by conditions you did
+        not disclose, by unmarked underground utilities, by pre-existing defects in the tree or
+        property, by acts of nature including storms and high winds, or by the later failure of a
+        tree we recommended removing and you chose to keep. Nothing in these terms limits liability
+        for gross negligence, willful misconduct, or bodily injury where the law does not permit a
+        limitation.
+      </p>
+
+      <h2 id="indemnity">11. Indemnity</h2>
+      <p>
+        You agree to indemnify and hold us harmless from claims arising out of your breach of these
+        terms, your failure to disclose a known hazard or utility, work performed on property you
+        did not have the authority to authorize, or a permit or approval you were responsible for
+        obtaining and did not obtain.
+      </p>
+
+      <h2 id="force-majeure">12. Events Beyond Our Control</h2>
+      <p>
+        Neither party is responsible for delay or failure to perform caused by events beyond
+        reasonable control, including severe weather, natural disaster, fire, power or
+        communications failure, labor disruption, equipment failure, or government action.
+      </p>
+
+      <h2 id="sms-terms">13. SMS Terms and Conditions</h2>
+      <p class="lead">
+        This section is the complete terms of our text messaging program. It applies to every text
+        message we exchange with you.
+      </p>
+
+      <h3>13.1 Program and sender</h3>
+      <p>
+        The program is <strong>{b.legal.sms.programName}</strong>, operated by {legalName}. Every
+        message we send identifies {b.name} as the sender. We do not send messages on behalf of any
+        other company, and no other company sends messages using our number.
+      </p>
+
+      <h3>13.2 How you opt in</h3>
+      <p>
+        You are added to this program only by your own affirmative action. Consent is given when
+        you check the unchecked consent box on the estimate form on this website, when you send us
+        a text message first, or when you tell us on a call that you would like updates by text and
+        we record that request. We do not add numbers from purchased lists, from public records, or
+        from third parties. The person who consents must be the account holder for the mobile
+        number, or have the account holder&rsquo;s permission, and must be at least 18 years old.
+      </p>
+      <p>
+        <strong>
+          Consent to receive text messages is not a condition of purchase and is not required to
+          receive an estimate or any service from us.
+        </strong>{' '}
+        You can decline and still hire us, and we will simply call or email you instead.
+      </p>
+
+      <h3>13.3 What kinds of messages we send</h3>
+      <p>
+        Messages relate to your own inquiry or job. They include replies to your questions,
+        confirmation that we received your estimate request, scheduling and appointment
+        confirmations, reminders the day before a scheduled visit, crew arrival and delay notices,
+        follow-up after the work is finished, and invoice and payment notifications. Examples of
+        the messages we send:
+      </p>
+      <ul>
+        <li>
+          &ldquo;{b.name}: Thanks for your request. Can we come look at the pine over your garage
+          Thursday between 9 and 11? Reply Y to confirm. Reply STOP to opt out, HELP for help.&rdquo;
+        </li>
+        <li>
+          &ldquo;{b.name}: Reminder, our crew is scheduled at your property tomorrow between 8 and
+          10 AM. Please move vehicles from the driveway. Reply STOP to opt out.&rdquo;
+        </li>
+        <li>
+          &ldquo;{b.name}: Storms have pushed today&rsquo;s schedule. We now expect to reach you
+          around 2 PM. Reply STOP to opt out.&rdquo;
+        </li>
+      </ul>
+
+      <h3>13.4 Message frequency</h3>
+      <p>
+        {b.legal.sms.frequency}. Frequency depends on your job; a single estimate request generates
+        only a few messages, and an active job generates more.
+      </p>
+
+      <h3>13.5 Cost</h3>
+      <p>
+        <strong>Message and data rates may apply.</strong> We do not charge you anything to receive
+        or send these messages, but your mobile carrier&rsquo;s standard message and data rates
+        apply according to your plan. Check with your carrier if you are unsure of your rates.
+      </p>
+
+      <h3>13.6 How to stop messages</h3>
+      <p>
+        <strong>
+          Reply STOP to any message from us to cancel. You may also reply END, CANCEL, UNSUBSCRIBE,
+          QUIT, or REVOKE.
+        </strong>{' '}
+        We will send one final message confirming that you have been unsubscribed, and after that
+        we will not send you any further texts. You may also ask us to remove your number by phone
+        or by email using the contact details below. If you opt out and later want messages again,
+        reply START or ask us, and we will re-enroll you.
+      </p>
+
+      <h3>13.7 How to get help</h3>
+      <p>
+        <strong>Reply HELP to any message</strong> and you will receive a reply identifying
+        {' '}{b.name}, our contact details, and how to opt out. You can also reach a person
+        directly:
+      </p>
+      <address class="nap-block">
+        <strong>{legalName}</strong><br />
+        {postalLine}<br />
+        Email: <a href={`mailto:${b.legal.email}`}>{b.legal.email}</a>
+        {hasPhone && <Fragment><br />Phone: <a href={telHref}>{b.phoneDisplay}</a></Fragment>}
+      </address>
+
+      <h3>13.8 Carriers and delivery</h3>
+      <p>
+        Message delivery depends on your mobile carrier&rsquo;s network and is not guaranteed.
+        <strong>
+          Carriers are not liable for delayed or undelivered messages.
+        </strong>{' '}
+        Neither are we responsible for a message that a carrier delays, blocks, or fails to deliver,
+        or for messages missed because your handset was off, out of coverage, or out of storage. If
+        a matter is urgent, call us rather than relying on a text.
+      </p>
+
+      <h3>13.9 Privacy of your number and your consent</h3>
+      <p>
+        <strong>
+          No mobile information will be shared with third parties or affiliates for marketing or
+          promotional purposes. Text messaging originator opt-in data and consent will not be
+          shared with any third parties.
+        </strong>{' '}
+        Your number and your consent record are used only by {legalName} to message you about your
+        own estimate or job, and are handled as described in our
+        {' '}<a href="/privacy-policy/#text-messaging">Privacy Policy</a>.
+      </p>
+
+      <h3>13.10 Changes to the messaging program</h3>
+      <p>
+        We may update these SMS terms. If we materially change what kinds of messages we send, we
+        will obtain your consent again rather than relying on consent you gave for something else.
+      </p>
+
+      <h2 id="governing-law">14. Governing Law and Disputes</h2>
+      <p>
+        These terms are governed by the laws of the State of Texas, without regard to conflict of
+        law rules. Any dispute will be brought exclusively in the state or federal courts located
+        in Montgomery County, Texas, and both parties consent to that venue. Before filing anything,
+        both parties agree to first give the other written notice describing the dispute and 30
+        days to resolve it, and to attempt mediation in Montgomery County in good faith. Nothing
+        here prevents either party from seeking relief in small claims court.
+      </p>
+
+      <h2 id="general">15. General</h2>
+      <p>
+        If any provision of these terms is held unenforceable, the rest remain in force. Our failure
+        to enforce a provision is not a waiver of it. These terms, together with your written
+        estimate and our Privacy Policy, are the entire agreement between us and supersede any
+        prior discussion. You may not assign your rights under an accepted estimate without our
+        written consent.
+      </p>
+
+      <h2 id="terms-changes">16. Changes to These Terms</h2>
+      <p>
+        We may revise these terms and will update the effective date above when we do. Work already
+        accepted is governed by the terms in effect when you accepted the estimate. Continuing to
+        use this site or our services after a change means you accept the revised terms.
+      </p>
+      <p class="legal__date">Last updated: {b.legal.effectiveDate}</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Matches /privacy-policy/ — see the note there on why long-form legal
+     copy needs its own rhythm on top of the marketing body scale. */
+  .legal h2 { margin-top: 2.5rem; }
+  .legal h3 { margin-top: 1.75rem; font-size: 1.05rem; }
+  .legal ul { margin: 0 0 1.25rem 1.25rem; max-width: 68ch; }
+  .legal li { margin-bottom: 0.6rem; }
+  .legal address { margin-bottom: 1.5rem; font-style: normal; }
+  .legal__date { margin-top: 2.5rem; font-size: 0.9rem; color: var(--c-ink-soft); }
+</style>
