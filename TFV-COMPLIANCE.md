@@ -43,24 +43,30 @@ partners — a single such sentence fails the review (30520).
 These are not policy problems. They are on the live site right now and a
 reviewer opens the live site.
 
-### 2.1 The site shows no phone number (code 30492, 30473)
+### 2.1 ~~The site shows no phone number~~ — RESOLVED (code 30492, 30473)
 
-`src/config/business.ts` still has:
+`src/config/business.ts` now carries a real number, and every call button,
+the header, the footer NAP, and the LocalBusiness schema pick it up from
+that one field:
 
 ```
-phone: '[PENDING-TWILIO-E164]'
-phoneDisplay: '[PENDING 936 TRACKING NUMBER]'
+phone: '+19169942497'
+phoneDisplay: '(916) 994-2497'
 ```
 
-Those brackets render in the header, the mobile nav, the sticky call bar,
-the footer, and inside the LocalBusiness schema on **every page**. Code
-30492 is "Missing branding — display company name, logo, and contact
-details." A site whose Call Now button links to `tel:[PENDING-TWILIO-E164]`
-reads as an unfinished template.
+All 191 `tel:` links across the 34 built pages resolve to it, and no
+`[PENDING]` placeholder renders anywhere on the site.
 
-**Fix:** set both fields to the real number before submitting. Use the
-toll-free number being verified, or the tracking number that forwards to
-it — but the number a customer would call must be on the page.
+**One thing to sanity-check before submitting: 916 is a Sacramento,
+California area code.** This is a Conroe, Texas business, the config was
+written expecting a 936 number, and the site, the GBP, and the schema all
+claim Montgomery County. That mismatch is not itself a listed rejection
+code, but reviewers do compare the number against the stated business
+location, and a non-local number on a hyper-local service site invites the
+"is this business real?" question the whole submission is trying to answer.
+It also works against the local-SEO premise of the build. If 916 is a
+deliberate tracking or forwarding number, it will probably pass; if a 936
+number is available, use that instead.
 
 ### 2.2 No business email address anywhere on the site (code 30482)
 
@@ -152,7 +158,7 @@ number's traffic blocked after approval.
 ### HELP (required — code 30486 checks for business name and contact)
 
 ```
-Conroe Tree Co.: For help, call (936) XXX-XXXX or email office@conroetreeco.com. Msg frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe. Terms: conroetreeco.com/terms-and-conditions
+Conroe Tree Co.: For help, call (916) 994-2497 or email office@conroetreeco.com. Msg frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe. Terms: conroetreeco.com/terms-and-conditions
 ```
 
 ### STOP confirmation
@@ -225,7 +231,8 @@ the footer showing the Privacy Policy and Terms links.
 
 ## 6. Pre-submission checklist
 
-- [ ] Real phone number in `business.ts` (`phone` + `phoneDisplay`), site rebuilt and deployed
+- [x] Real phone number in `business.ts` (`phone` + `phoneDisplay`) — **still needs deploying**
+- [ ] Confirm the 916 (Sacramento) area code is intentional for a Conroe, TX business
 - [ ] `office@conroetreeco.com` mailbox created and receiving
 - [ ] `business.legal.legalName` set to the registered entity name
 - [ ] `https://www.conroetreeco.com/privacy-policy/` loads publicly, no login

@@ -37,8 +37,8 @@ export const business = {
     zip: '77301',
     country: 'US',
   },
-  phone: '[PENDING-TWILIO-E164]',            // E.164 for tel: links + schema, e.g. +19365550100
-  phoneDisplay: '[PENDING 936 TRACKING NUMBER]',   // exactly as it will appear on the GBP
+  phone: '+19169942497',                 // E.164 for tel: links + schema
+  phoneDisplay: '(916) 994-2497',        // exactly as it will appear on the GBP
 
   // ── Geo + service area ────────────────────────────────────────────
   geo: { lat: 30.3118769, lng: -95.4560512 },  // Conroe city center; replace with GBP pin once verified
