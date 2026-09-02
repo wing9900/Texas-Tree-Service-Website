@@ -29,15 +29,16 @@ const description = `Call ${b.name} at ${b.phoneDisplay} or send a quick request
     <div class="container split">
       <div>
         <h2>Prefer to Send Details?</h2>
-        {/* GHL (LeadConnector) quote form. The wrapper's height starts at
-            the widget's own data-height and form_embed.js resizes it live
-            via postMessage once the iframe loads, so a taller/shorter form
-            in GHL updates the page automatically -- nothing to touch here. */}
+        {/* GHL (LeadConnector) quote form. No `height:100%` on the iframe
+            and no fixed height on the wrapper: form_embed.js writes the
+            loaded form's real height onto iframe.style.height, and the
+            auto-height wrapper hugs it. A taller/shorter form in GHL then
+            updates the page by itself -- nothing to touch here. */}
         <div class="quote-form-embed">
           <iframe
-            src="https://api.leadconnectorhq.com/widget/form/IOj05Ci2FjifEoSyWk4o"
-            style="width:100%;height:100%;border:none;border-radius:8px"
-            id="inline-IOj05Ci2FjifEoSyWk4o"
+            src="https://api.leadconnectorhq.com/widget/form/lVpPEmDHvnyLuJHiyCIS"
+            style="width:100%;border:none;border-radius:8px"
+            id="inline-lVpPEmDHvnyLuJHiyCIS"
             data-layout="{'id':'INLINE'}"
             data-trigger-type="alwaysShow"
             data-trigger-value=""
@@ -46,9 +47,9 @@ const description = `Call ${b.name} at ${b.phoneDisplay} or send a quick request
             data-deactivation-type="neverDeactivate"
             data-deactivation-value=""
             data-form-name="Form 0"
-            data-height="963"
-            data-layout-iframe-id="inline-IOj05Ci2FjifEoSyWk4o"
-            data-form-id="IOj05Ci2FjifEoSyWk4o"
+            data-height="1024"
+            data-layout-iframe-id="inline-lVpPEmDHvnyLuJHiyCIS"
+            data-form-id="lVpPEmDHvnyLuJHiyCIS"
             data-cookie-consent="true"
             data-cookie-consent-provider="auto"
             title="Form 0"

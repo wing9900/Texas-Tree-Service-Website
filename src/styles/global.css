@@ -1036,7 +1036,15 @@ html:has(.lightbox:popover-open) body { overflow: hidden; touch-action: none; }
    GHL (LeadConnector) embed. The iframe is height:100%, so the wrapper
    needs a real starting height -- matches the widget's own data-height;
    form_embed.js resizes both live via postMessage once it loads. */
-.quote-form-embed { height: 963px; max-height: 80vh; }
+/* The wrapper HUGS the form. form_embed.js writes the loaded form's real
+   height straight onto iframe.style.height, so the wrapper has to be auto
+   for that to have any effect -- the old fixed height + `max-height: 80vh`
+   clamped the wrapper at 576px on a 720px-tall viewport while the iframe
+   sized itself to ~1000px, overflowing the wrapper by 400px and spilling
+   over the section below it. The iframe's height here is only the
+   pre-load placeholder, matched to the widget's own data-height. */
+.quote-form-embed { height: auto; }
+.quote-form-embed iframe { display: block; width: 100%; height: 1024px; }
 .quote-form { display: flex; flex-direction: column; gap: 0.25rem; }
 .quote-form__label {
   font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
