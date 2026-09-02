@@ -81,19 +81,65 @@ legal: { email: 'office@conroetreeco.com', … }
 it receives mail — opt-out requests and privacy requests are directed there
 by both policy pages. Use the same address on the verification form.
 
-### 2.3 The GHL form's own policy links point at example.com (code 30493, 30509)
+### 2.3 ~~The GHL form's policy links point at example.com~~ — RESOLVED
 
-The embedded quote form (`IOj05Ci2FjifEoSyWk4o`) ends with:
-
-```html
-<a href="https://www.example.com">Privacy Policy</a> |
-<a href="https://www.example.com">Terms of Service</a>
-```
-
-A reviewer clicks these. **Fix in the HighLevel form builder:**
+The site now embeds form `lVpPEmDHvnyLuJHiyCIS`, whose footer links are
+already correct (verified against the live form):
 
 - Privacy Policy → `https://www.conroetreeco.com/privacy-policy/`
 - Terms of Service → `https://www.conroetreeco.com/terms-and-conditions/`
+
+### 2.3b NEW BLOCKER — the new form's consent text bundles marketing (codes 30504, 30507)
+
+The replacement form changed the consent wording to:
+
+> By checking this box, I consent to receive SMS text messages from Conroe
+> Tree Company, including service updates **and promotional marketing
+> messages**. Message frequency varies. Message and data rates may apply.
+> Reply STOP to opt out.
+
+This is a regression against the previous form, which said
+"non-marketing," and it breaks the submission two ways:
+
+1. **Code 30504 — separate opt-ins required for different use cases.** One
+   checkbox covering both transactional service updates and promotional
+   marketing is a recognised rejection. Carriers want marketing consent
+   collected separately from service consent.
+2. **Code 30507 — opt-in must match the declared use case.** The pack tells
+   you to submit as Customer Care (§5). A consent box promising promotional
+   marketing contradicts that. Submitting as Marketing instead draws
+   heavier scrutiny on a toll-free number and contradicts the published
+   SMS Terms.
+
+It also directly contradicts the live site: `/terms-and-conditions/`
+§13.3 states messages are replies, scheduling, reminders, arrival notices,
+follow-ups and invoices — no promotional category. A reviewer comparing
+the opt-in box against the published terms sees the conflict.
+
+**Fix (pick one):**
+
+- **Recommended:** edit the checkbox in the GHL form builder back to
+  non-marketing wording — use the text in §3 below — and submit as Customer
+  Care. Nothing on the site needs to change.
+- **If promotional texts are genuinely wanted:** add a *second*, separate
+  optional checkbox for marketing, keep the first one non-marketing, and
+  tell me — §13.3 of the SMS Terms then needs a promotional category added
+  so the published terms and the opt-in agree.
+
+### 2.3c The "Submission in progress" popup is a GHL setting, not site code
+
+The modal reading "You have an unfinished submission. Would you like to
+continue?" is HighLevel's Save Progress feature. Typing into the form
+writes `form_progress_lVpPEmDHvnyLuJHiyCIS` to localStorage on the
+`api.leadconnectorhq.com` origin (confirmed by inspection); on the next
+load the form offers to resume it. It is rendered inside the GHL iframe
+and cannot be disabled from this repo.
+
+**Fix:** in the GHL form builder, open the form's **Settings** tab and turn
+**OFF** the **"Save exit confirmation"** toggle.
+
+To stop seeing it on your own machine right now, clear site data for
+`api.leadconnectorhq.com` (or delete that one localStorage key).
 
 ### 2.4 The business name is inconsistent (codes 30484, 30506, 30488)
 
@@ -238,7 +284,9 @@ the footer showing the Privacy Policy and Terms links.
 - [ ] `https://www.conroetreeco.com/privacy-policy/` loads publicly, no login
 - [ ] `https://www.conroetreeco.com/terms-and-conditions/` loads publicly, no login
 - [ ] Footer shows both links on every page
-- [ ] GHL form policy links no longer point to example.com
+- [x] GHL form policy links no longer point to example.com — correct on the new form
+- [ ] Consent checkbox no longer promises "promotional marketing messages" (see 2.3b)
+- [ ] "Save exit confirmation" toggled OFF in the form's Settings tab (see 2.3c)
 - [ ] GHL consent checkbox text replaced (§3), unchecked, optional
 - [ ] GHL SMS workflow filters on the consent field
 - [ ] HELP and STOP auto-replies configured (§4)
