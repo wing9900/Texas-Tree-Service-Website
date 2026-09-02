@@ -112,11 +112,17 @@ export const business = {
     // (error 30484) or the DBA filing (30488). Leave '' to fall back to
     // `name` above — only correct if the brand IS the registered name.
     legalName: '',                        // e.g. 'Conroe Tree Co. LLC'
-    // Contact mailbox for privacy/legal requests. MUST be on the site's
-    // own domain — carriers reject gmail/yahoo/outlook addresses
-    // (error 30482). Create this mailbox before launch; it has to
-    // actually receive mail, because opt-out and data requests land here.
-    email: 'office@conroetreeco.com',
+    // Contact mailbox for privacy/legal requests, published on both policy
+    // pages. It has to actually receive mail — opt-out and data requests
+    // land here.
+    //
+    // NOTE: toll-free verification error 30482 rejects free webmail for
+    // the business contact and expects an address on the business's own
+    // domain. This is deliberately set to a Gmail address per the owner's
+    // instruction. The domain-matched alternative is to point
+    // office@conroetreeco.com at this same inbox and publish that instead
+    // — same mail, no 30482 exposure.
+    email: 'aiyana0098@gmail.com',
     // Optional postal line for the policies. '' renders the city/state/zip
     // from `address` above, which is correct for a service-area business.
     mailingAddress: '',

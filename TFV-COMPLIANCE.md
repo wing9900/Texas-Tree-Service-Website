@@ -68,18 +68,29 @@ It also works against the local-SEO premise of the build. If 916 is a
 deliberate tracking or forwarding number, it will probably pass; if a 936
 number is available, use that instead.
 
-### 2.2 No business email address anywhere on the site (code 30482)
+### 2.2 The published contact email is a Gmail address (code 30482)
 
-Carriers reject free webmail (gmail/yahoo/outlook) for the business contact
-and expect a domain-matched address. `src/config/business.ts` now has:
+`src/config/business.ts` now publishes, on both policy pages:
 
 ```
-legal: { email: 'office@conroetreeco.com', … }
+legal: { email: 'aiyana0098@gmail.com', … }
 ```
 
-**Fix:** create that mailbox on the `conroetreeco.com` domain and make sure
-it receives mail — opt-out requests and privacy requests are directed there
-by both policy pages. Use the same address on the verification form.
+Set at the owner's instruction. Be aware of the exposure: **rejection code
+30482 is "Email must use business domain, not Gmail/Yahoo."** It is applied
+to the business contact on the verification submission, and a reviewer who
+opens the policy pages sees the same free-webmail address as the
+business's published contact.
+
+**The cheap fix, if you want it:** create `office@conroetreeco.com` as a
+*forwarding alias* on the domain you already own, pointing at
+`aiyana0098@gmail.com`. Mail still lands in the same Gmail inbox, nothing
+changes operationally, and the address on the site and on the submission
+is domain-matched. Say the word and I will switch the config back.
+
+Whichever address is published here must be the one used on the
+verification form, and it must actually receive mail — opt-out and privacy
+requests are directed to it by both policy pages.
 
 ### 2.3 ~~The GHL form's policy links point at example.com~~ — RESOLVED
 
@@ -204,7 +215,7 @@ number's traffic blocked after approval.
 ### HELP (required — code 30486 checks for business name and contact)
 
 ```
-Conroe Tree Co.: For help, call (916) 994-2497 or email office@conroetreeco.com. Msg frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe. Terms: conroetreeco.com/terms-and-conditions
+Conroe Tree Co.: For help, call (916) 994-2497 or email aiyana0098@gmail.com. Msg frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe. Terms: conroetreeco.com/terms-and-conditions
 ```
 
 ### STOP confirmation
@@ -279,7 +290,8 @@ the footer showing the Privacy Policy and Terms links.
 
 - [x] Real phone number in `business.ts` (`phone` + `phoneDisplay`) — **still needs deploying**
 - [ ] Confirm the 916 (Sacramento) area code is intentional for a Conroe, TX business
-- [ ] `office@conroetreeco.com` mailbox created and receiving
+- [ ] `aiyana0098@gmail.com` monitored for opt-out and privacy requests
+- [ ] Decide on 30482: keep Gmail, or publish a domain alias forwarding to it (see 2.2)
 - [ ] `business.legal.legalName` set to the registered entity name
 - [ ] `https://www.conroetreeco.com/privacy-policy/` loads publicly, no login
 - [ ] `https://www.conroetreeco.com/terms-and-conditions/` loads publicly, no login
