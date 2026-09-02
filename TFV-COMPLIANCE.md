@@ -11,6 +11,26 @@ cited inline so each item can be traced back to the rule it satisfies.
 
 ---
 
+## 0. The decision: SERVICE MESSAGES ONLY
+
+This submission goes in as **Customer Care / non-marketing**. No promotional
+or reactivation texts. That is the shorter path to approval: marketing use
+cases require written-only consent, separately selectable opt-ins per
+message type, and screenshot evidence for each — every one of them an extra
+way to be rejected.
+
+The site already matches this decision. `/terms-and-conditions/` §13
+describes a service-only program and the word "promotional" appears
+nowhere on it except inside the no-sharing sentence. **Nothing on the
+website needs to change.** The remaining work is all in HighLevel.
+
+Demoing a reactivation flow to your own phone does not change this. You
+consented, you are the recipient, and no third party is involved.
+
+If marketing is added later it means: a second, independently selectable
+checkbox; new sample messages and a promotional category in Terms §13.3;
+and re-verification of the number under the broader use case.
+
 ## 1. What is already done (in this repo)
 
 | Item | Where | Rejection code it closes |
@@ -24,6 +44,8 @@ cited inline so each item can be traced back to the rule it satisfies.
 | "Carriers are not liable for delayed or undelivered messages" | T&C §13.8 | — (CTIA 5.1) |
 | Message frequency + "message and data rates may apply" | T&C §13.4, §13.5 | — (CTIA 5.1) |
 | Sample messages matching the use case | T&C §13.3 | 30499 |
+| Company name, logo, phone and email on every page | `Header`/`Footer`/`MapNAP` | 30492 |
+| No `[PENDING]` placeholders anywhere in the served HTML | — | 30473, 30492 |
 
 The **exact sentences** carrier reviewers search for are these two, and they
 appear on both pages:
@@ -100,42 +122,21 @@ already correct (verified against the live form):
 - Privacy Policy → `https://www.conroetreeco.com/privacy-policy/`
 - Terms of Service → `https://www.conroetreeco.com/terms-and-conditions/`
 
-### 2.3b NEW BLOCKER — the new form's consent text bundles marketing (codes 30504, 30507)
+### 2.3b BLOCKER — the consent checkbox promises marketing (codes 30504, 30507)
 
-The replacement form changed the consent wording to:
+The form's checkbox currently reads:
 
 > By checking this box, I consent to receive SMS text messages from Conroe
 > Tree Company, including service updates **and promotional marketing
-> messages**. Message frequency varies. Message and data rates may apply.
-> Reply STOP to opt out.
+> messages**. …
 
-This is a regression against the previous form, which said
-"non-marketing," and it breaks the submission two ways:
+Per §0 this is wrong on two counts: one checkbox covering both
+transactional and promotional messages is code 30504, and promising
+marketing while declaring Customer Care is code 30507. It also contradicts
+the published Terms §13.3, which lists no promotional category.
 
-1. **Code 30504 — separate opt-ins required for different use cases.** One
-   checkbox covering both transactional service updates and promotional
-   marketing is a recognised rejection. Carriers want marketing consent
-   collected separately from service consent.
-2. **Code 30507 — opt-in must match the declared use case.** The pack tells
-   you to submit as Customer Care (§5). A consent box promising promotional
-   marketing contradicts that. Submitting as Marketing instead draws
-   heavier scrutiny on a toll-free number and contradicts the published
-   SMS Terms.
-
-It also directly contradicts the live site: `/terms-and-conditions/`
-§13.3 states messages are replies, scheduling, reminders, arrival notices,
-follow-ups and invoices — no promotional category. A reviewer comparing
-the opt-in box against the published terms sees the conflict.
-
-**Fix (pick one):**
-
-- **Recommended:** edit the checkbox in the GHL form builder back to
-  non-marketing wording — use the text in §3 below — and submit as Customer
-  Care. Nothing on the site needs to change.
-- **If promotional texts are genuinely wanted:** add a *second*, separate
-  optional checkbox for marketing, keep the first one non-marketing, and
-  tell me — §13.3 of the SMS Terms then needs a promotional category added
-  so the published terms and the opt-in agree.
+**Fix:** replace the wording with the text in §3 below. That is the single
+highest-value change left.
 
 ### 2.3c The "Submission in progress" popup is a GHL setting, not site code
 

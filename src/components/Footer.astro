@@ -87,7 +87,8 @@ const socialLinks = b.sameAs.map((href) => {
         <address class="nap-block">
           {b.address.street && <Fragment>{b.address.street}<br /></Fragment>}
           {b.address.city}, {b.address.stateAbbr} {b.address.zip}<br />
-          <a href={telHref}>{b.phoneDisplay}</a>
+          <a href={telHref}>{b.phoneDisplay}</a><br />
+          <a href={`mailto:${b.legal.email}`}>{b.legal.email}</a>
         </address>
         {socialLinks.length > 0 && (
           <ul class="site-footer__social">

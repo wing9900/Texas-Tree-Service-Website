@@ -37,7 +37,8 @@ const closedDays = WEEK.filter((d) => !covered.has(d));
         <strong>{b.name}</strong><br />
         {b.address.street && <Fragment>{b.address.street}<br /></Fragment>}
         {b.address.city}, {b.address.stateAbbr} {b.address.zip}<br />
-        <a href={telHref}>{b.phoneDisplay}</a>
+        <a href={telHref}>{b.phoneDisplay}</a><br />
+        <a href={`mailto:${b.legal.email}`}>{b.legal.email}</a>
       </address>
       <ul class="hours-list">
         {b.hours.map((h) => (
