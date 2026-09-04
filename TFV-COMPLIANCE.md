@@ -186,17 +186,13 @@ Current text on the form:
 > from Conroe Tree Company. Message & data rates may apply. Reply STOP to
 > opt out.
 
-That is missing HELP, message frequency, the "not a condition of purchase"
-statement, and the policy links — all of which reviewers check for.
-Replace it with this (keep the two links as real hyperlinks):
+That is missing HELP and the "not a condition of purchase" statement, both
+of which reviewers check for. Replace it with this exact text:
 
-> By checking this box, I consent to receive non-marketing text messages
-> from Conroe Tree Co. about my estimate, appointment scheduling, and job
-> updates at the mobile number provided. Consent is not a condition of
-> purchase. Message frequency varies. Message and data rates may apply.
-> Reply HELP for help or STOP to opt out at any time. See our
-> [Privacy Policy](https://www.conroetreeco.com/privacy-policy/) and
-> [SMS Terms](https://www.conroetreeco.com/terms-and-conditions/#sms-terms).
+> By checking this box, I consent to receive text messages and emails from
+> Conroe Tree Co. at the phone number and email provided. Consent is not a
+> condition of purchase. Message and data rates may apply. Reply HELP for
+> help or STOP to opt out at any time.
 
 **Two settings on that field must not change:**
 
@@ -264,11 +260,10 @@ true:
 > https://www.conroetreeco.com/contact/. They enter their name, phone,
 > email, and a description of the tree work needed, then must affirmatively
 > check a consent box that is unchecked by default and reads: "By checking
-> this box, I consent to receive non-marketing text messages from Conroe
-> Tree Co. about my estimate, appointment scheduling, and job updates at
-> the mobile number provided. Consent is not a condition of purchase.
-> Message frequency varies. Message and data rates may apply. Reply HELP
-> for help or STOP to opt out at any time." The box is optional and the
+> this box, I consent to receive text messages and emails from Conroe Tree
+> Co. at the phone number and email provided. Consent is not a condition of
+> purchase. Message and data rates may apply. Reply HELP for help or STOP
+> to opt out at any time." The box is optional and the
 > form submits without it; customers who decline are contacted by phone or
 > email only. Customers also opt in by texting our published number first,
 > or by verbally asking for text updates during a call, which staff record
