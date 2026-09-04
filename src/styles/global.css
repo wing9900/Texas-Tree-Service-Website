@@ -479,8 +479,25 @@ p:last-child { margin-bottom: 0; }
    the real one (it writes that straight onto iframe.style.height, which
    outranks this rule). display:block kills the inline-element baseline
    gap that would otherwise leave a few px of white under the form. */
-.hero__form-panel .quote-form-embed { width: 100%; height: auto; max-height: none; }
-.hero__form-panel iframe { display: block; width: 100%; height: 880px; }
+/* overflow:hidden makes the wrapper a BFC AND clips the iframe's cropped
+   top -- see the negative margin below. The selector carries .quote-form-embed
+   so it outranks the later `.quote-form-embed iframe { height: 1024px }`
+   rule, which previously won on source order and silently overrode the
+   placeholder height set here. */
+.hero__form-panel .quote-form-embed { width: 100%; height: auto; max-height: none; overflow: hidden; }
+.hero__form-panel .quote-form-embed iframe { display: block; width: 100%; height: 880px; }
+/* The GHL form opens with a 202px image block that repeats the logo already
+   sitting in the site header directly above the card -- 202px of the first
+   screen spent twice on the same mark, and the single biggest reason the
+   form ran past the fold. Pulling the iframe up by exactly that block's
+   height clips it away and shortens the wrapper by the same amount, because
+   the wrapper's height is content-driven. Deliberately NOT transform:
+   scale() -- that is what made the earlier build's form blurry. Nothing is
+   resampled here, so the form stays pixel-sharp, and form_embed.js keeps
+   writing the live form height onto the iframe, so the card still hugs the
+   content exactly. If the logo is ever removed inside the HighLevel form
+   builder (the proper fix), delete this rule with it. */
+.hero__form-panel .quote-form-embed iframe { margin-top: -202px; }
 
 @media (min-width: 48rem) {
   .hero--photo.hero--split { padding-block: 3rem 3.25rem; }
@@ -500,7 +517,7 @@ p:last-child { margin-bottom: 0; }
      the hero is the shortest it can honestly be without shrinking the
      form. On a tall screen it still fills most of the first screen. */
   .hero--photo.hero--split {
-    display: grid; align-content: center; padding-block: 3.25rem;
+    display: grid; align-content: center; padding-block: 2rem;
   }
   /* Form column stays the wider of the two: at ~600px GHL lays Phone and
      Email side by side instead of stacking them, which keeps the card
@@ -533,6 +550,21 @@ p:last-child { margin-bottom: 0; }
   .hero--photo.hero--split .hero__img { object-position: 38% 45%; }
 }
 
+/* ── Wide desktop: widen the form column past the GHL breakpoint ────
+   The embedded form is a FIXED-height document -- it reports the same
+   height to form_embed.js at 560px wide as at 900px -- with one
+   exception: its own ~720px breakpoint, above which Phone and Email sit
+   side by side instead of stacked and the consent paragraph wraps to
+   fewer lines. Measured on the live form: 1030px tall at a 648px column,
+   913px at 740px and wider. So the column has to clear ~740px for that
+   117px to come back, which the old 1.15fr share never did (648px on a
+   1440px screen). A fixed 47rem track for the form with the copy column
+   taking the remainder buys it; below 75rem there is not enough room to
+   give and the ratio above still applies. */
+@media (min-width: 75rem) {
+  .hero--split .container { grid-template-columns: minmax(0, 1fr) minmax(0, 47rem); gap: 2.5rem; }
+}
+
 /* ── Short desktop viewports (laptops) ──────────────────────────────
    Reclaim the hero's OWN whitespace so the whole hero -- headline, CTA
    pair and the complete quote form -- clears the fold without scrolling.
@@ -551,6 +583,15 @@ p:last-child { margin-bottom: 0; }
   .hero--split .container { gap: 2.25rem; }
   .hero--split .hero__benefits { margin-top: 0.6rem; }
   .hero--split .hero__cta { margin-top: 1.1rem; }
+}
+/* Last of the hero's own whitespace. Below roughly this height the form's
+   remaining ~711px plus the sticky header simply exceeds the viewport, and
+   no amount of padding is left to give -- the next reduction has to come
+   from the form itself in the HighLevel builder (a shorter Work Description
+   textarea is the obvious candidate). */
+@media (min-width: 64rem) and (max-height: 48rem) {
+  .hero--photo.hero--split { padding-block: 0.4rem; }
+  .hero--split .container { gap: 2rem; }
 }
 
 /* ── Photo grid (Recent Work entries + About) ──
