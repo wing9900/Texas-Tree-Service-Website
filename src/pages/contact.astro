@@ -11,7 +11,7 @@ import MapNAP from '../components/MapNAP.astro';
 import { business as b, cityState, telHref } from '../config/business';
 
 const title = `Contact ${b.name} | ${b.primaryCategory} in ${cityState}`;
-const description = `Call ${b.name} at ${b.phoneDisplay} or send a quick request online. Free estimates for tree removal, trimming, stump grinding, and storm cleanup in ${cityState}.`;
+const description = `Call ${b.name} or send a quick request online. Free estimates for tree removal, trimming, stump grinding, and storm cleanup in ${cityState}.`;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -20,7 +20,7 @@ const description = `Call ${b.name} at ${b.phoneDisplay} or send a quick request
       <h1>Get a Fast, Free Estimate in {b.address.city}</h1>
       <p class="hero__sub">The quickest way to reach us is a call or text. You'll talk to a real person who can schedule you today.</p>
       <div class="hero__cta">
-        <a class="btn btn--primary" href={telHref}>Call {b.phoneDisplay}</a>
+        <a class="btn btn--primary" href={telHref}>Call Now</a>
       </div>
     </div>
   </section>
@@ -60,7 +60,7 @@ const description = `Call ${b.name} at ${b.phoneDisplay} or send a quick request
       <div>
         <h2>What Happens Next</h2>
         <p>
-          Call or text {b.phoneDisplay} any day of the week and tell us what the
+          Call or text us any day of the week and tell us what the
           tree is doing: leaning, dropping limbs, crowding the roof, or already
           down. You get a free estimate for the work, in writing, with the
           removal, hauling, and cleanup spelled out before anything goes on the

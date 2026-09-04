@@ -260,8 +260,8 @@ const description = `Service terms, estimate and payment terms, and the SMS text
       <address class="nap-block">
         <strong>{legalName}</strong><br />
         {postalLine}<br />
-        Email: <a href={`mailto:${b.legal.email}`}>{b.legal.email}</a>
-        {hasPhone && <Fragment><br />Phone: <a href={telHref}>{b.phoneDisplay}</a></Fragment>}
+        <a href="/contact/">Send us a message</a>
+        {hasPhone && <Fragment><br /><a href={telHref}>Call Now</a></Fragment>}
       </address>
 
       <h3>13.8 Carriers and delivery</h3>
