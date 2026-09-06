@@ -516,13 +516,27 @@ p:last-child { margin-bottom: 0; }
      min-height:auto stands instead, so the content sets the height and
      the hero is the shortest it can honestly be without shrinking the
      form. On a tall screen it still fills most of the first screen. */
+  /* Padding-block is a continuous function of viewport HEIGHT, not the
+     old three stepped tiers, because the thing it has to clear is exact:
+     the sticky header (90px) plus the form card (736px at 41rem) = 826px
+     of fixed, unshrinkable height. Anything left over is ours to spend on
+     breathing room, and the clamp spends exactly that -- full 2rem on a
+     tall screen, tapering to 0 at 832px, so the Submit button lands above
+     the fold on every laptop that can geometrically hold it instead of
+     falling off a step boundary at 896/816/768px. The 832 (not 826) is
+     6px of slack for sub-pixel rounding in the form's reported height. */
   .hero--photo.hero--split {
-    display: grid; align-content: center; padding-block: 2rem;
+    display: grid; align-content: center;
+    padding-block: clamp(0px, (100vh - 832px) / 2, 2rem);
   }
-  /* Form column stays the wider of the two: at ~600px GHL lays Phone and
-     Email side by side instead of stacking them, which keeps the card
-     meaningfully shorter. */
-  .hero--split .container { display: grid; grid-template-columns: 0.85fr 1.15fr; align-items: center; gap: 3rem; }
+  /* Form column is CAPPED, not proportional. A 4-field form stretched to
+     a share of the viewport reads as a wall of over-long inputs -- a name
+     field 700px wide is the single thing that made this hero look cheap.
+     27rem (432px) is a normal lead-card width and is all the room the
+     fields need here; the copy column takes everything left over, so the
+     headline and the photo get the width back. See the 73.75rem rule
+     below for the wider tier. */
+  .hero--split .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 27rem); align-items: center; gap: 3rem; }
   /* The copy column stays centred on desktop rather than switching to
      left-aligned, so the headline sits centred over the CTA pair the way
      it already does at every width below this breakpoint. Centring the
@@ -550,47 +564,63 @@ p:last-child { margin-bottom: 0; }
   .hero--photo.hero--split .hero__img { object-position: 38% 45%; }
 }
 
-/* ── Wide desktop: widen the form column past the GHL breakpoint ────
+/* ── Wide desktop: the narrowest form that still fits the fold ──────
    The embedded form is a FIXED-height document -- it reports the same
-   height to form_embed.js at 560px wide as at 900px -- with one
-   exception: its own ~720px breakpoint, above which Phone and Email sit
-   side by side instead of stacked and the consent paragraph wraps to
-   fewer lines. Measured on the live form: 1030px tall at a 648px column,
-   913px at 740px and wider. So the column has to clear ~740px for that
-   117px to come back, which the old 1.15fr share never did (648px on a
-   1440px screen). A fixed 47rem track for the form with the copy column
-   taking the remainder buys it; below 75rem there is not enough room to
-   give and the ratio above still applies. */
-@media (min-width: 75rem) {
-  .hero--split .container { grid-template-columns: minmax(0, 1fr) minmax(0, 47rem); gap: 2.5rem; }
+   height to form_embed.js across a wide range of widths -- with one
+   exception: its own internal breakpoint, above which Phone and Email
+   sit side by side instead of stacked and the consent paragraph wraps to
+   fewer lines. Re-measured on the live form (the old note here guessed
+   ~720-740px; it is lower than that): stacked and 1055px tall at a 630px
+   column, two-up and 918px tall at 650px. The cliff is ~640px and it is
+   worth 137px of hero height -- the difference between the whole hero
+   clearing the fold and the Submit button sitting below it.
+
+   So 41rem (656px) is not a taste call, it is the floor: the narrowest
+   the card can be while keeping the compact two-up layout, with ~16px of
+   margin over the cliff so a font swap or a copy edit can't tip it. The
+   previous 47rem (752px) cleared the same cliff with 112px to spare and
+   spent all of it on width -- 52% of a 1440px screen for four fields,
+   which is what made the hero read as a form with a caption instead of a
+   headline with a form beside it. Going NARROWER than 41rem does not
+   make the card smaller; it makes it 137px taller and pushes the form
+   past the fold. Do not "tidy" this down to a rounder number.
+
+   The 73.75rem floor (not 75rem) is the width at which 656px of form
+   still leaves the copy column ~440px -- enough for the headline to hold
+   its three lines. Below that the 27rem tier above applies. */
+@media (min-width: 73.75rem) {
+  .hero--split .container { grid-template-columns: minmax(0, 1fr) minmax(0, 41rem); gap: 2.5rem; }
 }
 
 /* ── Short desktop viewports (laptops) ──────────────────────────────
-   Reclaim the hero's OWN whitespace so the whole hero -- headline, CTA
-   pair and the complete quote form -- clears the fold without scrolling.
-   The old build bought the same no-scroll result by scaling the embed to
-   73%, which is what made the form blurry and undersized; giving up our
-   own padding costs nothing and touches the form not at all.
-   Keyed on viewport height, not width, because height is what actually
-   runs out: a 1512x850 laptop and a 1920x1080 desktop are the same width
-   class but not the same problem. */
+   The hero's own padding used to be reclaimed here in three steps; that
+   job now belongs to the padding-block clamp above, which tapers
+   continuously instead of dropping at a boundary. What is left in these
+   tiers is only the COPY column's internal spacing -- the gap between the
+   two columns and the margins inside the left stack. Keyed on viewport
+   height, not width, because height is what actually runs out: a
+   1512x850 laptop and a 1920x1080 desktop are the same width class but
+   not the same problem.
+   Note these tighten the shorter of the two columns, so they buy no fold
+   height on their own once the form card is the taller one -- they keep
+   the left stack from looking loose beside it. */
 @media (min-width: 64rem) and (max-height: 56rem) {
-  .hero--photo.hero--split { padding-block: 1.5rem; }
   .hero--split .hero__cta { margin-top: 1.4rem; }
 }
 @media (min-width: 64rem) and (max-height: 51rem) {
-  .hero--photo.hero--split { padding-block: 0.85rem; }
   .hero--split .container { gap: 2.25rem; }
   .hero--split .hero__benefits { margin-top: 0.6rem; }
   .hero--split .hero__cta { margin-top: 1.1rem; }
 }
-/* Last of the hero's own whitespace. Below roughly this height the form's
-   remaining ~711px plus the sticky header simply exceeds the viewport, and
-   no amount of padding is left to give -- the next reduction has to come
-   from the form itself in the HighLevel builder (a shorter Work Description
-   textarea is the obvious candidate). */
+/* Below roughly this height nothing on our side is left to give: the form
+   card (736px at 41rem) plus the sticky header (90px) is 826px of fixed,
+   unshrinkable height, and the clamp above has already spent the hero's
+   padding down to 0. Measured floor: the hero clears the fold at >=826px
+   of viewport height and cannot below it. The next reduction has to come
+   from the form itself in the HighLevel builder -- the Work Description
+   textarea (~133px) and the consent paragraph (~94px) are the candidates,
+   since a cross-origin iframe can't be trimmed from this stylesheet. */
 @media (min-width: 64rem) and (max-height: 48rem) {
-  .hero--photo.hero--split { padding-block: 0.4rem; }
   .hero--split .container { gap: 2rem; }
 }
 
