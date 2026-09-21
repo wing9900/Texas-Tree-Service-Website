@@ -53,8 +53,9 @@ src/layouts/
 src/components/
   Header.astro               Brand · Menu (mobile) · full number + Free Estimate (desktop) ·
                              CSS-only checkbox nav (zero JS, links always in DOM).
-                             "Areas We Serve" item AUTO-APPEARS when location pages
-                             exist. Sticky at all sizes; mobile nav is a right-aligned
+                             "Service Areas" item is PERMANENT; its href AUTO-SWITCHES
+                             from /service-areas/ to the /locations/ hub when location
+                             pages exist. Sticky at all sizes; mobile nav is a right-aligned
                              overlay dropdown under the Menu button with tap-outside
                              scrim close + glyph flip — all CSS-only, zero JS.
   Footer.astro               NAP + hours from config, quick links.
@@ -89,6 +90,11 @@ src/pages/
                              Service + FAQPage + Breadcrumb schema, deep content
                              body, prose links to siblings/category/home (Rule 16 —
                              no orphans).
+  service-areas.astro        Service Areas page (header nav target pre-Phase-2).
+                             Renders business.serviceAreas — the SAME list that feeds
+                             schema areaServed — so coverage can never drift between
+                             the page and the structured data. No per-town claims and
+                             no thin geo pages; links into the service hub instead.
   locations/index.astro      Areas hub. Towns sort before landmarks. NOINDEX while
                              collection empty.
   locations/[location].astro Dual template: town titles keep their own geo;
@@ -136,7 +142,7 @@ src/styles/global.css        Mobile-first (~375px base; 48rem/64rem scale-ups).
 10. `npm run build` → verify §6 → deploy `dist/`.
 
 **B. Established multi-area client (one address serving a region)**
-Steps 1–5, 7–10 identical, plus: create one town page per genuinely served town (within ~50 miles) from `_TEMPLATE-town.md` AT LAUNCH — the topical-authority gate protects new sites; an aged GBP with reviews/links usually clears it (run a rank map to prioritize weak towns, not to gate). Add every town to `serviceAreas` in `business.ts` (feeds schema areaServed). The Areas We Serve nav item + homepage strip activate automatically. Towns beyond the GBP's realistic radius need a second verified location — never a page.
+Steps 1–5, 7–10 identical, plus: create one town page per genuinely served town (within ~50 miles) from `_TEMPLATE-town.md` AT LAUNCH — the topical-authority gate protects new sites; an aged GBP with reviews/links usually clears it (run a rank map to prioritize weak towns, not to gate). Add every town to `serviceAreas` in `business.ts` (feeds schema areaServed). The homepage strip activates automatically and the Service Areas nav item re-points from `/service-areas/` to the `/locations/` hub on its own. Towns beyond the GBP's realistic radius need a second verified location — never a page.
 
 ## 4. What's mechanically enforced (framework guarantees)
 

@@ -7,8 +7,10 @@
  * nothing (Rule 4).
  *
  * While the locations collection is empty, this page ships with
- * noindex automatically. When Phase 2 begins: add location .md files
- * (from _TEMPLATE.md), and add /locations/ to the Header nav.
+ * noindex automatically, and the header's Service Areas tab points at
+ * /service-areas/ instead. When Phase 2 begins, adding location .md
+ * files (from _TEMPLATE.md) is the whole step — the tab re-points here
+ * on its own, in both the header and the footer.
  */
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';

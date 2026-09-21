@@ -46,8 +46,10 @@ const services = defineCollection({
  *  kind "town"     — mini-hub for a town the business genuinely serves
  *                    (multi-area clients ship these at launch)
  *  kind "landmark" — within-city expansion page (rank-map driven batches)
- * Renders at /locations/[location]/  The Areas We Serve nav item and the
- * homepage service-areas strip appear automatically once entries exist.
+ * Renders at /locations/[location]/  The homepage service-areas strip
+ * appears automatically once entries exist, and the header's permanent
+ * Service Areas tab re-points itself from /service-areas/ to the
+ * /locations/ hub the moment there is a hub worth indexing.
  */
 const locations = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/locations' }),

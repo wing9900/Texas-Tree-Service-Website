@@ -1,0 +1,100 @@
+---
+/**
+ * SERVICE AREAS — the launch-safe answer to "do you come out to my town?".
+ *
+ * Renders business.serviceAreas, the SAME list that feeds areaServed in
+ * the LocalBusiness and Service schema, so the page a visitor reads and
+ * the coverage Google parses can never drift apart (same single-source
+ * rule that keeps NAP consistent — Rule 12).
+ *
+ * This is NOT the /locations/ hub. That stays an empty Phase 2 scaffold
+ * for real per-town pages, which do nothing before topical authority
+ * exists (Rule 4). This page makes no per-town claims and spawns no thin
+ * geo pages: it states coverage once, then routes visitors into the
+ * service pages and the estimate form.
+ */
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import MapNAP from '../components/MapNAP.astro';
+import { business as b, cityState, telHref } from '../config/business';
+
+const categories = (await getCollection('categories')).sort(
+  (a, z) => a.data.order - z.data.order
+);
+
+// Town pages only exist in Phase 2. Until then the area names are plain
+// text — linking them to pages that don't exist is how a nav item turns
+// into a dead end.
+const towns = await getCollection('locations', ({ data }) => data.kind === 'town');
+const townPage = (name: string) =>
+  towns.find((t) => (t.data.shortName ?? t.data.title) === name)?.id;
+
+const title = `Tree Service Areas in ${cityState} | ${b.name}`;
+const description = `The Montgomery County towns ${b.name} covers for tree removal, trimming, and stump grinding — ${b.serviceAreas.slice(0, 3).join(', ')}, and more. Free estimates.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="hero">
+    <div class="container">
+      <h1>Tree Service Areas Around {b.address.city}, {b.address.stateAbbr}</h1>
+      <p class="hero__sub">
+        We're a {b.address.city}-based crew, and we work the towns around it. Here's exactly
+        where our trucks go — no guessing whether we'll drive out to you.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href={telHref}>Call Now</a>
+        <a class="btn btn--outline" href="/contact/">Get a Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Where we work</p>
+      <h2>Towns We Serve</h2>
+      <p class="areas-links">
+        {b.serviceAreas.map((name, i) => {
+          const id = townPage(name);
+          return (
+            <>
+              {id ? <a href={`/locations/${id}/`}>{name}</a> : <span>{name}</span>}
+              {i < b.serviceAreas.length - 1 ? ' · ' : ''}
+            </>
+          );
+        })}
+      </p>
+      <p>
+        That's {b.address.city} itself plus the Montgomery County towns within a comfortable
+        drive of it. Storm work and emergency removals run across the whole list, around
+        the clock.
+      </p>
+      <p>
+        Don't see your town? Call us anyway — if the job is close enough to the edge of this map
+        we'll tell you straight, and if it isn't, we'll say so rather than waste your afternoon.
+        <a href="/contact/">Send us the details</a> or <a href={telHref}>call {b.phoneDisplay}</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <h2>What We Do in Every Area We Serve</h2>
+      <p>
+        The same crew, equipment, and cleanup standard applies everywhere on the list above.
+      </p>
+      <div class="grid grid--3">
+        {categories.map((cat) => (
+          <div class="card card--link">
+            <h3>{cat.data.title}</h3>
+            <p><a href={`/services/${cat.id}/`}>See all {cat.data.title.toLowerCase()} services</a></p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <MapNAP />
+
+  <CTA />
+</BaseLayout>

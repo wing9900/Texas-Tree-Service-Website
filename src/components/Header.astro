@@ -9,7 +9,13 @@
 import { getCollection } from 'astro:content';
 import { business as b, telHref } from '../config/business';
 
+// "Service Areas" is a permanent nav item — coverage is the second thing
+// every caller asks after price, so it never gates on content existing.
+// Only its destination moves: /service-areas/ states the covered towns
+// from config today; the moment Phase 2 ships real town pages, the tab
+// points at the /locations/ hub that indexes them instead (Rule 31).
 const hasAreas = (await getCollection('locations')).length > 0;
+const areasHref = hasAreas ? '/locations/' : '/service-areas/';
 // Nav items for proof pages gate on their proof existing: projects on
 // gallery entries, reviews on a live GBP rating. They reappear on their
 // own the day the data is real — nothing to remember at fill-in time.
@@ -41,7 +47,9 @@ const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/services/">Services</a></li>
-          {hasAreas && <li><a href="/locations/">Areas We Serve</a></li>}
+          {/* Directly after Services: what we do, then where we do it —
+              the pair a visitor scans together before anything else. */}
+          <li><a href={areasHref}>Service Areas</a></li>
           {hasProjects && <li><a href="/projects/">Recent Work</a></li>}
           {hasRating && <li><a href="/testimonials/">Reviews</a></li>}
           <li><a href="/about/">About</a></li>
