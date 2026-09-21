@@ -12,9 +12,6 @@ const year = new Date().getFullYear();
 // projects on gallery entries, reviews on a live GBP rating.
 const hasProjects = (await getCollection('projects')).length > 0;
 const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
-// Same destination rule as the header's Service Areas tab: the config-driven
-// page until Phase 2 town pages exist, then the /locations/ hub.
-const areasHref = (await getCollection('locations')).length > 0 ? '/locations/' : '/service-areas/';
 
 // Collapse only CONTIGUOUS day runs (matches MapNAP.astro) so exception
 // days render as "Mon, Wed–Fri" instead of a contradictory "Mon–Fri".
@@ -128,7 +125,7 @@ const socialLinks = b.sameAs.map((href) => {
         <h3>Quick Links</h3>
         <ul>
           <li><a href="/services/">All Services</a></li>
-          <li><a href={areasHref}>Service Areas</a></li>
+          <li><a href="/service-areas/">Service Areas</a></li>
           {hasProjects && <li><a href="/projects/">Recent Work</a></li>}
           {hasRating && <li><a href="/testimonials/">Customer Reviews</a></li>}
           <li><a href="/about/">About Us</a></li>

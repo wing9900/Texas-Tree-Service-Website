@@ -21,11 +21,11 @@ const towns = (await getCollection('locations', ({ data }) => data.kind === 'tow
       <h2>Proudly Serving {b.address.city} and the Surrounding Region</h2>
       <p class="areas-links">
         {towns.map((t, i) => (
-          <><a href={`/locations/${t.id}/`}>{t.data.shortName ?? t.data.title}</a>{i < towns.length - 1 ? ' · ' : ''}</>
+          <><a href={`/service-areas/${t.id}/`}>{t.data.shortName ?? t.data.title}</a>{i < towns.length - 1 ? ' · ' : ''}</>
         ))}
       </p>
       <p class="areas-more">
-        <a href="/locations/">See tree service details for each area</a>.
+        <a href="/service-areas/">See tree service details for each area</a>.
       </p>
     </div>
   </section>

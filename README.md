@@ -33,7 +33,7 @@ src/content/
   services/                  One .md per GBP-listed service → /services/[cat]/[slug]/
                              Ships 12 samples — real builds need 20–30. The #1 local
                              organic ranking factor is a dedicated page per service.
-  locations/                 Geographic pages → /locations/[slug]/ · EMPTY by default.
+  locations/                 Geographic pages → /service-areas/[slug]/ · ships 6 towns.
                              kind "town" = multi-area mini-hubs (ship at launch for
                              established clients). kind "landmark" = within-city
                              expansion (rank-map driven, later phase).
@@ -53,9 +53,10 @@ src/layouts/
 src/components/
   Header.astro               Brand · Menu (mobile) · full number + Free Estimate (desktop) ·
                              CSS-only checkbox nav (zero JS, links always in DOM).
-                             "Service Areas" item is PERMANENT; its href AUTO-SWITCHES
-                             from /service-areas/ to the /locations/ hub when location
-                             pages exist. Sticky at all sizes; mobile nav is a right-aligned
+                             "Service Areas" item is PERMANENT and always points at
+                             /service-areas/, which indexes a page per town (and
+                             noindexes itself while the collection is empty).
+                             Sticky at all sizes; mobile nav is a right-aligned
                              overlay dropdown under the Menu button with tap-outside
                              scrim close + glyph flip — all CSS-only, zero JS.
   Footer.astro               NAP + hours from config, quick links.
@@ -90,14 +91,11 @@ src/pages/
                              Service + FAQPage + Breadcrumb schema, deep content
                              body, prose links to siblings/category/home (Rule 16 —
                              no orphans).
-  service-areas.astro        Service Areas page (header nav target pre-Phase-2).
-                             Renders business.serviceAreas — the SAME list that feeds
-                             schema areaServed — so coverage can never drift between
-                             the page and the structured data. No per-town claims and
-                             no thin geo pages; links into the service hub instead.
-  locations/index.astro      Areas hub. Towns sort before landmarks. NOINDEX while
-                             collection empty.
-  locations/[location].astro Dual template: town titles keep their own geo;
+  service-areas/index.astro  Service Areas hub + header nav target. Cards every town
+                             page; also names any business.serviceAreas entry without
+                             a page, so the page and schema areaServed never disagree.
+                             Towns sort before landmarks. NOINDEX while collection empty.
+  service-areas/[location].astro  Dual template: town titles keep their own geo;
                              landmark titles auto-append home city (Rule 31).
                              Auto-builds a punctuated related-services sentence
                              from relatedServices[].
@@ -142,11 +140,11 @@ src/styles/global.css        Mobile-first (~375px base; 48rem/64rem scale-ups).
 10. `npm run build` → verify §6 → deploy `dist/`.
 
 **B. Established multi-area client (one address serving a region)**
-Steps 1–5, 7–10 identical, plus: create one town page per genuinely served town (within ~50 miles) from `_TEMPLATE-town.md` AT LAUNCH — the topical-authority gate protects new sites; an aged GBP with reviews/links usually clears it (run a rank map to prioritize weak towns, not to gate). Add every town to `serviceAreas` in `business.ts` (feeds schema areaServed). The homepage strip activates automatically and the Service Areas nav item re-points from `/service-areas/` to the `/locations/` hub on its own. Towns beyond the GBP's realistic radius need a second verified location — never a page.
+Steps 1–5, 7–10 identical, plus: create one town page per genuinely served town (within ~50 miles) from `_TEMPLATE-town.md` AT LAUNCH — the topical-authority gate protects new sites; an aged GBP with reviews/links usually clears it (run a rank map to prioritize weak towns, not to gate). Add every town to `serviceAreas` in `business.ts` (feeds schema areaServed). The homepage strip and the `/service-areas/` hub cards both activate automatically. Towns beyond the GBP's realistic radius need a second verified location — never a page.
 
 ## 4. What's mechanically enforced (framework guarantees)
 
-NAP/phone/hours render only from config (can't drift from GBP) · title + metaDescription required per page (build fails) · title formulas per page type incl. long-title `titleTail` zone · exactly one H1/page, above fold, largest text · each category an H2 on the homepage, each service an H2 on its category page · editorial link chains homepage→categories→services→siblings (no orphans possible) · FAQs always fully expanded + FAQPage schema · LocalBusiness (sitewide) + Service + BreadcrumbList + AggregateRating schema · canonical + sitemap + robots directives · locations/projects noindex while empty · Areas nav + strip auto-gate on town pages · static hero, no carousels/accordions/tabs anywhere · tap-to-call in the hero, every CTA band, and the tablet/desktop sticky header · anchor-offset compensation · zero external requests (system fonts, inlined CSS, no JS).
+NAP/phone/hours render only from config (can't drift from GBP) · title + metaDescription required per page (build fails) · title formulas per page type incl. long-title `titleTail` zone · exactly one H1/page, above fold, largest text · each category an H2 on the homepage, each service an H2 on its category page · editorial link chains homepage→categories→services→siblings (no orphans possible) · FAQs always fully expanded + FAQPage schema · LocalBusiness (sitewide) + Service + BreadcrumbList + AggregateRating schema · canonical + sitemap + robots directives · locations/projects noindex while empty · Service Areas hub cards + homepage strip auto-gate on town pages · static hero, no carousels/accordions/tabs anywhere · tap-to-call in the hero, every CTA band, and the tablet/desktop sticky header · anchor-offset compensation · zero external requests (system fonts, inlined CSS, no JS).
 
 ## 5. Rules the AGENT must uphold when writing content
 

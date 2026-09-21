@@ -1,0 +1,117 @@
+---
+/**
+ * SERVICE AREAS HUB (Rule 31) — the crawlable index of every town page,
+ * one hop from the homepage and from the header's Service Areas tab.
+ *
+ * Lives at /service-areas/ rather than /locations/ so the URL, the nav
+ * label and the search intent all read the same. Towns sort before
+ * landmarks; landmark pages (within-city expansion) hang off the same
+ * collection in a later phase.
+ *
+ * The town list and business.serviceAreas must agree: the first drives
+ * these pages, the second drives areaServed in the schema. A town with a
+ * page and no config entry is a coverage claim the structured data does
+ * not make.
+ *
+ * While the locations collection is empty this page ships noindex
+ * automatically, so it can never rank as an empty scaffold.
+ */
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTA from '../../components/CTA.astro';
+import MapNAP from '../../components/MapNAP.astro';
+import { business as b, cityState, telHref } from '../../config/business';
+
+const locations = (await getCollection('locations')).sort((a, z) =>
+  a.data.kind === z.data.kind
+    ? a.data.order - z.data.order
+    : a.data.kind === 'town' ? -1 : 1
+);
+const towns = locations.filter((l) => l.data.kind === 'town');
+
+const categories = (await getCollection('categories')).sort(
+  (a, z) => a.data.order - z.data.order
+);
+
+// Config names with no page of their own still belong on the page: they
+// are in areaServed, so a visitor searching them should find them stated.
+const named = new Set(towns.map((t) => t.data.shortName ?? t.data.title));
+const areasWithoutPages = b.serviceAreas.filter((n) => n !== b.address.city && !named.has(n));
+
+const title = `Tree Service Areas in ${cityState} | ${b.name}`;
+const description = `The Montgomery County towns ${b.name} covers for tree removal, trimming, and stump grinding, with a page of local detail for each one.`;
+---
+
+<BaseLayout title={title} description={description} noindex={locations.length === 0}>
+  <section class="hero">
+    <div class="container">
+      <h1>Tree Service Areas Around {b.address.city}, {b.address.stateAbbr}</h1>
+      <p class="hero__sub">
+        We're a {b.address.city}-based crew, and we work the towns around it. Every area below
+        has its own page covering drive times, local tree problems, and what the work costs
+        you in time.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href={telHref}>Call Now</a>
+        <a class="btn btn--outline" href="/contact/">Get a Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Where we work</p>
+      <h2>Towns We Serve</h2>
+      {towns.length > 0 ? (
+        <div class="grid grid--3">
+          {towns.map((loc) => (
+            <div class="card card--link">
+              <h3>{loc.data.shortName ?? loc.data.title}, {b.address.stateAbbr}</h3>
+              <p>
+                <a href={`/service-areas/${loc.id}/`}>
+                  Tree service in {loc.data.shortName ?? loc.data.title}
+                </a>
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>
+          <!-- Placeholder while the collection is empty (page is noindexed) -->
+          Town pages are added here as coverage areas go live.
+        </p>
+      )}
+      <p>
+        That's {b.address.city} and the Montgomery County towns around it{areasWithoutPages.length > 0 ? `, plus ${areasWithoutPages.join(', ')}` : ''}.
+        Every service on this site is available everywhere on that list, and storm damage and
+        emergency removals are handled around the clock.
+      </p>
+      <p>
+        Don't see your town? Ask anyway. Plenty of work sits just past the edge of that list,
+        and you'll get a straight answer either way.
+        <a href="/contact/">Send us the details</a> and we'll tell you where you stand.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <h2>What We Do in Every Area We Serve</h2>
+      <p>
+        The same crew, equipment, and cleanup standard applies everywhere on the list above.
+      </p>
+      <div class="grid grid--3">
+        {categories.map((cat) => (
+          <div class="card card--link">
+            <h3>{cat.data.title}</h3>
+            <p><a href={`/services/${cat.id}/`}>See all {cat.data.title.toLowerCase()} services</a></p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <MapNAP />
+
+  <CTA />
+</BaseLayout>

@@ -2,7 +2,8 @@
 # ═══ TOWN TEMPLATE: for businesses genuinely serving multiple towns ═══
 # Established multi-area clients ship these AT LAUNCH. One page per real
 # town served (within ~50 miles / the GBP's realistic radius).
-# Filename = slug = keyword: e.g. tree-service-kilgore-tx.md
+# Filename = slug = the town, e.g. kilgore.md -> /service-areas/kilgore/
+# (the base path already carries the keyword; no need to repeat it)
 title: "[Primary Category] in [Town], [ST]"   # e.g. "Tree Service in Kilgore, TX"
 kind: "town"
 shortName: "[Town]"                  # used in the homepage strip + breadcrumbs

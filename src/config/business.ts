@@ -45,16 +45,25 @@ export const business = {
   // Every town that gets a town page MUST also be listed here — this
   // feeds areaServed in LocalBusiness + Service schema, which is what
   // Google and AI assistants read to decide if you serve a searcher's town.
-  // Launch is single-location (README §3-A): no town pages yet, so this
-  // list stays short and honest — Conroe plus immediate Montgomery
-  // County neighbors a Conroe crew genuinely covers.
+  // Conroe (home base) plus the six towns targeted for coverage, each of
+  // which has its own page under /service-areas/. Chosen for canopy age,
+  // property values and access difficulty, which is what sets job value:
+  // The Woodlands (permit-gated removals over high-value homes), Montgomery
+  // (Lake Conroe waterfront rigging), Willis (closest, storm-exposed),
+  // Magnolia (acreage and lot clearing), Tomball (mature-tree maintenance),
+  // Spring (1970s-80s pines now at failure age).
+  //
+  // EVERY name here is a coverage CLAIM: it lands in areaServed on the
+  // LocalBusiness + Service schema. Never list a town a crew will not
+  // actually drive to.
   serviceAreas: [
     'Conroe',
+    'The Woodlands',
     'Willis',
     'Montgomery',
-    'Panorama Village',
-    'Cut and Shoot',
-    'Grangerland',
+    'Magnolia',
+    'Tomball',
+    'Spring',
   ],
 
   // ── Hours (match GBP exactly — Rule 7: open-at-time-of-search is top-5) ──

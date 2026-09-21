@@ -46,10 +46,11 @@ const services = defineCollection({
  *  kind "town"     — mini-hub for a town the business genuinely serves
  *                    (multi-area clients ship these at launch)
  *  kind "landmark" — within-city expansion page (rank-map driven batches)
- * Renders at /locations/[location]/  The homepage service-areas strip
- * appears automatically once entries exist, and the header's permanent
- * Service Areas tab re-points itself from /service-areas/ to the
- * /locations/ hub the moment there is a hub worth indexing.
+ * Renders at /service-areas/[location]/ and is indexed by the hub the
+ * header's Service Areas tab points at. The homepage service-areas strip
+ * and the hub's town cards both appear automatically once entries exist.
+ * Every town here also belongs in serviceAreas in business.ts, which is
+ * what puts it in schema areaServed.
  */
 const locations = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/locations' }),

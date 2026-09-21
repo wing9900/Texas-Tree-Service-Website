@@ -56,8 +56,8 @@ const crumbName = location.data.shortName ?? location.data.title;
 <BaseLayout title={title} description={location.data.metaDescription}>
   <BreadcrumbSchema items={[
     { name: 'Home', url: '/' },
-    { name: 'Areas We Serve', url: '/locations/' },
-    { name: crumbName, url: `/locations/${location.id}/` },
+    { name: 'Service Areas', url: '/service-areas/' },
+    { name: crumbName, url: `/service-areas/${location.id}/` },
   ]} />
 
   <section class="hero">
@@ -65,7 +65,7 @@ const crumbName = location.data.shortName ?? location.data.title;
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <ol>
           <li><a href="/">Home</a></li>
-          <li><a href="/locations/">Areas We Serve</a></li>
+          <li><a href="/service-areas/">Service Areas</a></li>
           <li aria-current="page">{crumbName}</li>
         </ol>
       </nav>
