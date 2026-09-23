@@ -18,7 +18,7 @@ const description = `Call ${b.name} or send a quick request online. Free estimat
   <section class="hero">
     <div class="container">
       <h1>Get a Fast, Free Estimate in {b.address.city}</h1>
-      <p class="hero__sub">The quickest way to reach us is a call or text. You'll talk to a real person who can schedule you today.</p>
+      <p class="hero__sub">Call now and talk to a real person, or book a time below that fits your schedule. Either way the estimate is free and the price is in writing before any work starts.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href={telHref}>Call Now</a>
       </div>
@@ -28,7 +28,6 @@ const description = `Call ${b.name} or send a quick request online. Free estimat
   <section class="section">
     <div class="container split">
       <div>
-        <h2>Prefer to Send Details?</h2>
         {/* GHL (LeadConnector) quote form. No `height:100%` on the iframe
             and no fixed height on the wrapper: form_embed.js writes the
             loaded form's real height onto iframe.style.height, and the
@@ -55,20 +54,30 @@ const description = `Call ${b.name} or send a quick request online. Free estimat
             title="Form 0"
           ></iframe>
         </div>
-        <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
       </div>
       <div>
-        <h2>What Happens Next</h2>
-        <p>
-          Call or text us any day of the week and tell us what the
-          tree is doing: leaning, dropping limbs, crowding the roof, or already
-          down. You get a free estimate for the work, in writing, with the
-          removal, hauling, and cleanup spelled out before anything goes on the
-          schedule. Storm damage jumps the line, so say so if a tree is on a
-          structure or blocking your driveway.
-        </p>
+        {/* GHL (LeadConnector) booking calendar, the second column of the
+            same .split grid: on desktop it sits directly beside the form,
+            below it on tablet and phone. Same auto-height contract as the
+            form -- form_embed.js writes the widget's real height onto
+            iframe.style.height, so the wrapper is `height: auto` and the
+            CSS height is only the pre-load placeholder. */}
+        <div class="booking-embed">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/booking/6xy0znQhsIGbBYFRhAqR"
+            allow="payment"
+            scrolling="no"
+            style="width:100%;border:none;overflow:hidden;border-radius:8px"
+            id="6xy0znQhsIGbBYFRhAqR_1790200366596"
+            title="Book an appointment"
+          ></iframe>
+        </div>
       </div>
     </div>
+    {/* One script for BOTH embeds -- form_embed.js resizes every LeadConnector
+        iframe on the page, so loading it a second time would only duplicate
+        the listeners. */}
+    <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
   </section>
 
   <MapNAP />
