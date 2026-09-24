@@ -78,7 +78,7 @@ export const homepage = {
   faqs: [
     {
       q: 'What does an estimate cost?',
-      a: 'Nothing. Tell us what the tree is doing and where it sits on the property, and you get a written price before any work goes on the schedule. <a href="/contact/">Request your free estimate here</a>.',
+      a: 'Nothing. Tell us what the tree is doing and where it sits on the property, and you get a written price before any work goes on the schedule. <a href="/appointment/">Book your free estimate here</a>.',
     },
     {
       q: 'How much does tree removal cost in Conroe?',
