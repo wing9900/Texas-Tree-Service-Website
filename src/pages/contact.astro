@@ -5,6 +5,12 @@
  * placeholder shell: wire the action/embed to the GHL form + pipeline
  * per business at fill-in time. Quote submissions auto-forward per the
  * lead-routing setup.
+ *
+ * The booking calendar used to sit beside the form here; it now has its
+ * own page at /appointment/, which is the link that goes out in texts.
+ * This page is the written-request path: call, or send details and get a
+ * callback. It links to the calendar rather than embedding it, so the two
+ * pages never compete for the same click.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MapNAP from '../components/MapNAP.astro';
@@ -12,43 +18,32 @@ import { business as b, cityState, telHref } from '../config/business';
 
 const title = `Contact ${b.name} | ${b.primaryCategory} in ${cityState}`;
 const description = `Call ${b.name} or send a quick request online. Free estimates for tree removal, trimming, stump grinding, and storm cleanup in ${cityState}.`;
-
-/**
- * Share card for THIS PAGE ONLY (og: + twitter:), passed through BaseLayout's
- * `social` prop because meta tags have to land in <head> — anything rendered
- * from the slot below ends up in <body>, where scrapers ignore it.
- * This is what people see when the page is texted or posted, so it reads as an
- * invitation rather than as the search-results title. `title` and `description`
- * above still drive <title> and meta description untouched, so nothing here
- * can move Google rankings. og:/twitter:description fall through to
- * `description`.
- */
-const social = {
-  title: 'Book Your Free Appointment',
-  url: 'https://www.conroetreeco.com/contact/',
-  image: 'https://www.conroetreeco.com/images/estimate-preview.jpg',
-};
 ---
 
-<BaseLayout title={title} description={description} social={social}>
+<BaseLayout title={title} description={description}>
   <section class="hero">
     <div class="container">
       <h1>Get a Fast, Free Estimate in {b.address.city}</h1>
-      <p class="hero__sub">Call now and talk to a real person, or book a time below that fits your schedule. Either way the estimate is free and the price is in writing before any work starts.</p>
+      <p class="hero__sub">Call and talk to a real person, or send your details below and we will get right back to you. Either way the estimate is free and the price is in writing before any work starts.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href={telHref}>Call Now</a>
+        <a class="btn btn--outline" href="/appointment/">Book a Time Online</a>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="container split">
-      <div>
-        {/* GHL (LeadConnector) quote form. No `height:100%` on the iframe
-            and no fixed height on the wrapper: form_embed.js writes the
-            loaded form's real height onto iframe.style.height, and the
-            auto-height wrapper hugs it. A taller/shorter form in GHL then
-            updates the page by itself -- nothing to touch here. */}
+    <div class="container">
+      {/* GHL (LeadConnector) quote form. Now the section's only element, so
+          it gets a centred, capped column rather than a half-width .split
+          cell -- a lone form stretched across 1240px reads as a wall of
+          inputs on a desktop monitor.
+          No `height:100%` on the iframe and no fixed height on the wrapper:
+          form_embed.js writes the loaded form's real height onto
+          iframe.style.height, and the auto-height wrapper hugs it. A
+          taller/shorter form in GHL then updates the page by itself --
+          nothing to touch here. */}
+      <div class="embed-col">
         <div class="quote-form-embed">
           <iframe
             src="https://api.leadconnectorhq.com/widget/form/lVpPEmDHvnyLuJHiyCIS"
@@ -71,28 +66,11 @@ const social = {
           ></iframe>
         </div>
       </div>
-      <div>
-        {/* GHL (LeadConnector) booking calendar, the second column of the
-            same .split grid: on desktop it sits directly beside the form,
-            below it on tablet and phone. Same auto-height contract as the
-            form -- form_embed.js writes the widget's real height onto
-            iframe.style.height, so the wrapper is `height: auto` and the
-            CSS height is only the pre-load placeholder. */}
-        <div class="booking-embed">
-          <iframe
-            src="https://api.leadconnectorhq.com/widget/booking/6xy0znQhsIGbBYFRhAqR"
-            allow="payment"
-            scrolling="no"
-            style="width:100%;border:none;overflow:hidden;border-radius:8px"
-            id="6xy0znQhsIGbBYFRhAqR_1790200366596"
-            title="Book an appointment"
-          ></iframe>
-        </div>
-      </div>
+      <p class="booking-alt">
+        Rather pick your own time? <a href="/appointment/">Book a free
+        appointment online</a> and choose a slot that fits your schedule.
+      </p>
     </div>
-    {/* One script for BOTH embeds -- form_embed.js resizes every LeadConnector
-        iframe on the page, so loading it a second time would only duplicate
-        the listeners. */}
     <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
   </section>
 

@@ -1151,7 +1151,7 @@ html:has(.lightbox:popover-open) body { overflow: hidden; touch-action: none; }
    pre-load placeholder, matched to the widget's own data-height. */
 .quote-form-embed { height: auto; }
 .quote-form-embed iframe { display: block; width: 100%; height: 1024px; }
-/* ── Booking calendar (contact page, right column of the same .split) ──
+/* ── Booking calendar (the whole of /appointment/) ──
    Same contract as the quote form above: the wrapper is auto so
    form_embed.js's live height write on the iframe actually moves it, and
    the height below is only the placeholder for the moment before that
@@ -1159,6 +1159,25 @@ html:has(.lightbox:popover-open) body { overflow: hidden; touch-action: none; }
    that would otherwise leave a few px of white under the calendar. */
 .booking-embed { height: auto; }
 .booking-embed iframe { display: block; width: 100%; height: 700px; }
+/* ── Single-embed column (the /contact/ form, the /appointment/ calendar) ──
+   Both pages now lead with ONE embed as the section's whole focus. Left in
+   a bare .container it would stretch the full 1240px, which turns a short
+   form into a run of very wide inputs and pulls the calendar's day grid
+   apart. Capping and centring keeps the measure readable; the wide variant
+   is for the calendar, which needs the room to put its month beside its
+   time slots before it stacks them. */
+.embed-col { max-width: 44rem; margin-inline: auto; }
+.embed-col--wide { max-width: 56rem; }
+/* Quiet hand-off line under an embed, pointing at the other page's path
+   (form → calendar, calendar → call/form). Deliberately not a button: the
+   embed above it is the page's job, and a second button competes with it.
+   The `auto` side margins are load-bearing: the desktop `main p` rule caps
+   every paragraph at 68ch, which would otherwise leave this one centred
+   INSIDE a 68ch box still pinned to the container's left edge. */
+.booking-alt {
+  margin: 2.25rem auto 0; text-align: center; text-wrap: pretty;
+  color: var(--c-ink-soft); font-size: 1.02rem;
+}
 .quote-form { display: flex; flex-direction: column; gap: 0.25rem; }
 .quote-form__label {
   font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;

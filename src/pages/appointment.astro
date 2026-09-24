@@ -1,0 +1,105 @@
+---
+/**
+ * APPOINTMENT PAGE — one job: get a time on the calendar.
+ *
+ * This is the URL that goes out in texts, so it carries the share card
+ * (see `social` below) and stays deliberately sparse. Everything on the
+ * page either IS the calendar or removes a reason not to use it; a second
+ * CTA here would just split the click.
+ *
+ * Division of labour with /contact/: this page books a slot, /contact/
+ * takes a written request and shows the map + hours. Neither should grow
+ * the other's job — one clear next step per page (Rule 16).
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { business as b, cityState, telHref } from '../config/business';
+
+const title = `Book a Free Tree Service Estimate | ${b.name}`;
+const description = `Pick a time that suits you and we'll come look at the tree in ${cityState}, then put the full price in writing. Free estimate, and no obligation to book.`;
+
+/**
+ * Share card for THIS PAGE ONLY (og: + twitter:), passed through
+ * BaseLayout's `social` prop — meta tags have to land in <head>, and
+ * anything rendered from the slot below ends up in <body> where scrapers
+ * ignore it. Reads as an invitation because this link gets texted; the
+ * `title`/`description` above still drive <title> and meta description
+ * untouched, so nothing here can move search rankings.
+ */
+const social = {
+  title: 'Book Your Free Appointment',
+  url: 'https://www.conroetreeco.com/appointment/',
+  image: 'https://www.conroetreeco.com/images/estimate-preview.jpg',
+};
+---
+
+<BaseLayout title={title} description={description} social={social}>
+  <section class="hero">
+    <div class="container">
+      <h1>Book Your Free Estimate</h1>
+      <p class="hero__sub">
+        Pick a time below that works for you. We come out, look at the tree,
+        and give you the full price in writing — free, and you are never
+        obligated to book the work.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {/* GHL (LeadConnector) booking calendar — the whole point of the page,
+          so it gets its own centred column instead of sharing a .split.
+          Same auto-height contract as every other LeadConnector embed:
+          form_embed.js writes the widget's real height onto
+          iframe.style.height, so the wrapper is `height: auto` and the CSS
+          height is only the pre-load placeholder. */}
+      <div class="embed-col embed-col--wide">
+        <div class="booking-embed">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/booking/6xy0znQhsIGbBYFRhAqR"
+            allow="payment"
+            scrolling="no"
+            style="width:100%;border:none;overflow:hidden;border-radius:8px"
+            id="6xy0znQhsIGbBYFRhAqR_1790200366596"
+            title="Book an appointment"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="grid grid--3">
+        <div class="card">
+          <h2 class="card-title">The visit costs nothing</h2>
+          <p>
+            No trip charge and no estimate fee. If the number does not work for
+            you, that is the end of it — you owe us nothing for coming out.
+          </p>
+        </div>
+        <div class="card">
+          <h2 class="card-title">The price comes in writing</h2>
+          <p>
+            Removal, stump, hauling and cleanup all spelled out before any saw
+            starts. Nobody quotes you one number in the driveway and hands you a
+            bigger one from the truck.
+          </p>
+        </div>
+        <div class="card">
+          <h2 class="card-title">We look at the tree in person</h2>
+          <p>
+            A removal cannot be priced honestly from a photo. We walk the
+            property in {b.address.city}, check the lean and what is under it,
+            then quote the job we actually have to do.
+          </p>
+        </div>
+      </div>
+      <p class="booking-alt">
+        Rather not wait for a slot? <a href={telHref}>Call {b.phoneDisplay}</a> and
+        talk to a real person, or <a href="/contact/">send your details</a> and we
+        will get right back to you.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
