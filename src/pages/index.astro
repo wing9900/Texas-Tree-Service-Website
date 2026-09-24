@@ -79,7 +79,7 @@ const whyIcons: Record<string, string> = {
        The form slot makes this a two-column split on desktop (copy left,
        form right, both in the first screen) -- see .hero--split in
        global.css. Below desktop it stacks: hero content, then the form. -->
-  <Hero h1={hp.hero.h1} benefits={hp.hero.benefits} reviewers={hp.googleReviewers} pillText={hp.hero.pillText} ctaLabel={hp.hero.ctaLabel} image={hp.hero.image}>
+  <Hero h1={hp.hero.h1} benefits={hp.hero.benefits} ctaLabel={hp.hero.ctaLabel} image={hp.hero.image}>
     <Fragment slot="form">
       {/* No label here -- the GHL form now renders its own "Get a Free
           Quote" heading + logo, so a page-level one on top was redundant. */}

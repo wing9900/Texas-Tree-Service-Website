@@ -1,0 +1,105 @@
+---
+/**
+ * GOOGLE RATING — one line of type, no chrome.
+ *
+ * Deliberately NOT a badge: no capsule, no drop shadow, no avatar stack.
+ * Those read as decoration, and decoration around a rating makes people
+ * trust it less, not more. This states a fact and links to the listing
+ * where anyone can check it, which is the whole job.
+ *
+ * Stars are real SVG (Material's star, the same shape Google draws) rather
+ * than the ★ glyph: glyphs render at a different weight on every platform
+ * and sit next to the official Google G looking home-made. Each star fills
+ * by fraction, so 4.7 draws as four and seven tenths, not five.
+ *
+ * Renders nothing when there is no rating to show, same gate as everywhere
+ * else: never invent a number the listing can't back up.
+ */
+import { business as b } from '../config/business';
+
+interface Props {
+  /** 'light' for dark/photo backgrounds (hero), 'dark' for the cream page. */
+  tone?: 'light' | 'dark';
+  /** Slightly larger type where it stands alone rather than beside copy. */
+  size?: 'md' | 'lg';
+  class?: string;
+}
+const { tone = 'dark', size = 'md', class: extraClass = '' } = Astro.props;
+
+const rating = b.gbp.ratingValue;
+const count = b.gbp.reviewCount;
+const hasRating = rating > 0 && count > 0;
+
+// Material's star. Google draws this shape; the ★ glyph does not.
+const STAR = 'M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z';
+const stars = [0, 1, 2, 3, 4].map((i) => Math.round(Math.max(0, Math.min(1, rating - i)) * 100));
+
+const cls = ['grating', `grating--${tone}`, `grating--${size}`, extraClass].filter(Boolean).join(' ');
+const label = `Rated ${rating} out of 5 from ${count} Google reviews`;
+const Tag = b.gbp.profileUrl ? 'a' : 'span';
+---
+
+{hasRating && (
+  <Tag class={cls} href={b.gbp.profileUrl || undefined} aria-label={label}>
+    <svg class="grating__g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+    <span class="grating__score">{rating.toFixed(1)}</span>
+    <span class="grating__stars" aria-hidden="true">
+      {stars.map((pct) => (
+        <span class="grating__star">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d={STAR} /></svg>
+          <span class="grating__star-fill" style={`width:${pct}%`}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d={STAR} /></svg>
+          </span>
+        </span>
+      ))}
+    </span>
+    {/* Exact count, never "127+": the plus reads as an estimate, and an
+        estimate is the one thing a verifiable number should never look
+        like. */}
+    <span class="grating__count">{count} Google reviews</span>
+  </Tag>
+)}
+
+<style>
+  .grating {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    text-decoration: none; line-height: 1;
+    font-size: 1rem; font-weight: 600;
+  }
+  .grating--lg { font-size: 1.1rem; gap: 0.5rem; }
+
+  .grating__g { flex: none; width: 1.15em; height: 1.15em; }
+
+  .grating__score { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.01em; }
+
+  .grating__stars { display: inline-flex; gap: 0.08em; }
+  /* Each star is the empty shape with a gold copy clipped over it, so a
+     fractional rating draws a partial star instead of rounding. */
+  .grating__star { position: relative; display: inline-block; width: 1.02em; height: 1.02em; }
+  .grating__star svg { display: block; width: 100%; height: 100%; }
+  .grating__star > svg path { fill: var(--star-empty); }
+  .grating__star-fill { position: absolute; inset: 0; overflow: hidden; }
+  .grating__star-fill svg { width: 1.02em; height: 1.02em; }
+  .grating__star-fill path { fill: var(--c-star); }
+
+  .grating__count { font-weight: 500; }
+
+  /* On the hero photo. The underline is on the count alone: it marks the
+     thing worth clicking (the listing) without turning the whole line into
+     a link-coloured blob. */
+  .grating--light { color: #fff; text-shadow: 0 1px 10px rgb(13 42 27 / 0.65); --star-empty: rgb(255 255 255 / 0.4); }
+  .grating--light .grating__count { color: #eef3ea; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgb(255 255 255 / 0.45); }
+  .grating--light:hover .grating__count { text-decoration-color: #fff; }
+
+  /* On the cream page background. */
+  .grating--dark { color: var(--c-ink); --star-empty: #d9ded8; }
+  .grating--dark .grating__count { color: var(--c-ink-soft); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgb(23 83 56 / 0.35); }
+  .grating--dark:hover .grating__count { color: var(--c-primary); }
+
+  /* Phones: the count is the first thing to go if the line gets tight,
+     but it carries the proof, so shrink the whole line instead of
+     dropping anything from it. */
+  @media (max-width: 29.99rem) {
+    .grating, .grating--lg { font-size: 0.92rem; gap: 0.35rem; }
+  }
+</style>

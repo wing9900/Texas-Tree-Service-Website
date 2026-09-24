@@ -65,8 +65,11 @@ export const homepage = {
     },
   ],
 
-  // Google reviewer avatars for the hero pill. Renders only when
-  // populated: NEVER invent reviewers the profile can't back up.
+  // UNUSED since the hero pill was replaced by the one-line GoogleRating
+  // component (no avatar stack any more). Kept because a future proof band
+  // can still use it; nothing reads it today.
+  // Google reviewer avatars. Populate only from real reviewers:
+  // NEVER invent reviewers the profile can't back up.
   // [PENDING — stays EMPTY until the Conroe GBP exists and has real
   // reviews. Do not copy avatars or reviewers from any other site.]
   googleReviewers: [] as ReadonlyArray<{ img?: string; initials?: string; bg?: string }>,

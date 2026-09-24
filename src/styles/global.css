@@ -1251,3 +1251,9 @@ textarea.quote-form__input { min-height: 7rem; resize: vertical; line-height: 1.
 .quote-form__submit { margin-top: 1.15rem; }
 .quote-form__note { font-size: var(--fs-small); color: var(--c-ink-soft); margin-top: 0.75rem; }
 .quote-form__botcheck { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+/* Hero rating line spacing. Sits between the benefits row and the CTA
+   pair, and costs no fold height on the split hero: that hero's height is
+   set by the quote card (626px), which is far taller than the copy stack. */
+.hero__rating { margin: 0.9rem auto 0.2rem; }
+.hero--split .hero__rating { margin: 1rem auto 0; }
