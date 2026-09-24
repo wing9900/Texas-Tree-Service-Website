@@ -7,6 +7,17 @@ chamberofcommerce.com, Nextdoor, EcoHome, their Square site.
 
 ## MISSING — collect before launch
 
+0. ⚠️ **REMOVE THE DEMO RATING BEFORE LAUNCH** — the hero currently shows
+   "4.9 ★★★★★ 127 Google reviews", drawn from
+   `business.demoPlaceholderRating`. **Those numbers are invented**, put
+   up for walkthrough demos at the owner's request. Replace them with the
+   real rating, review count and `gbp.profileUrl` in `gbp.*`, and set
+   `demoPlaceholderRating.enabled` to false (or delete the block) in the
+   same edit. Nothing false is published as structured data today:
+   `AggregateRating` reads `gbp.*`, which is still 0, so Google is told
+   nothing — that stops being true the moment someone "tidies" the demo
+   numbers into `gbp.*`. Find the element in built HTML by its
+   `data-placeholder="true"` attribute.
 1. **Maps embed URL** — Google Maps → the GBP listing → Share → "Embed a
    map" → copy the iframe `src` → paste into `gbp.mapsEmbedUrl` in
    `src/config/business.ts`. (30 seconds; Rule 12 signal #3.)

@@ -89,6 +89,34 @@ export const business = {
     reviewCount: 0,
   },
 
+  /**
+   * ⚠️ DEMO PLACEHOLDER — NOT REAL REVIEW DATA. REMOVE BEFORE LAUNCH. ⚠️
+   *
+   * Invented numbers, shown on the page for a walkthrough demo, exactly
+   * like the DEMO ONLY hero photo in homepage.ts. Tracked in HANDOFF.md
+   * under "MISSING — collect before launch".
+   *
+   * DELIBERATELY SEPARATE FIELDS from gbp.ratingValue / gbp.reviewCount
+   * above, which stay at 0. That separation is the whole point and is
+   * not a style choice:
+   *   - LocalBusinessSchema reads gbp.*, so AggregateRating stays OFF and
+   *     nothing false is published as structured data for Google to read.
+   *   - SocialProofBand, ReviewsEmbed and the Reviews nav item read gbp.*
+   *     too, so they all stay dark as well.
+   *   - ONLY GoogleRating.astro reads this block, and only to draw pixels.
+   * Never merge these values back into gbp.* to "simplify" it. Doing that
+   * silently turns a demo into a false structured-data claim.
+   *
+   * TO GO LIVE FOR REAL: set enabled to false (or delete this block) and
+   * put the true numbers in gbp.ratingValue / gbp.reviewCount + the real
+   * gbp.profileUrl. Everything then lights up together, honestly.
+   */
+  demoPlaceholderRating: {
+    enabled: true,
+    ratingValue: 4.9,
+    reviewCount: 127,
+  },
+
   // ── Schema ────────────────────────────────────────────────────────
   // Most specific schema.org LocalBusiness subtype that applies
   // (e.g. 'HomeAndConstructionBusiness', 'Plumber', 'RoofingContractor',
