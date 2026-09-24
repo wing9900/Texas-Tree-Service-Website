@@ -5,6 +5,13 @@ supplied with conflicts. Sources used: gulfcoasttreeremoval.com (2 pages),
 Google Business Profile (via Places, 2026-07-18), Yelp, Facebook,
 chamberofcommerce.com, Nextdoor, EcoHome, their Square site.
 
+> **See also `OPEN-ITEMS.md`** — the full audited backlog (live bugs,
+> placeholders, dead code, guardrails), audited against the built output on
+> 2026-09-24. Where the two disagree, OPEN-ITEMS.md is the checked one: that
+> audit found items 3 and 6 below had drifted, and both are corrected in
+> place. This file remains the list of *information to collect from the
+> owner*; OPEN-ITEMS.md covers everything else.
+
 ## MISSING — collect before launch
 
 0. ⚠️ **REMOVE THE DEMO RATING BEFORE LAUNCH** — the hero currently shows
@@ -24,15 +31,23 @@ chamberofcommerce.com, Nextdoor, EcoHome, their Square site.
 2. **Live review widget** — create the GBP embed (Elfsight/EmbedSocial
    free tier) and drop it in the marked slot in
    `src/components/ReviewsEmbed.astro`.
-3. **GHL form** — wire the quote form (name · phone · message only) into
-   the marked slot in `src/pages/contact.astro`.
+3. ~~**GHL form**~~ — RESOLVED (verified 2026-09-24): `/contact/` renders
+   the same HighLevel iframe form as the homepage. Consequence: the
+   Web3Forms block in `business.ts` (`accessKey: ''`) is now **obsolete
+   config, not a pending task** — nothing reads it. See OPEN-ITEMS.md
+   OI-11.
 4. **Photos** — run the IMAGES.md protocol (hero, og-image, about photo,
    project photos). The only visual-judgment step left.
 5. ~~Robert's last name~~ — RESOLVED: **Robert W. Ebbecke**, verified
    against his ISA certificate and his signed review replies. Wired into
    About copy + `business.owner` + schema founder entity.
-6. ~~Email~~ — RESOLVED: gulfcoasttreeremoval@gmail.com added to config,
-   contact page, footer, and LocalBusiness schema.
+6. **Email** — ⚠️ NOT RESOLVED, despite what this line said until
+   2026-09-24. `business.email` is `aiyana0098@gmail.com` (not the
+   gulfcoasttreeremoval address named here), and **nothing in the codebase
+   reads it** — no contact page, no footer, no schema. There is no email
+   address anywhere in the built site, on any of the 41 pages. This
+   matters for toll-free SMS verification, which directs customers to that
+   address. See OPEN-ITEMS.md OI-03.
 
 ## VERIFY with Robert / the GBP — conflicts & assumptions
 

@@ -14,6 +14,11 @@ package.json                 deps: astro, @astrojs/sitemap only
 tsconfig.json                strict Astro TS config
 public/robots.txt            allow-all + Sitemap URL (CHANGE PER BUSINESS)
 README.md                    this manual
+OPEN-ITEMS.md                ★ audited backlog: every known bug, placeholder and piece of
+                             dead code, each with evidence, why it matters and a command to
+                             re-verify it, plus GUARDRAILS — things that look wrong but are
+                             deliberate. Start here when asked "what still needs fixing?"
+HANDOFF.md                   info still to be collected from the owner (narrower than above)
 
 src/config/
   business.ts                ★ SINGLE SOURCE OF TRUTH: name, primary category, NAP,
