@@ -12,9 +12,25 @@ import { business as b, cityState, telHref } from '../config/business';
 
 const title = `Contact ${b.name} | ${b.primaryCategory} in ${cityState}`;
 const description = `Call ${b.name} or send a quick request online. Free estimates for tree removal, trimming, stump grinding, and storm cleanup in ${cityState}.`;
+
+/**
+ * Share card for THIS PAGE ONLY (og: + twitter:), passed through BaseLayout's
+ * `social` prop because meta tags have to land in <head> — anything rendered
+ * from the slot below ends up in <body>, where scrapers ignore it.
+ * This is what people see when the page is texted or posted, so it reads as an
+ * invitation rather than as the search-results title. `title` and `description`
+ * above still drive <title> and meta description untouched, so nothing here
+ * can move Google rankings. og:/twitter:description fall through to
+ * `description`.
+ */
+const social = {
+  title: 'Book Your Free Appointment',
+  url: 'https://www.conroetreeco.com/contact/',
+  image: 'https://www.conroetreeco.com/images/estimate-preview.jpg',
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} social={social}>
   <section class="hero">
     <div class="container">
       <h1>Get a Fast, Free Estimate in {b.address.city}</h1>

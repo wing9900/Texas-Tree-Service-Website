@@ -15,9 +15,29 @@ interface Props {
   title: string;        // full title tag — front-load the keyword (Rule 17)
   description: string;  // 150–160 char hand-written ad copy (Rule 20)
   noindex?: boolean;    // used only by empty scaffold pages (locations hub pre-Phase-2)
+  /**
+   * Per-page share-card overrides, for the rare page whose link preview must
+   * read differently from its search snippet. Omit it and the card is built
+   * from this page's own title / description / canonical exactly as before —
+   * every page that passes nothing renders byte-identical HTML.
+   * NEVER route SEO copy through here: <title> and meta description are the
+   * `title`/`description` props above and are untouched by this.
+   * Only /contact uses it (conversion wording for texted links).
+   */
+  social?: {
+    title?: string;  // og:title + twitter:title
+    url?: string;    // og:url — absolute
+    image?: string;  // og:image + twitter:image — absolute, 1200×630 JPEG
+  };
 }
-const { title, description, noindex = false } = Astro.props;
+const { title, description, noindex = false, social } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+
+const ogTitle = social?.title ?? title;
+const ogUrl = social?.url ?? canonical.href;
+// Page override first, then the sitewide seo.ogImage; '' on both = no card image.
+const ogImage = social?.image
+  ?? (business.seo.ogImage ? new URL(business.seo.ogImage, Astro.site).href : '');
 ---
 
 <!doctype html>
@@ -34,13 +54,16 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="robots" content={noindex ? 'noindex' : 'max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical} />
+    <meta property="og:url" content={ogUrl} />
     <meta property="og:site_name" content={business.name} />
-    {business.seo.ogImage && <meta property="og:image" content={new URL(business.seo.ogImage, Astro.site).href} />}
-    {business.seo.ogImage && <meta name="twitter:card" content="summary_large_image" />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    {ogImage && <meta name="twitter:card" content="summary_large_image" />}
+    {ogImage && <meta name="twitter:title" content={ogTitle} />}
+    {ogImage && <meta name="twitter:description" content={description} />}
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
