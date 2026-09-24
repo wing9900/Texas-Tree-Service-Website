@@ -10,7 +10,11 @@ interface Props {
 }
 const {
   heading = `Ready to Get Started in ${b.address.city}?`,
-  sub = 'Call or text now for a free estimate, or send your details and we\'ll get right back to you.',
+  // Describes what the two buttons below actually do. The second one books
+  // a time on the calendar, so the old "send your details and we'll get
+  // right back to you" (written when it pointed at /contact/) would now
+  // promise the wrong thing.
+  sub = 'Call or text now for a free estimate, or pick a time online and we\'ll come take a look.',
 } = Astro.props;
 ---
 
@@ -20,7 +24,8 @@ const {
     <p>{sub}</p>
     <div class="cta-band__actions">
       <a class="btn btn--primary" href={telHref}>Call Now</a>
-      <a class="btn btn--outline" href="/contact/">Get a Free Estimate</a>
+      {/* Booking calendar, not /contact/ — see the note in Header.astro. */}
+      <a class="btn btn--outline" href="/appointment/">Get a Free Estimate</a>
     </div>
   </div>
 </section>

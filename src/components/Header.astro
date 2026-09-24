@@ -31,7 +31,7 @@ const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
         </span>
       </a>
       <div class="site-header__actions">
-        <a class="site-header__estimate" href="/contact/">Free Estimate</a>
+        <a class="site-header__estimate" href="/appointment/">Free Estimate</a>
         <a class="site-header__phone" href={telHref} aria-label={`Call ${b.name}`}>
           <span class="site-header__phone-short">Call</span>
           <span class="site-header__phone-full">Call Now</span>
@@ -54,10 +54,15 @@ const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
           <li><a href="/contact/">Contact</a></li>
         </ul>
         {/* Menu CTAs — phone overlay only (hidden ≥48rem, where the header
-            bar already shows both). Plain links: tel: + /contact/, zero JS. */}
+            bar already shows both). Plain links: tel: + /appointment/,
+            zero JS. Every "free estimate" BUTTON on the site points at the
+            booking calendar, not /contact/: the estimate starts with a
+            time on the calendar, and /contact/ stays the destination for
+            "send us a message" wording and the in-content editorial links.
+            Keep the two straight when adding CTAs. */}
         <div class="site-nav__cta">
           <a class="btn btn--primary" href={telHref}>Call Now</a>
-          <a class="btn btn--outline" href="/contact/">Get a Free Estimate</a>
+          <a class="btn btn--outline" href="/appointment/">Get a Free Estimate</a>
         </div>
       </nav>
     </div>

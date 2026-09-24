@@ -30,7 +30,10 @@ interface Props {
   ctaHref?: string;
   image?: HeroImage; // real job photo (Rule 21/26): falls back to gradient when absent
 }
-const { eyebrow, h1, benefits = [], reviewers = [], pillText = 'Trusted by Your Neighbors', ctaLabel = 'Get a Free Estimate', ctaHref = '/contact/', image } = Astro.props;
+// ctaHref defaults to the booking calendar, not /contact/: a "free
+// estimate" button starts by putting a time on the calendar. Pages that
+// want the written-request form instead pass ctaHref explicitly.
+const { eyebrow, h1, benefits = [], reviewers = [], pillText = 'Trusted by Your Neighbors', ctaLabel = 'Get a Free Estimate', ctaHref = '/appointment/', image } = Astro.props;
 const hasRating = b.gbp.ratingValue > 0 && b.gbp.reviewCount > 0;
 // Optional `form` slot: when a page passes one (homepage only, today),
 // the hero becomes a two-column split on desktop -- copy/CTA left, the
