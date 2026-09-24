@@ -18,16 +18,16 @@ interface Props {
   /**
    * Per-page share-card overrides, for the rare page whose link preview must
    * read differently from its search snippet. Omit it and the card is built
-   * from this page's own title / description / canonical exactly as before —
+   * from this page's own title / description / canonical exactly as before:
    * every page that passes nothing renders byte-identical HTML.
    * NEVER route SEO copy through here: <title> and meta description are the
    * `title`/`description` props above and are untouched by this.
-   * Only /contact uses it (conversion wording for texted links).
+   * Only /appointment uses it (conversion wording for texted links).
    */
   social?: {
     title?: string;  // og:title + twitter:title
-    url?: string;    // og:url — absolute
-    image?: string;  // og:image + twitter:image — absolute, 1200×630 JPEG
+    url?: string;    // og:url, absolute
+    image?: string;  // og:image + twitter:image, absolute, 1200x630 JPEG
   };
 }
 const { title, description, noindex = false, social } = Astro.props;

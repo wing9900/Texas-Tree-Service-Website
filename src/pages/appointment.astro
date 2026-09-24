@@ -1,25 +1,24 @@
 ---
 /**
- * APPOINTMENT PAGE — one job: get a time on the calendar.
+ * APPOINTMENT PAGE. One job: get a time on the calendar.
  *
  * This is the URL that goes out in texts, so it carries the share card
- * (see `social` below) and stays deliberately sparse. Everything on the
- * page either IS the calendar or removes a reason not to use it; a second
- * CTA here would just split the click.
+ * (see `social` below) and stays deliberately sparse. The page is the
+ * calendar plus one fallback line; a second CTA would only split the click.
  *
  * Division of labour with /contact/: this page books a slot, /contact/
  * takes a written request and shows the map + hours. Neither should grow
- * the other's job — one clear next step per page (Rule 16).
+ * the other's job, one clear next step per page (Rule 16).
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { business as b, cityState, telHref } from '../config/business';
 
 const title = `Book a Free Tree Service Estimate | ${b.name}`;
-const description = `Pick a time that suits you and we'll come look at the tree in ${cityState}, then put the full price in writing. Free estimate, and no obligation to book.`;
+const description = `Choose a time that works for you and we'll come look at the work in ${cityState}, then give you a free estimate in writing. No obligation to book the work.`;
 
 /**
  * Share card for THIS PAGE ONLY (og: + twitter:), passed through
- * BaseLayout's `social` prop — meta tags have to land in <head>, and
+ * BaseLayout's `social` prop, because meta tags have to land in <head> and
  * anything rendered from the slot below ends up in <body> where scrapers
  * ignore it. Reads as an invitation because this link gets texted; the
  * `title`/`description` above still drive <title> and meta description
@@ -37,16 +36,15 @@ const social = {
     <div class="container">
       <h1>Book Your Free Estimate</h1>
       <p class="hero__sub">
-        Pick a time below that works for you. We come out, look at the tree,
-        and give you the full price in writing — free, and you are never
-        obligated to book the work.
+        Choose a time below that works for you. We come out, look at the work,
+        and give you a free estimate in writing, with no obligation to book.
       </p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      {/* GHL (LeadConnector) booking calendar — the whole point of the page,
+      {/* GHL (LeadConnector) booking calendar, the whole point of the page,
           so it gets its own centred column instead of sharing a .split.
           Same auto-height contract as every other LeadConnector embed:
           form_embed.js writes the widget's real height onto
@@ -64,42 +62,17 @@ const social = {
           ></iframe>
         </div>
       </div>
-    </div>
-    <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
-  </section>
-
-  <section class="section section--alt">
-    <div class="container">
-      <div class="grid grid--3">
-        <div class="card">
-          <h2 class="card-title">The visit costs nothing</h2>
-          <p>
-            No trip charge and no estimate fee. If the number does not work for
-            you, that is the end of it — you owe us nothing for coming out.
-          </p>
-        </div>
-        <div class="card">
-          <h2 class="card-title">The price comes in writing</h2>
-          <p>
-            Removal, stump, hauling and cleanup all spelled out before any saw
-            starts. Nobody quotes you one number in the driveway and hands you a
-            bigger one from the truck.
-          </p>
-        </div>
-        <div class="card">
-          <h2 class="card-title">We look at the tree in person</h2>
-          <p>
-            A removal cannot be priced honestly from a photo. We walk the
-            property in {b.address.city}, check the lean and what is under it,
-            then quote the job we actually have to do.
-          </p>
-        </div>
-      </div>
+      {/* Sits inside the calendar's own section so the gap above it is the
+          normal paragraph rhythm, not a full section break. The three
+          reassurance cards that used to follow were removed at the owner's
+          request; nothing else should be added under the calendar without
+          re-checking that spacing. */}
       <p class="booking-alt">
-        Rather not wait for a slot? <a href={telHref}>Call {b.phoneDisplay}</a> and
-        talk to a real person, or <a href="/contact/">send your details</a> and we
-        will get right back to you.
+        Rather not wait for an appointment? <a href={telHref}>Call {b.phoneDisplay}</a>
+        and talk to a real person, or <a href="/contact/">send your details</a> and
+        we will get right back to you.
       </p>
     </div>
+    <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
   </section>
 </BaseLayout>

@@ -154,6 +154,7 @@ NAP/phone/hours render only from config (can't drift from GBP) · title + metaDe
 - Name the city/town naturally and often. No generic industry filler ("5 signs you need…" is banned).
 - Every content page: 3–5 editorial links to related pages + ≥1 external validation link.
 - Second person; specifics over adjectives; short paragraphs (2–3 sentences); ~6th–8th grade level.
+- NO EM DASHES (`—`) in any visible page copy, ever: owner's standing preference. Use a period, a comma, a colon, or parentheses instead. This covers headlines, body copy, button labels, FAQ answers, meta descriptions and alt text. En dashes in true ranges (`Mon–Sun`, `150–160`) are fine and are not what this bans.
 - Images: REAL job photos only (no stock, no AI imagery for local proof) · descriptive keyword filenames (`oak-removal-longview-crane.webp`, never `IMG_4382.jpg`) · specific human-useful alt text, never repeated · compressed WebP.
 - NEVER add: accordions/tabs/read-mores, carousels, popups on load, client-side JS frameworks, localStorage, hardcoded NAP outside config, animation that hides content on load or uses JS libraries. CSS-only interaction effects (hover/transform/opacity) are fine.
 - Unique content per site when duplicating across a portfolio — structure repeats, words never do.
